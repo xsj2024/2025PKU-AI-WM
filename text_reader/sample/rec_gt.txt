@@ -1,0 +1,62 @@
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_0.jpg	1
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_1.jpg	Armaments+
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_2.jpg	Gain 5 Block
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_3.jpg	Upgrade all cards in
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_4.jpg	your hand for the rest
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_5.jpg	of combat.
+crop_img/19b0dc81-cddb-4864-816c-66e540ab32aa_crop_6.jpg	Skill
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_0.jpg	2
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_1.jpg	Shockwave
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_2.jpg	Apply 3 Weak and
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_3.jpg	Vulnerable to ALL
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_4.jpg	enemies.
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_5.jpg	Exhaust
+crop_img/85bf710e-05b5-4207-83d4-e199786e136c_crop_6.jpg	Skill
+crop_img/bf1d92ad-7af9-4d96-b57d-218a7971e8fa_crop_0.jpg	1
+crop_img/2dc9cfec-dc51-481e-8859-563784806867_crop_0.jpg	1
+crop_img/QQ_1748083321810_crop_0.jpg	2
+crop_img/1_crop_0.jpg	Calculated Gamble+
+crop_img/1_crop_1.jpg	Skill
+crop_img/1_crop_2.jpg	Discard your hand,
+crop_img/1_crop_3.jpg	then draw that many
+crop_img/1_crop_4.jpg	cards.
+crop_img/1_crop_5.jpg	0
+crop_img/2_crop_0.jpg	1
+crop_img/2_crop_1.jpg	Alchemize
+crop_img/2_crop_2.jpg	Skill
+crop_img/2_crop_3.jpg	Obtain a random
+crop_img/2_crop_4.jpg	potion.
+crop_img/2_crop_5.jpg	Exhaust.
+crop_img/3_crop_0.jpg	1
+crop_img/3_crop_1.jpg	Envenom+
+crop_img/3_crop_2.jpg	Power
+crop_img/3_crop_3.jpg	Whenever an Attack
+crop_img/3_crop_4.jpg	deals unblocked
+crop_img/3_crop_5.jpg	damage,apply 1
+crop_img/3_crop_6.jpg	Poison.
+crop_img/4_crop_0.jpg	Tactician+
+crop_img/4_crop_1.jpg	Slkill
+crop_img/4_crop_2.jpg	Unplayable.
+crop_img/4_crop_3.jpg	If this cardis discarded
+crop_img/4_crop_4.jpg	from your hand,gain
+crop_img/4_crop_5.jpg	**
+crop_img/5_crop_0.jpg	1
+crop_img/5_crop_1.jpg	Die Die Die
+crop_img/5_crop_2.jpg	Attack
+crop_img/5_crop_3.jpg	Deal 26 damage to ALL
+crop_img/5_crop_4.jpg	enemies.
+crop_img/5_crop_5.jpg	Exhaust.
+crop_img/6_crop_0.jpg	0
+crop_img/6_crop_1.jpg	Prepared+
+crop_img/6_crop_2.jpg	Skill
+crop_img/6_crop_3.jpg	Draw 2 cards.
+crop_img/6_crop_4.jpg	Discard 2 cards.
+crop_img/QQ_1748083411916_crop_0.jpg	X
+crop_img/QQ_1748095382049_crop_0.jpg	Armaments+
+crop_img/test_crop_0.jpg	Defend
+crop_img/test_crop_1.jpg	Skill
+crop_img/test_crop_2.jpg	Gain5Block
+crop_img/test_crop_3.jpg	1
+crop_img/屏幕截图 2025-05-24 231521_crop_0.jpg	Sundial
+crop_img/屏幕截图 2025-05-24 231521_crop_1.jpg	Every 3 times you shuffle
+crop_img/屏幕截图 2025-05-24 231521_crop_2.jpg	your draw pile, gain **
