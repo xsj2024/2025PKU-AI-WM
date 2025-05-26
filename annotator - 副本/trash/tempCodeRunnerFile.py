@@ -1,0 +1,1 @@
+self.annotator = AnnotationTool(self.model)
