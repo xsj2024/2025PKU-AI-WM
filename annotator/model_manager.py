@@ -62,6 +62,8 @@ class ModelManager:
                     label = names.get(cls_id, cls_id)
                     x1, y1, x2, y2 = map(int, box[:4])
                     output.append((label, x1, y1, x2, y2))
+            # 将 output 按照 (x1 + x2) 升序排序
+            output.sort(key=lambda x: (x[1] + x[3]))
             return output
         except Exception as e:
             print(f"Detection error: {str(e)}")

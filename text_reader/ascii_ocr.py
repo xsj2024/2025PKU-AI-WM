@@ -1,39 +1,43 @@
 import cv2
 import string
 import numpy as np
-from paddleocr import PaddleOCR
+import easyocr
 
-ocr = PaddleOCR(use_angle_cls=True, lang='en')
-
+reader = easyocr.Reader(['en'], gpu=True)
 def ascii_ocr(image: np.ndarray) -> str:
     if image is None:
         raise ValueError("Input image is None. Please check the image path or file.")
-    min_size = 300
-    h, w = image.shape[:2]
-    scale = max(min_size / h, min_size / w, 1)
-    if scale > 1:
-        image = cv2.resize(image, (int(w * scale), int(h * scale)), interpolation=cv2.INTER_CUBIC)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    img_rgb = cv2.cvtColor(gray, cv2.COLOR_GRAY2BGR)
-    result = ocr.ocr(img_rgb)
+    # 图像预处理：放大
+    upscale_factor = 5
+    image = cv2.resize(image, (image.shape[1]*upscale_factor, image.shape[0]*upscale_factor), interpolation=cv2.INTER_CUBIC)
+    # easyocr 需要RGB格式
+    img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    results = reader.readtext(img_rgb, detail=1, decoder='beamsearch')
+    # results: [(bbox, text, conf), ...]
+    # 按 top(y) 坐标、再按 left(x) 坐标排序
+    def get_box_pos(r):
+        box = r[0]
+        # 取左上角点的 y, x
+        y = min(box[0][1], box[1][1], box[2][1], box[3][1])
+        x = min(box[0][0], box[1][0], box[2][0], box[3][0])
+        return (round(y//10), x)  # y 取整分组，避免微小抖动
+    results_sorted = sorted(results, key=get_box_pos)
     text = ''
-    for line in result:
-        if line is None or len(line) == 0:
-            continue
-        for box in line:
-            txt = box[1][0]
-            txt = ''.join([c for c in txt if c in string.printable and (c.isalnum() or c in '+-*/=.,:;!?()[]{}<>|\\@#$%^&*_~`\'\"')])
-            if txt:
-                text += txt + '\n'
+    for r in results_sorted:
+        txt = r[1]
+        if txt:
+            text += txt + '\n'
+    if not text:
+        text = '[No text detected]'
     return text.strip()
 
 if __name__ == '__main__':
     import time
-    img = cv2.imread('text_reader//QQ_1748095382049.png')
+    img = cv2.imread('text_reader//QQ_1748485534844.png')
     if img is None:
         print("Failed to load image: test.png. Please check the file path.")
     else:
-        N = 10
+        N = 1
         start = time.time()
         for _ in range(N):
             text = ascii_ocr(img)

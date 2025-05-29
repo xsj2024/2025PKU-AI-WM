@@ -56,11 +56,49 @@ class GameCapture:
         self._running = False
         
     def get_frame(self):
-        """获取当前帧"""
+        """获取当前帧，并将焦点切换到游戏窗口"""
         return self.current_frame.copy() if self.current_frame is not None else None
+    def wait_for_stable_frame(self, max_wait=60, interval=0.15, threshold=3, min_count=5):
+        """
+        连续采集帧，直到画面变化低于阈值，返回稳定帧。
+        :param capture: GameCapture 实例
+        :param max_wait: 最大等待秒数
+        :param interval: 帧间隔秒数
+        :param threshold: 均值绝对差阈值
+        :param min_count: 连续多少帧都低于阈值才算稳定
+        :return: 一帧可用于识别的 np.ndarray
+        """
+        last_frame = None
+        stable_count = 0
+        start_time = time.time()
+        while time.time() - start_time < max_wait:
+            frame = self.get_frame()
+            if frame is None:
+                time.sleep(interval)
+                continue
+            if last_frame is not None:
+                diff = np.abs(frame.astype(np.float32) - last_frame.astype(np.float32)).mean()
+                if diff < threshold:
+                    stable_count += 1
+                    if stable_count >= min_count:
+                        return frame
+                else:
+                    stable_count = 0
+            last_frame = frame
+            time.sleep(interval)
+        return last_frame
+    def move_mouse_to_center(self):
+        """将鼠标移动到游戏窗口中心"""
+        if not self.game_window:
+            print("Game window not found")
+            return
+        center_x = self.game_window.width // 2
+        center_y = self.game_window.height // 2
+        # pyautogui.moveTo(center_x, center_y, duration=0.1)
+        move_mouse_in_window(center_x, center_y)
 
 # 移动鼠标到窗口内坐标（窗口内容区左上角为原点）
-def move_mouse_in_window(x, y, window_title='Slay the Spire', speed=1000):
+def move_mouse_in_window(x, y, window_title=Config.GAME_WINDOW_TITLE, speed=1000):
     import pygetwindow as gw
     import pyautogui
     try:
@@ -75,3 +113,9 @@ def move_mouse_in_window(x, y, window_title='Slay the Spire', speed=1000):
     dist = ((cur_x - abs_x) ** 2 + (cur_y - abs_y) ** 2) ** 0.5
     duration = dist / speed if speed > 0 else 0.01
     pyautogui.moveTo(abs_x, abs_y, duration=duration)
+import win32gui, win32com.client
+def activate_game_window(window_title):
+    hwnd = win32gui.FindWindow(None, window_title)
+    shell = win32com.client.Dispatch("WScript.Shell")
+    shell.SendKeys('%')
+    win32gui.SetForegroundWindow(hwnd)
