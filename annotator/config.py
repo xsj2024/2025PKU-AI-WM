@@ -48,8 +48,8 @@ class Config:
     MODEL_STRICT_LOAD = False  # 允许加载不匹配的权重（用于空白初始化）
 
     BATCH_SIZE = 8  # 基础值
-    if torch.cuda.get_device_properties(0).total_memory < 8e9:  # <8GB显存
-        BATCH_SIZE = 4
+    # if torch.cuda.get_device_properties(0).total_memory < 8e9:  # <8GB显存
+    #     BATCH_SIZE = 4
 
     # 增强强度配置（根据样本量自动调节）
     AUG_INTENSITY = 0.5  # 0-1范围，0.5为中等强度

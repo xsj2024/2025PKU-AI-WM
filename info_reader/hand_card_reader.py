@@ -1,6 +1,4 @@
-import cv2
 import keyboard
-import time
 import numpy as np
 from annotator import game_capture
 from annotator.model_manager import ModelManager
@@ -34,8 +32,7 @@ def read_hand_cards(capture, model):
     for key in key_list:
         # 按下数字键，等待动画展示
         keyboard.press_and_release(key)
-        time.sleep(0.6)  # 适当延迟，确保动画完成
-        frame = capture.get_frame()
+        frame = capture.wait_for_stable_frame()
         if frame is None:
             continue
         detections = model.detect_all(frame)
@@ -47,8 +44,7 @@ def read_hand_cards(capture, model):
                 break
         if card_box is None:
             # try again
-            time.sleep(0.5)
-            frame = capture.get_frame()
+            frame = capture.wait_for_stable_frame()
             detections = model.detect_all(frame)
             card_box = None
             for det in detections:
@@ -60,10 +56,6 @@ def read_hand_cards(capture, model):
             # 截取 card 区域图片
             x1, y1, x2, y2 = card_box
             card_img = frame[y1:y2, x1:x2]
-            
-            # 去除首项为数字或大写字母 'X'
-            if card_text and (card_text[0].isdigit() or card_text[0] == 'X'):
-                card_text = card_text[1:]
             hand_cards.append(read_card(card_img))
         # 再次按下数字键收回手牌
         keyboard.press_and_release(key)

@@ -96,6 +96,16 @@ class GameCapture:
         center_y = self.game_window.height // 2
         # pyautogui.moveTo(center_x, center_y, duration=0.1)
         move_mouse_in_window(center_x, center_y)
+    def move_to_edge(self):
+        """移动到一个固定的不会遮挡关键信息的位置"""
+        if not self.game_window:
+            print("Game window not found")
+            return
+        # 这里假设移动到窗口左上角偏下的位置
+        edge_x = 10
+        # y 坐标为窗口高度一半
+        edge_y = self.game_window.height // 2
+        move_mouse_in_window(edge_x, edge_y)
 
 # 移动鼠标到窗口内坐标（窗口内容区左上角为原点）
 def move_mouse_in_window(x, y, window_title=Config.GAME_WINDOW_TITLE, speed=1000):
@@ -114,8 +124,8 @@ def move_mouse_in_window(x, y, window_title=Config.GAME_WINDOW_TITLE, speed=1000
     duration = dist / speed if speed > 0 else 0.01
     pyautogui.moveTo(abs_x, abs_y, duration=duration)
 import win32gui, win32com.client
-def activate_game_window(window_title):
-    hwnd = win32gui.FindWindow(None, window_title)
+def activate_game_window():
+    hwnd = win32gui.FindWindow(None, Config.GAME_WINDOW_TITLE)
     shell = win32com.client.Dispatch("WScript.Shell")
     shell.SendKeys('%')
     win32gui.SetForegroundWindow(hwnd)

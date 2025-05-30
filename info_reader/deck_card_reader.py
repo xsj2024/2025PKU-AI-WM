@@ -1,4 +1,3 @@
-import time
 import cv2
 import pyautogui
 from annotator.model_manager import ModelManager
@@ -17,19 +16,16 @@ def get_card_list_screenshots(capture, model, max_scroll=50, sleep_time=0.5):
     last_max_y2 = None
     # 获取屏幕高度
     screen_height = capture.get_frame().shape[0]
-    print(capture.get_frame().shape)
     bottom = int(screen_height * (1 - 1/6))
     eps = int(screen_height / 100)
-    print(bottom)
     # pyautogui.scroll 的单位不是像素，通常需要很大数值才有较大滚动幅度
     # 这里建议 scroll_step = screen_height * 2 或更大，实际效果需根据游戏窗口微调
-    for scroll_idx in range(max_scroll):
-        frame = capture.get_frame()
+    while True:
+        frame = capture.wait_for_stable_frame()
         detections = model.detect_all(frame)
         card_boxes = [(x1, y1, x2, y2) for (label, x1, y1, x2, y2) in detections if label == 'card' and y2 <= bottom]
         if not card_boxes:
             pyautogui.scroll(-1)
-            time.sleep(sleep_time)
             continue
         max_y2 = max([y2 for (x1, y1, x2, y2) in card_boxes])
         # 记录新出现的卡牌（y2大于上次最大y2的卡牌）
@@ -59,7 +55,7 @@ def get_card_list_screenshots(capture, model, max_scroll=50, sleep_time=0.5):
         else:
             new_card_found = False
         # 判断是否需要继续滑动
-        print(f"Scroll {scroll_idx + 1}/{max_scroll}: max_y2={max_y2}, last_max_y2={last_max_y2}, new_card_found={new_card_found}")
+        # print(f"Scroll {scroll_idx + 1}/{max_scroll}: max_y2={max_y2}, last_max_y2={last_max_y2}, new_card_found={new_card_found}")
         if last_max_y2 is not None:
             if max_y2 + eps < last_max_y2 or new_card_found:
                 # 最低卡牌上升或出现新卡牌，继续滑动
@@ -71,7 +67,6 @@ def get_card_list_screenshots(capture, model, max_scroll=50, sleep_time=0.5):
         pyautogui.scroll(-1)
         pyautogui.scroll(-1)
         pyautogui.scroll(-1)
-        time.sleep(sleep_time)
     return all_cards
 
 if __name__ == '__main__':
