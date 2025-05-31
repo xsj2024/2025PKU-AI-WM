@@ -1,6 +1,5 @@
 from info_reader.hand_card_reader import read_card
 from info_reader.deck_card_reader import get_card_list_screenshots
-import time
 from annotator.game_capture import activate_game_window
 
 def card_selection_phase(handle, frame, detections):
@@ -53,7 +52,15 @@ def choose_loot_phase(handle, frame, detections):
         new_frame = handle.capture.wait_for_stable_frame()
         new_detections = handle.click_box_by_label.__self__.model.detect_all(new_frame)
         if any(d[0] == 'card' for d in new_detections):
-            card_selection_phase(handle, new_frame, new_detections)
+            if any(d[0] == 'prompt' for d in new_detections):
+                card_selection_phase(handle, new_frame, new_detections)
+            else:
+                deck_selection_phase(handle, new_frame, new_detections)
+            frame = handle.capture.wait_for_stable_frame()
+        else:
+            frame = new_frame
+        detections = handle.model.detect_all(frame)
+            
 
 import pyautogui
 import time

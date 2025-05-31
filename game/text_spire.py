@@ -3,12 +3,16 @@ import cv2
 import numpy as np
 from game.battle import BattleHandler
 from game.event import EventHandler
-from annotator import config
+from game.campfire import CampfireHandler
+from game.chest import ChestHandler
+from game.map import MapHandler
+from game.shop import ShopHandler
 from annotator import game_capture
 from annotator import model_manager
 from text_reader import ascii_ocr
 from annotator.config import Config
 from annotator.game_capture import activate_game_window
+import pyautogui
 
 class TextSlayTheSpire:
     def __init__(self):
@@ -22,13 +26,25 @@ class TextSlayTheSpire:
         self.event_handler = EventHandler(
             self.capture, self.model, self.get_box_text, self.click_box_by_label
         )
+        self.campfire_handler = CampfireHandler(
+            self.capture, self.model, self.get_box_text, self.click_box_by_label
+        )
+        self.chest_handler = ChestHandler(
+            self.capture, self.model, self.get_box_text, self.click_box_by_label
+        )
+        self.map_handler = MapHandler(
+            self.capture, self.model, self.get_box_text, self.click_box_by_label
+        )
+        self.shop_handler = ShopHandler(
+            self.capture, self.model, self.get_box_text, self.click_box_by_label
+        )
 
     def get_scene(self, detections):
         # Priority: long_button > chest/boss chest > monster > merchant/card_removal_service > button > map
         labels = [d[0] for d in detections]
         if 'long_button' in labels:
             return 'event'
-        if 'chest' in labels or 'boss chest' in labels:
+        if 'chest' in labels or 'boss_chest' in labels:
             return 'chest'
         if 'energy_state' in labels:
             return 'battle'
@@ -36,14 +52,16 @@ class TextSlayTheSpire:
             return 'shop'
         if 'campfire_button' in labels:
             return 'campfire'
-        return 'map'
+        if "selectable_room" in labels or 'boss_room' in labels or 'selected_room' in labels:
+            return 'map'
+        return 'unknown'
 
     def run(self):
         print('Text-based Slay the Spire started.')
         self.capture.start_capture()
         try:
             while self.running:
-                frame = self.capture.wait_for_stable_frame()
+                frame = self.capture.get_frame()
                 if frame is None:
                     time.sleep(0.1)
                     continue
@@ -56,6 +74,17 @@ class TextSlayTheSpire:
                     self.battle_handler.handle_battle(frame, detections)
                 elif scene == 'event':
                     self.event_handler.handle_event(frame, detections)
+                elif scene == 'campfire':
+                    self.campfire_handler.handle_campfire(frame, detections)
+                elif scene == 'chest':
+                    self.chest_handler.handle_chest(frame, detections)
+                elif scene == 'map':
+                    self.map_handler.handle_map(frame, detections)
+                elif scene == 'shop':
+                    self.shop_handler.handle_shop(frame, detections)
+                elif scene == 'unknown':
+                    print('Unknown scene detected.')
+                    continue
                 # TODO: handle other scenes
         except KeyboardInterrupt:
             print('Exiting game...')
@@ -85,9 +114,7 @@ class TextSlayTheSpire:
         x1, y1, x2, y2 = matches[index][1:5]
         cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
         game_capture.move_mouse_in_window(cx, cy, window_title=Config.GAME_WINDOW_TITLE)
-        import pyautogui
         pyautogui.click()
-        time.sleep(0.2)
 
     def get_box_text(self, frame, detection):
         try:

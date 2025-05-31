@@ -42,3 +42,7 @@ names:
   37: long_button
   38: campfire_button
   39: card_back
+  40: selectable_room
+  41: selected_room
+  42: boss_room
+  43: merchant_words

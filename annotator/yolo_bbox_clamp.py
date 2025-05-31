@@ -59,8 +59,9 @@ def process_folder(folder_path):
 
 if __name__ == "__main__":
     import sys
+    from .config import Config  # 假设Config类在config.py中定义
         
-    folder_path = r"yolo_dataset\real\labels"
+    folder_path = os.path.join(Config.YOLO_DATA_DIR_REAL, "labels")
     if not os.path.isdir(folder_path):
         print(f"错误: {folder_path} 不是一个有效的文件夹")
         sys.exit(1)
