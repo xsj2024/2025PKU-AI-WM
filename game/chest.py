@@ -60,9 +60,11 @@ class ChestHandler:
                     self.click_box_by_label('relic', index=boss_relics[idx-1][0], frame=frame, detections=detections)
                     # relic后续检测
                     if True:
+                        time.sleep(0.5)
                         frame2 = self.capture.wait_for_stable_frame()
                         detections2 = self.model.detect_all(frame2)
                         labels2 = [d[0] for d in detections2]
+                        print(labels2)
                         if len([d for d in detections2 if d[0] == 'button' and frame.shape[1] - d[3] <= 20]) == 1:
                             print('Only one button detected after relic, clicking.')
                             self.click_box_by_label('button', index=0, frame=frame2, detections=detections2)
@@ -72,6 +74,7 @@ class ChestHandler:
                         if 'loot' in labels2:
                             print('Loot selection phase after relic.')
                             choose_loot_phase(self, frame2, detections2)
+                            return
                         elif 'card' in labels2:
                             print('Deck selection phase after relic.')
                             deck_selection_phase(self, frame2, detections2)
@@ -87,5 +90,7 @@ class ChestHandler:
                 if buttons:
                     print('Exiting chest scene.')
                     self.click_box_by_label('button', index=0, frame=frame3, detections=detections3)
+                    if chest_name == 'boss_chest':
+                        time.sleep(5)
                     return
                 time.sleep(0.2)

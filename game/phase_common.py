@@ -56,6 +56,7 @@ def choose_loot_phase(handle, frame, detections):
                 card_selection_phase(handle, new_frame, new_detections)
             else:
                 deck_selection_phase(handle, new_frame, new_detections)
+            handle.click_box_by_label('prompt', index=0, frame=frame, detections=detections)
             frame = handle.capture.wait_for_stable_frame()
         else:
             frame = new_frame

@@ -31,8 +31,8 @@ class Config:
     TRAIN_VAL_SPLIT = 0.8  # 训练集比例
     
     # 训练参数
-    TRAIN_EPOCHS = 15
-    AUGMENT_FACTOR = 35 # 每张图片数据增强数量
+    TRAIN_EPOCHS = 30
+    AUGMENT_FACTOR = 30 # 每张图片数据增强数量
     # 图像尺寸处理配置
     IMAGE_SIZE = 640  # 模型输入尺寸（正方形）
     PAD_COLOR = (114, 114, 114)  # 填充色（YOLO标准灰色）

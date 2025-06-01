@@ -9,15 +9,19 @@ class MapHandler:
 
     def handle_map(self, frame, detections):
         while True:
-            frame = self.capture.wait_for_stable_frame()
-            detections = self.model.detect_all(frame)
-            selectable_rooms = [d for d in detections if d[0] == 'selectable_room']
-            if selectable_rooms:
-                print('Selectable room found, clicking the first one.')
-                self.click_box_by_label('selectable_room', index=0, frame=frame, detections=detections)
-                return
-            else:
-                assert 'boss_room' in [d[0] for d in detections], "No boss room found in detections"
-                print('No selectable room, clicking boss room.')
-                self.click_box_by_label('boss_room', index=0, frame=frame, detections=detections)
-                return
+            frames = []
+            for i in range(10):
+                frames.append(self.capture.get_frame())
+            detections = None
+            frame = None
+            for frame in frames:
+                detections = self.model.detect_all(frame)
+                selectable_rooms = [d for d in detections if d[0] == 'selectable_room']
+                if selectable_rooms:
+                    print('Selectable room found, clicking the first one.')
+                    self.click_box_by_label('selectable_room', index=0, frame=frame, detections=detections)
+                    return
+            assert 'boss_room' in [d[0] for d in detections], "No boss room found in detections"
+            print('No selectable room, clicking boss room.')
+            self.click_box_by_label('boss_room', index=0, frame=frame, detections=detections)
+            return

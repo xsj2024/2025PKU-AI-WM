@@ -90,7 +90,7 @@ class BattleHandler:
         print('5. Play a card')
         print('6. End turn')
         choice = input('Enter your choice: ').strip()
-        activate_game_window()
+        if choice != '5': activate_game_window()
         if choice == '1':
             try:
                 cards = hand_card_reader.read_hand_cards(self.capture, self.model)
@@ -142,7 +142,6 @@ class BattleHandler:
         elif choice == '5':
             print('Enter the index of the card to play (1-9,0 for 10th card):')
             x = input('Card index: ')
-            activate_game_window()
             y = input('Target index: ')
             activate_game_window()
             try:

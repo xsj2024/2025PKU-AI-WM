@@ -67,7 +67,7 @@ class TextSlayTheSpire:
                     continue
                 detections = self.model.detect_all(frame)
                 scene = self.get_scene(detections)
-                if scene != self.last_scene:
+                if True:
                     print(f'--- Scene switched to: {scene} ---')
                     self.last_scene = scene
                 if scene == 'battle':
@@ -79,7 +79,10 @@ class TextSlayTheSpire:
                 elif scene == 'chest':
                     self.chest_handler.handle_chest(frame, detections)
                 elif scene == 'map':
+                    time.sleep(1)
                     self.map_handler.handle_map(frame, detections)
+                    self.capture.move_to_edge()  # 确保地图处理后鼠标不在游戏区域
+                    time.sleep(1)
                 elif scene == 'shop':
                     self.shop_handler.handle_shop(frame, detections)
                 elif scene == 'unknown':
