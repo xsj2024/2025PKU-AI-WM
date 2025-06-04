@@ -98,6 +98,86 @@ def load_game_status() -> dict:
         typewriter_print(f"⚠️ 加载状态失败: {str(e)}, 使用默认状态")
         return default
 
+class GameSession:
+    """管理整个游戏会话的持久化记忆"""
+    
+    def __init__(self):
+        # 加载并嵌入知识库到系统提示
+        self.knowledge = load_strategy_knowledge()
+        system_prompt = (
+            f"作为《Slay the Spire》指令生成器，严格遵守：\n"
+            f"1. 输出格式：〖卡牌名称 -> 目标〗或〖卡牌名称〗\n"
+            f"2. 括号内说明原因（原因：...）\n"
+            f"3. 优先考虑能量消耗\n"
+            f"4. 攻击卡必须指定目标\n\n"
+            f"【战略知识库】\n{self.knowledge}"
+        )
+        
+        # 创建持久化的ChatAgent
+        self.agent = ChatAgent(
+            system_message=system_prompt,
+            model=battle_model,
+            output_language="zh"
+        )
+        
+        # 记忆状态
+        self.round_count = 0
+        self.decision_history = []  # 存储历史决策
+        typewriter_print("✅ 游戏会话初始化 (持久化记忆)")
+        typewriter_print(f"• 知识库加载: {len(self.knowledge)}字符")
+
+    def add_decision_history(self, command: str, reasoning: str):
+        """添加历史决策到记忆"""
+        self.round_count += 1
+        self.decision_history.append({
+            "round": self.round_count,
+            "command": command,
+            "reasoning": reasoning
+        })
+        # 只保留最近3条历史记录
+        if len(self.decision_history) > 3:
+            self.decision_history.pop(0)
+
+    def build_current_prompt(self, game_state: dict) -> str:
+        """构建包含记忆的当前回合提示"""
+        # 玩家状态
+        player = game_state["player_status"]
+        player_info = (
+            f"【玩家状态】\n"
+            f"- 生命: {player['health']} | 能量: {player['energy']}\n"
+            f"- 格挡: {player['block']} | 状态: {player['statuses']}\n"
+            f"- 手牌:\n"
+        )
+        for i, card in enumerate(player["hand"], 1):
+            player_info += f"  {i}. {card['name']} ({card['type']}, 消耗:{card['cost']})"
+            if 'effect' in card:
+                player_info += f" - {card['effect']}"
+            player_info += "\n"
+        
+        # 敌人状态
+        enemies_info = "\n【敌人状态】"
+        for i, enemy in enumerate(game_state["enemies"]):
+            enemies_info += (
+                f"\n{i+1}. {enemy['name']}:\n"
+                f"  - 生命: {enemy['health']}, 格挡: {enemy['block']}\n"
+                f"  - 意图: {enemy['intent']}, 状态: {enemy['statuses']}\n"
+            )
+        
+        # 历史记忆
+        history_section = ""
+        if self.decision_history:
+            history_section = "\n【历史决策】"
+            for decision in self.decision_history:
+                history_section += f"\n回合 {decision['round']}: {decision['command']}"
+                history_section += f"\n  原因: {decision['reasoning']}"
+        
+        return (
+            f"=== 回合 #{self.round_count+1} ===\n"
+            f"{player_info}"
+            f"{enemies_info}"
+            f"{history_section}"
+            "\n\n请生成当前回合的最佳指令！"
+        )
 # ===== 使用 ChatAgent 实现决策逻辑 =====
 class BattleCommander:
     SYSTEM_PROMPT = """作为《Slay the Spire》指令生成器，严格遵守：
@@ -107,13 +187,9 @@ class BattleCommander:
 4. 攻击卡牌必须指定目标"""
 
     def __init__(self):
-        self.knowledge = load_strategy_knowledge()
-        self.agent = ChatAgent(
-            system_message=self.SYSTEM_PROMPT,
-            model=battle_model,
-            output_language="zh"
-        )
-        typewriter_print("✅ 聊天代理初始化完成")
+        # 创建游戏会话（包含持久化ChatAgent）
+        self.session = GameSession()
+        typewriter_print("✅ 战斗指挥官初始化 (带记忆功能)")
 
     def _current_energy(self, status: dict) -> int:
         energy_str = status["player_status"]["energy"]
@@ -175,71 +251,75 @@ class BattleCommander:
         return prompt
 
     def generate_command(self) -> str:
-        status = load_game_status()
-        typewriter_print(f"✅ 游戏状态加载完成 - 敌人数量: {len(status['enemies'])}")
+        """生成基于记忆的指令"""
+        # 加载当前状态
+        game_state = load_game_status()
+        typewriter_print(f"🔁 回合 #{self.session.round_count+1} 状态已加载")
         
-        # 前置条件检查
-        if not status["enemies"]:
-            typewriter_print("🛑 战场无敌人，自动结束回合")
+        # 特殊情况处理：无敌人或能量不足
+        if not game_state["enemies"]:
+            typewriter_print("🛑 战场无敌人，结束回合")
             return "〖结束回合〗"
         
-        current_energy = self._current_energy(status)
-        playable = any(c["cost"] <= current_energy for c in status["player_status"]["hand"])
-        if not playable:
-            typewriter_print("🔋 能量不足无法出牌，结束回合")
-            return "〖结束回合〗"
+        # 构建用户提示（包含历史记忆）
+        user_prompt = self.session.build_current_prompt(game_state)
+        typewriter_print(f"📝 提示已构建 ({len(user_prompt)}字符)")
         
-        # 构建用户消息
-        user_prompt = self._build_user_prompt(status)
-        typewriter_print(f"📨 用户提示已构建 ({len(user_prompt)}字符)")
+        # 创建用户消息
+        user_msg = BaseMessage.make_user_message(
+            role_name="玩家", content=user_prompt)
         
-        max_retries = 3
-        base_delay = 1
+        # 添加思考动画
+        stop_animation = False
+        animation_thread = threading.Thread(
+            target=self._show_thinking_animation, 
+            args=("AI思考中...", lambda: stop_animation)
+        )
+        animation_thread.daemon = True
+        animation_thread.start()
         
-        for attempt in range(max_retries):
-            try:
-                typewriter_print(f"\n💬 第{attempt+1}次向AI发送指令请求...")
+        # 发送请求
+        start_time = time.time()
+        try:
+            agent_response = self.session.agent.step(user_msg)
+            stop_animation = True
+            animation_thread.join()
+            
+            ai_content = agent_response.msgs[0].content
+            response_time = time.time() - start_time
+            
+            typewriter_print(f"\033[36m🤖 AI响应 (耗时{response_time:.1f}s)\033[0m")
+            return self._process_response(ai_content, game_state)
                 
-                # 创建用户消息
-                user_msg = BaseMessage.make_user_message(
-                    role_name="玩家", content=user_prompt)
-                
-                # 创建并启动思考动画线程
-                stop_animation = False
-                animation_thread = threading.Thread(target=self._show_thinking_animation, 
-                                                   args=(f"第{attempt+1}次推理中", lambda: stop_animation))
-                animation_thread.daemon = True
-                animation_thread.start()
-                
-                # 发送消息并获取响应
-                start_time = time.time()
-                agent_response = self.agent.step(user_msg)
-                stop_animation = True
-                animation_thread.join()
-                
-                # 提取响应内容
-                ai_content = agent_response.msgs[0].content if agent_response.msgs else ""
-                response_time = time.time() - start_time
-                
-                if ai_content:
-                    typewriter_print(f"\033[36m🤖 AI响应 ({len(ai_content)}字符，耗时{response_time:.1f}s):\033[0m")
-                    typewriter_print(f"\033[36m{ai_content}\033[0m")
-                    return self._validate_response(ai_content, status)
-                else:
-                    typewriter_print("⚠️ AI返回空响应")
-                    raise RuntimeError("AI returned empty response")
-                
-            except Exception as e:
-                error_type = type(e).__name__
-                typewriter_print(f"\n🔥 请求失败 ({error_type}): {str(e)}")
-                
-                sleep_time = base_delay * (2 ** attempt) + random.uniform(0, 0.5)
-                typewriter_print(f"⏳ 将在{sleep_time:.1f}秒后重试 ({attempt+1}/{max_retries})")
-                time.sleep(sleep_time)
-                continue
-
-        typewriter_print("🔥 所有重试失败，启用熔断机制")
-        return self.fallback_command(status)
+        except Exception as e:
+            stop_animation = True
+            animation_thread.join()
+            typewriter_print(f"🔥 请求失败: {str(e)}")
+            return self.fallback_command(game_state)
+    
+    def _process_response(self, response: str, game_state: dict) -> str:
+        """处理AI响应并添加到记忆"""
+        # 提取指令
+        pattern = r"〖([^〗]+?)(?:\s*->\s*([^〗]+?))?〗"
+        if match := re.search(pattern, response):
+            card_name = match.group(1).strip()
+            target = match.group(2).strip() if match.group(2) else None
+            
+            # 提取原因
+            reasoning = "未说明原因"
+            if reason_match := re.search(r"原因[:：]\s*(.+)", response):
+                reasoning = reason_match.group(1).strip()
+            
+            # 添加到历史记忆
+            command = f"〖{card_name}->{target}〗" if target else f"〖{card_name}〗"
+            self.session.add_decision_history(command, reasoning)
+            
+            typewriter_print(f"\033[33m📝 新记忆: 回合 {self.session.round_count} - {command}\033[0m")
+            typewriter_print(f"\033[33m  原因: {reasoning}\033[0m")
+            return command
+        
+        typewriter_print("⚠️ 未检测到有效指令格式，使用回退策略")
+        return self.fallback_command(game_state)
     
     def _show_thinking_animation(self, message, stop_flag):
         """显示思考动画"""
@@ -398,21 +478,25 @@ class BattleCommander:
 
 # ===== 主执行逻辑 =====
 if __name__ == "__main__":
-    typewriter_print("=== AI战术引擎启动 ===")
-    typewriter_print("版本: 1.0.0 | 日期: 2024-06-15")
+    typewriter_print("=== AI战术引擎启动 (持久化记忆版) ===")
     
     commander = BattleCommander()
     
-    # 尝试捕获可能的异常
-    try:
-        command = commander.generate_command()
-    except Exception as e:
-        typewriter_print(f"\n🔥 发生未捕获的异常: {str(e)}")
-        status = load_game_status()
-        command = commander.fallback_command(status)
+    while True:
+        try:
+            command = commander.generate_command()
+            typewriter_print(f"\n\033[1;35m🔥 战术指令: {command}\033[0m")
+            
+            # 等待用户输入继续
+            user_input = input("继续下一回合? (y/n): ").strip().lower()
+            if user_input != 'y':
+                break
+                
+        except KeyboardInterrupt:
+            typewriter_print("\n⏹ 用户中断操作")
+            break
+        except Exception as e:
+            typewriter_print(f"\n🔥 严重错误: {str(e)}")
+            break
     
-    typewriter_print(f"\n\033[1;35m🔥 最终战术指令: {command}\033[0m")
-    
-    # 在Windows上暂停以便查看输出
-    if os.name == 'nt':
-        input("按 Enter 键退出...")
+    typewriter_print("🛑 战术引擎已停止")
