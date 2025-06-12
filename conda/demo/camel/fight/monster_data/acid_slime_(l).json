@@ -1,0 +1,47 @@
+{
+  "name": "Acid Slime (L)",
+  "attributes": {
+    "hp": "65-69 68-72 7+",
+    "in_party_with": "None",
+    "debut_act": "Act 1",
+    "powers": "Split"
+  },
+  "moves": [
+    {
+      "name": "Corrosive Spit",
+      "intent": "Attack Debuff",
+      "effect": "Deals 11 damage, shuffles 2 Slimed into the discard pile."
+    },
+    {
+      "name": "Lick",
+      "intent": "Debuff1",
+      "effect": "Inflicts 2 Weak ."
+    },
+    {
+      "name": "Tackle",
+      "intent": "Attack intent 4",
+      "effect": "Deals 16 damage."
+    },
+    {
+      "name": "Split",
+      "intent": "Unknown",
+      "effect": "Dies and spawns 2 Acid Slimes (M) with current HP."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b5/Acid-slime-l-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "acid_slime_(l)_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "split",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/66/Icon_Split.png/revision/latest",
+      "source": "variant",
+      "local_image": "acid_slime_(l)_split.png"
+    }
+  ]
+}

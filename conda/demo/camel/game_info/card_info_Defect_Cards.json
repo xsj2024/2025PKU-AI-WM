@@ -1,0 +1,752 @@
+[
+    {
+        "name": "Defend",
+        "url": "https://slay-the-spire.fandom.com/wiki/Defend_(Defect)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/Defend_B.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block.",
+        "local_image": "images_Defect_Cards\\Defend.png"
+    },
+    {
+        "name": "Dualcast",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dualcast",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/00/Dualcast.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Evokeyour next Orb twice.",
+        "local_image": "images_Defect_Cards\\Dualcast.png"
+    },
+    {
+        "name": "Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Strike_(Defect)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/16/Strike_B.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage.",
+        "local_image": "images_Defect_Cards\\Strike.png"
+    },
+    {
+        "name": "Zap",
+        "url": "https://slay-the-spire.fandom.com/wiki/Zap",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/Zap.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Channel1Lightning.",
+        "local_image": "images_Defect_Cards\\Zap.png"
+    },
+    {
+        "name": "Ball Lightning",
+        "url": "https://slay-the-spire.fandom.com/wiki/Ball_Lightning",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b7/BallLightning.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(10) damage.Channel1Lightning.",
+        "local_image": "images_Defect_Cards\\Ball Lightning.png"
+    },
+    {
+        "name": "Barrage",
+        "url": "https://slay-the-spire.fandom.com/wiki/Barrage",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/2c/Barrage.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 4(6) damage for eachChanneledOrb.",
+        "local_image": "images_Defect_Cards\\Barrage.png"
+    },
+    {
+        "name": "Beam Cell",
+        "url": "https://slay-the-spire.fandom.com/wiki/Beam_Cell",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/19/BeamCell.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 3(4) damage and apply 1(2)Vulnerable.",
+        "local_image": "images_Defect_Cards\\Beam Cell.png"
+    },
+    {
+        "name": "Charge Battery",
+        "url": "https://slay-the-spire.fandom.com/wiki/Conserve_Battery",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ed/ChargeBattery.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 7(10)Block.Next turn, gain 1Energy.",
+        "local_image": "images_Defect_Cards\\Charge Battery.png"
+    },
+    {
+        "name": "Claw",
+        "url": "https://slay-the-spire.fandom.com/wiki/Claw",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Claw.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 3(5) damage.Increase the damage of ALL Claw cards by 2 this combat.",
+        "local_image": "images_Defect_Cards\\Claw.png"
+    },
+    {
+        "name": "Cold Snap",
+        "url": "https://slay-the-spire.fandom.com/wiki/Cold_Snap",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/ColdSnap.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage.Channel1Frost.",
+        "local_image": "images_Defect_Cards\\Cold Snap.png"
+    },
+    {
+        "name": "Compile Driver",
+        "url": "https://slay-the-spire.fandom.com/wiki/Compile_Driver",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/CompileDriver.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(10) damage. Draw 1 card for each unique Orb you have.",
+        "local_image": "images_Defect_Cards\\Compile Driver.png"
+    },
+    {
+        "name": "Coolheaded",
+        "url": "https://slay-the-spire.fandom.com/wiki/Coolheaded",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/Coolheaded.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Channel1Frost.Draw 1(2) card(s).",
+        "local_image": "images_Defect_Cards\\Coolheaded.png"
+    },
+    {
+        "name": "Go for the Eyes",
+        "url": "https://slay-the-spire.fandom.com/wiki/Go_for_the_Eyes",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1a/GofortheEyes.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 3(4) damage. If the enemy intends to attack, apply 1(2)Weak.",
+        "local_image": "images_Defect_Cards\\Go for the Eyes.png"
+    },
+    {
+        "name": "Hologram",
+        "url": "https://slay-the-spire.fandom.com/wiki/Hologram",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3b/Hologram-0.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 3(5)Block.Return a card from your discard pile to your hand.Exhaust(does not Exhaust).",
+        "local_image": "images_Defect_Cards\\Hologram.png"
+    },
+    {
+        "name": "Leap",
+        "url": "https://slay-the-spire.fandom.com/wiki/Leap",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/af/Leap.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 9(12)Block.",
+        "local_image": "images_Defect_Cards\\Leap.png"
+    },
+    {
+        "name": "Rebound",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rebound",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d0/Rebound.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 9(12) damage.Put the next card you play this turn on top of your draw pile.",
+        "local_image": "images_Defect_Cards\\Rebound.png"
+    },
+    {
+        "name": "Recursion",
+        "url": "https://slay-the-spire.fandom.com/wiki/Recursion",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/82/Recursion.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Evokeyour next Orb.Channelthe Orb that was justEvoked.",
+        "local_image": "images_Defect_Cards\\Recursion.png"
+    },
+    {
+        "name": "Stack",
+        "url": "https://slay-the-spire.fandom.com/wiki/Stack",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Stack.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "GainBlockequal to the number of cards in your discard pile (+3).",
+        "local_image": "images_Defect_Cards\\Stack.png"
+    },
+    {
+        "name": "Steam Barrier",
+        "url": "https://slay-the-spire.fandom.com/wiki/Steam_Barrier",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/67/SteamBarrier.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 6(8)Block. Decrease this card's Block by 1 this combat.",
+        "local_image": "images_Defect_Cards\\Steam Barrier.png"
+    },
+    {
+        "name": "Streamline",
+        "url": "https://slay-the-spire.fandom.com/wiki/Streamline",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/64/Streamline.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 15(20) damage.Whenever you play this card, reduce its cost by 1 for this combat.",
+        "local_image": "images_Defect_Cards\\Streamline.png"
+    },
+    {
+        "name": "Sweeping Beam",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sweeping_Beam",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/ca/SweepingBeam.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage to ALL enemies.Draw 1 card.",
+        "local_image": "images_Defect_Cards\\Sweeping Beam.png"
+    },
+    {
+        "name": "TURBO",
+        "url": "https://slay-the-spire.fandom.com/wiki/TURBO",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/23/TURBO.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 2(3)Energy.Add aVoidinto your discard pile.",
+        "local_image": "images_Defect_Cards\\TURBO.png"
+    },
+    {
+        "name": "Aggregate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Aggregate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/Aggregate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 1Energyfor every 4(3) cards in your draw pile.",
+        "local_image": "images_Defect_Cards\\Aggregate.png"
+    },
+    {
+        "name": "Auto-Shields",
+        "url": "https://slay-the-spire.fandom.com/wiki/Auto-Shields",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7d/Auto-Shields.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "If you have noBlock, gain 11(15)Block.",
+        "local_image": "images_Defect_Cards\\Auto-Shields.png"
+    },
+    {
+        "name": "Blizzard",
+        "url": "https://slay-the-spire.fandom.com/wiki/Blizzard",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/39/Blizzard.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal damage equal to 2(3) times the number ofFrostChanneledthis combat to ALL enemies.",
+        "local_image": "images_Defect_Cards\\Blizzard.png"
+    },
+    {
+        "name": "Boot Sequence",
+        "url": "https://slay-the-spire.fandom.com/wiki/Boot_Sequence",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/BootSequence.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Innate.Gain 10(13)Block.Exhaust.",
+        "local_image": "images_Defect_Cards\\Boot Sequence.png"
+    },
+    {
+        "name": "Bullseye",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bullseye",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/12/BullsEye.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(11) damage.Apply 2(3)Lock-On.",
+        "local_image": "images_Defect_Cards\\Bullseye.png"
+    },
+    {
+        "name": "Capacitor",
+        "url": "https://slay-the-spire.fandom.com/wiki/Capacitor",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b5/Capacitor.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Gain 2(3) Orb slots.",
+        "local_image": "images_Defect_Cards\\Capacitor.png"
+    },
+    {
+        "name": "Chaos",
+        "url": "https://slay-the-spire.fandom.com/wiki/Chaos",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/Chaos.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Channel1(2) random Orb(s).",
+        "local_image": "images_Defect_Cards\\Chaos.png"
+    },
+    {
+        "name": "Chill",
+        "url": "https://slay-the-spire.fandom.com/wiki/Chill",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7b/Chill.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "(Innate.)Channel1Frostfor each enemy in combat (per enemy in combat).Exhaust.",
+        "local_image": "images_Defect_Cards\\Chill.png"
+    },
+    {
+        "name": "Consume",
+        "url": "https://slay-the-spire.fandom.com/wiki/Consume",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/Consume.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 2(3)Focus.Lose 1 Orb Slot.",
+        "local_image": "images_Defect_Cards\\Consume.png"
+    },
+    {
+        "name": "Darkness",
+        "url": "https://slay-the-spire.fandom.com/wiki/Darkness",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c0/Darkness.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Channel1Dark. (Trigger the passive ability of allDarkorbs.)",
+        "local_image": "images_Defect_Cards\\Darkness.png"
+    },
+    {
+        "name": "Defragment",
+        "url": "https://slay-the-spire.fandom.com/wiki/Defragment",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/19/Defragment.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Gain 1(2)Focus.",
+        "local_image": "images_Defect_Cards\\Defragment.png"
+    },
+    {
+        "name": "Doom and Gloom",
+        "url": "https://slay-the-spire.fandom.com/wiki/Doom_and_Gloom",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/87/DoomandGloom.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 10(14) damage to ALL enemies.Channel1Dark.",
+        "local_image": "images_Defect_Cards\\Doom and Gloom.png"
+    },
+    {
+        "name": "Double Energy",
+        "url": "https://slay-the-spire.fandom.com/wiki/Double_Energy",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/DoubleEnergy.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Double yourEnergy.Exhaust.",
+        "local_image": "images_Defect_Cards\\Double Energy.png"
+    },
+    {
+        "name": "Equilibrium",
+        "url": "https://slay-the-spire.fandom.com/wiki/Equilibrium",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/81/Equilibrium.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 13(16)Block.Retainyour hand this turn.",
+        "local_image": "images_Defect_Cards\\Equilibrium.png"
+    },
+    {
+        "name": "FTL",
+        "url": "https://slay-the-spire.fandom.com/wiki/FTL",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c6/FTL.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 5(6) damage. If you have played less than 3(4) cards this turn, draw 1 card.",
+        "local_image": "images_Defect_Cards\\FTL.png"
+    },
+    {
+        "name": "Force Field",
+        "url": "https://slay-the-spire.fandom.com/wiki/Force_Field",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/aa/ForceField.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "4",
+        "description": "Costs 1 lessEnergyfor each Power card played this combat.Gain 12(16)Block.",
+        "local_image": "images_Defect_Cards\\Force Field.png"
+    },
+    {
+        "name": "Fusion",
+        "url": "https://slay-the-spire.fandom.com/wiki/Fusion",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/2d/Fusion.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2(1)",
+        "description": "Channel1Plasma.",
+        "local_image": "images_Defect_Cards\\Fusion.png"
+    },
+    {
+        "name": "Genetic Algorithm",
+        "url": "https://slay-the-spire.fandom.com/wiki/Genetic_Algorithm",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/GeneticAlgorithm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 1Block. Permanently increase this card'sBlockby 2(3).Exhaust.",
+        "local_image": "images_Defect_Cards\\Genetic Algorithm.png"
+    },
+    {
+        "name": "Glacier",
+        "url": "https://slay-the-spire.fandom.com/wiki/Glacier",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/24/Glacier.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 7(10)Block.Channel2Frost.",
+        "local_image": "images_Defect_Cards\\Glacier.png"
+    },
+    {
+        "name": "Heatsinks",
+        "url": "https://slay-the-spire.fandom.com/wiki/Heatsinks",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/Heatsinks.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you play a Power card, draw 1(2) card(s).",
+        "local_image": "images_Defect_Cards\\Heatsinks.png"
+    },
+    {
+        "name": "Hello World",
+        "url": "https://slay-the-spire.fandom.com/wiki/Hello_World",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/HelloWorld.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.)At the start of your turn, add a random Common card into your hand.",
+        "local_image": "images_Defect_Cards\\Hello World.png"
+    },
+    {
+        "name": "Loop",
+        "url": "https://slay-the-spire.fandom.com/wiki/Loop",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/21/Loop.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the start of your turn, trigger the passive ability of your next Orb (2 times).",
+        "local_image": "images_Defect_Cards\\Loop.png"
+    },
+    {
+        "name": "Melter",
+        "url": "https://slay-the-spire.fandom.com/wiki/Melter",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/Melter.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Remove allBlockfrom an enemy.Deal 10(14) damage.",
+        "local_image": "images_Defect_Cards\\Melter.png"
+    },
+    {
+        "name": "Overclock",
+        "url": "https://slay-the-spire.fandom.com/wiki/Overclock",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Overclock.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 2(3) cards.Add aBurninto your discard pile.",
+        "local_image": "images_Defect_Cards\\Overclock.png"
+    },
+    {
+        "name": "Recycle",
+        "url": "https://slay-the-spire.fandom.com/wiki/Recycle",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/70/Recycle.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Exhausta card.GainEnergyequal to its cost.",
+        "local_image": "images_Defect_Cards\\Recycle.png"
+    },
+    {
+        "name": "Reinforced Body",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reinforced_Body",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d4/ReinforcedBody.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Gain 7(9)BlockX times.",
+        "local_image": "images_Defect_Cards\\Reinforced Body.png"
+    },
+    {
+        "name": "Reprogram",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reprogram",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9d/Reprogram.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Lose 1(2)Focus. Gain 1(2)Strength. Gain 1(2)Dexterity.",
+        "local_image": "images_Defect_Cards\\Reprogram.png"
+    },
+    {
+        "name": "Rip and Tear",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rip_and_Tear",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/13/RipandTear.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(9) damage to a random enemy 2 times.",
+        "local_image": "images_Defect_Cards\\Rip and Tear.png"
+    },
+    {
+        "name": "Scrape",
+        "url": "https://slay-the-spire.fandom.com/wiki/Scrape",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/94/Scrape.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(10) damage.Draw 4(5) cards.Discard all cards drawn this way that do not cost 0.",
+        "local_image": "images_Defect_Cards\\Scrape.png"
+    },
+    {
+        "name": "Self Repair",
+        "url": "https://slay-the-spire.fandom.com/wiki/Self_Repair",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/SelfRepair.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the end of combat, heal 7(10) HP.",
+        "local_image": "images_Defect_Cards\\Self Repair.png"
+    },
+    {
+        "name": "Skim",
+        "url": "https://slay-the-spire.fandom.com/wiki/Skim",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/55/Skim.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Draw 3(4) cards.",
+        "local_image": "images_Defect_Cards\\Skim.png"
+    },
+    {
+        "name": "Static Discharge",
+        "url": "https://slay-the-spire.fandom.com/wiki/Static_Discharge",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/StaticDischarge.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you take attack damage,Channel1(2)Lightning.",
+        "local_image": "images_Defect_Cards\\Static Discharge.png"
+    },
+    {
+        "name": "Storm",
+        "url": "https://slay-the-spire.fandom.com/wiki/Storm",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/07/Storm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.)Whenever you play a Power card,Channel1Lightning.",
+        "local_image": "images_Defect_Cards\\Storm.png"
+    },
+    {
+        "name": "Sunder",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sunder",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/60/Sunder.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "3",
+        "description": "Deal 24(32) damage.If this kills an enemy, gain 3Energy.",
+        "local_image": "images_Defect_Cards\\Sunder.png"
+    },
+    {
+        "name": "Tempest",
+        "url": "https://slay-the-spire.fandom.com/wiki/Tempest",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/bb/Tempest.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "X",
+        "description": "ChannelX(+1)Lightning.Exhaust.",
+        "local_image": "images_Defect_Cards\\Tempest.png"
+    },
+    {
+        "name": "White Noise",
+        "url": "https://slay-the-spire.fandom.com/wiki/White_Noise",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/WhiteNoise.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Add a random Power to your hand.It costs 0 this turn.Exhaust.",
+        "local_image": "images_Defect_Cards\\White Noise.png"
+    },
+    {
+        "name": "All for One",
+        "url": "https://slay-the-spire.fandom.com/wiki/All_for_One",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/AllforOne.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 10(14) damage. Put all cost 0 cards from your discard pile into your hand.",
+        "local_image": "images_Defect_Cards\\All for One.png"
+    },
+    {
+        "name": "Amplify",
+        "url": "https://slay-the-spire.fandom.com/wiki/Amplify",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6d/Amplify.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "This turn, your next 1(2) Power(s) is (are) played twice.",
+        "local_image": "images_Defect_Cards\\Amplify.png"
+    },
+    {
+        "name": "Biased Cognition",
+        "url": "https://slay-the-spire.fandom.com/wiki/Biased_Cognition",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/50/BiasedCognition.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1",
+        "description": "Gain 4(5)Focus.At the start of each turn, lose 1Focus.",
+        "local_image": "images_Defect_Cards\\Biased Cognition.png"
+    },
+    {
+        "name": "Buffer",
+        "url": "https://slay-the-spire.fandom.com/wiki/Buffer",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Buffer.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2",
+        "description": "Prevent the next (1(2)) time(s) you would lose HP.",
+        "local_image": "images_Defect_Cards\\Buffer.png"
+    },
+    {
+        "name": "Core Surge",
+        "url": "https://slay-the-spire.fandom.com/wiki/Core_Surge",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/49/CoreSurge.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 11(15) damage.Gain 1Artifact.Exhaust.",
+        "local_image": "images_Defect_Cards\\Core Surge.png"
+    },
+    {
+        "name": "Creative AI",
+        "url": "https://slay-the-spire.fandom.com/wiki/Creative_AI",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/CreativeAI.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3(2)",
+        "description": "At the start of each turn, add a random Power card to your hand.",
+        "local_image": "images_Defect_Cards\\Creative AI.png"
+    },
+    {
+        "name": "Echo Form",
+        "url": "https://slay-the-spire.fandom.com/wiki/Echo_Form",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/93/EchoForm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3",
+        "description": "Ethereal. (not Ethereal.) The first card you play each turn is played twice.",
+        "local_image": "images_Defect_Cards\\Echo Form.png"
+    },
+    {
+        "name": "Electrodynamics",
+        "url": "https://slay-the-spire.fandom.com/wiki/Electrodynamics",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/ff/Electrodynamics.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2",
+        "description": "Lightningnow hits ALL enemies.Channel2(3)Lightning.",
+        "local_image": "images_Defect_Cards\\Electrodynamics.png"
+    },
+    {
+        "name": "Fission",
+        "url": "https://slay-the-spire.fandom.com/wiki/Fission",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4d/Fission.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Remove (Evoke) ALL of your Orbs. Gain 1Energyand draw 1 card for each Orb removed(Evoked).Exhaust.",
+        "local_image": "images_Defect_Cards\\Fission.png"
+    },
+    {
+        "name": "Hyperbeam",
+        "url": "https://slay-the-spire.fandom.com/wiki/Hyperbeam",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Hyperbeam.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 26(34) damage to ALL enemies.Lose 3Focus.",
+        "local_image": "images_Defect_Cards\\Hyperbeam.png"
+    },
+    {
+        "name": "Machine Learning",
+        "url": "https://slay-the-spire.fandom.com/wiki/Machine_Learning",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/03/MachineLearning.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.)At the start of your turn, draw 1 additional card.",
+        "local_image": "images_Defect_Cards\\Machine Learning.png"
+    },
+    {
+        "name": "Meteor Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Meteor_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/15/MeteorStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "5",
+        "description": "Deal 24(30) damage.Channel3Plasma.",
+        "local_image": "images_Defect_Cards\\Meteor Strike.png"
+    },
+    {
+        "name": "Multi-Cast",
+        "url": "https://slay-the-spire.fandom.com/wiki/Multi-Cast",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/91/Multi-Cast.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Evokeyour next Orb X (X+1) times.",
+        "local_image": "images_Defect_Cards\\Multi-Cast.png"
+    },
+    {
+        "name": "Rainbow",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rainbow",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1e/Rainbow.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Channel1Lightning, 1Frost, and 1Dark.Exhaust. (does not Exhaust.)",
+        "local_image": "images_Defect_Cards\\Rainbow.png"
+    },
+    {
+        "name": "Reboot",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reboot",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/de/Reboot.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Shuffle all of your cards into your draw pile, then draw 4(6) cards.Exhaust.",
+        "local_image": "images_Defect_Cards\\Reboot.png"
+    },
+    {
+        "name": "Seek",
+        "url": "https://slay-the-spire.fandom.com/wiki/Seek",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Seek.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Choose a (2) card(s) from your draw pile and place it (them) into your hand.Exhaust.",
+        "local_image": "images_Defect_Cards\\Seek.png"
+    },
+    {
+        "name": "Thunder Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Thunder_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/ThunderStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "3",
+        "description": "Deal 7(9) damage to a random enemy for eachLightningChanneledthis combat.",
+        "local_image": "images_Defect_Cards\\Thunder Strike.png"
+    }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "Spike Slime (S)",
+  "attributes": {
+    "hp": "10-14 11-15 7+",
+    "in_party_with": "Act 1 2 other Spike Slime (S) + 2 Acid Slime (S) Acid Slime (M)",
+    "debut_act": "Act 1",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Tackle",
+      "intent": "Attack Intent 2",
+      "effect": "Deal 5 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c7/Spike_Slime_S.png/revision/latest",
+      "source": "main",
+      "local_image": "spike_slime_(s)_appearance.png"
+    }
+  ]
+}

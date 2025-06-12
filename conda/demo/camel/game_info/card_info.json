@@ -1,0 +1,752 @@
+[
+    {
+        "name": "Bash",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bash",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/Bash.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 8(10) damage. Apply 2(3)Vulnerable.",
+        "local_image": "images_Ironclad_Cards\\Bash.png"
+    },
+    {
+        "name": "Defend",
+        "url": "https://slay-the-spire.fandom.com/wiki/Defend_(Ironclad)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7d/Defend_R.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block.",
+        "local_image": "images_Ironclad_Cards\\Defend.png"
+    },
+    {
+        "name": "Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Strike_(Ironclad)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/06/Strike_R.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage.",
+        "local_image": "images_Ironclad_Cards\\Strike.png"
+    },
+    {
+        "name": "Anger",
+        "url": "https://slay-the-spire.fandom.com/wiki/Anger",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/Anger.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 6(8) damage. Add a copy of this card to your discard pile.",
+        "local_image": "images_Ironclad_Cards\\Anger.png"
+    },
+    {
+        "name": "Armaments",
+        "url": "https://slay-the-spire.fandom.com/wiki/Armaments",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c3/Armaments.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5Block. Upgrade a(ALL)  card(s) in your hand for the rest of combat.",
+        "local_image": "images_Ironclad_Cards\\Armaments.png"
+    },
+    {
+        "name": "Body Slam",
+        "url": "https://slay-the-spire.fandom.com/wiki/Body_Slam",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/10/BodySlam.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1(0)",
+        "description": "Deal damage equal to your currentBlock.",
+        "local_image": "images_Ironclad_Cards\\Body Slam.png"
+    },
+    {
+        "name": "Clash",
+        "url": "https://slay-the-spire.fandom.com/wiki/Clash",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Clash.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Can only be played if every card in your hand is an Attack. Deal 14(18) damage.",
+        "local_image": "images_Ironclad_Cards\\Clash.png"
+    },
+    {
+        "name": "Cleave",
+        "url": "https://slay-the-spire.fandom.com/wiki/Cleave",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/Cleave.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(11) damage to ALL enemies.",
+        "local_image": "images_Ironclad_Cards\\Cleave.png"
+    },
+    {
+        "name": "Clothesline",
+        "url": "https://slay-the-spire.fandom.com/wiki/Clothesline",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/Clothesline.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 12(14) damage. Apply 2(3)Weak.",
+        "local_image": "images_Ironclad_Cards\\Clothesline.png"
+    },
+    {
+        "name": "Flex",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flex",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/Flex.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 2(4)Strength. At the end of your turn, lose 2(4)Strength.",
+        "local_image": "images_Ironclad_Cards\\Flex.png"
+    },
+    {
+        "name": "Havoc",
+        "url": "https://slay-the-spire.fandom.com/wiki/Havoc",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Havoc.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Play the top card of your draw pile andExhaustit.",
+        "local_image": "images_Ironclad_Cards\\Havoc.png"
+    },
+    {
+        "name": "Headbutt",
+        "url": "https://slay-the-spire.fandom.com/wiki/Headbutt",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1a/Headbutt.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 9(12) damage. Place a card from your discard pile on top of your draw pile.",
+        "local_image": "images_Ironclad_Cards\\Headbutt.png"
+    },
+    {
+        "name": "Heavy Blade",
+        "url": "https://slay-the-spire.fandom.com/wiki/Heavy_Blade",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/58/HeavyBlade.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 14 damage.Strengthaffects Heavy Blade 3(5) times.",
+        "local_image": "images_Ironclad_Cards\\Heavy Blade.png"
+    },
+    {
+        "name": "Iron Wave",
+        "url": "https://slay-the-spire.fandom.com/wiki/Iron_Wave",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/IronWave.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Gain 5(7)Block. Deal 5(7) damage.",
+        "local_image": "images_Ironclad_Cards\\Iron Wave.png"
+    },
+    {
+        "name": "Perfected Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Perfected_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/77/PerfectedStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 6 damage. Deals an additional 2(3) damage for ALL of your cards containing \"Strike\".",
+        "local_image": "images_Ironclad_Cards\\Perfected Strike.png"
+    },
+    {
+        "name": "Pommel Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Pommel_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/35/PommelStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 9(10) damage. Draw 1(2) card(s).",
+        "local_image": "images_Ironclad_Cards\\Pommel Strike.png"
+    },
+    {
+        "name": "Shrug it Off",
+        "url": "https://slay-the-spire.fandom.com/wiki/Shrug_it_Off",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4a/ShrugItOff.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 8(11)Block. Draw 1 card.",
+        "local_image": "images_Ironclad_Cards\\Shrug it Off.png"
+    },
+    {
+        "name": "Sword Boomerang",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sword_Boomerang",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/18/SwordBoomerang.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 3 damage to a random enemy 3(4) times.",
+        "local_image": "images_Ironclad_Cards\\Sword Boomerang.png"
+    },
+    {
+        "name": "Thunderclap",
+        "url": "https://slay-the-spire.fandom.com/wiki/Thunderclap",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8a/Thunderclap.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 4(7) damage and apply 1Vulnerableto ALL enemies.",
+        "local_image": "images_Ironclad_Cards\\Thunderclap.png"
+    },
+    {
+        "name": "True Grit",
+        "url": "https://slay-the-spire.fandom.com/wiki/True_Grit",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/TrueGrit.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 7(9)Block.Exhausta random(not random) card from your hand.",
+        "local_image": "images_Ironclad_Cards\\True Grit.png"
+    },
+    {
+        "name": "Twin Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Twin_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/18/TwinStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 5(7) damage twice.",
+        "local_image": "images_Ironclad_Cards\\Twin Strike.png"
+    },
+    {
+        "name": "Warcry",
+        "url": "https://slay-the-spire.fandom.com/wiki/Warcry",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9a/Warcry.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 1(2) card(s). Place a card from your hand on top of your draw pile.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Warcry.png"
+    },
+    {
+        "name": "Wild Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wild_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/WildStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 12(17) damage. Shuffle aWoundinto your draw pile.",
+        "local_image": "images_Ironclad_Cards\\Wild Strike.png"
+    },
+    {
+        "name": "Battle Trance",
+        "url": "https://slay-the-spire.fandom.com/wiki/Battle_Trance",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3a/BattleTrance.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 3(4) cards. You cannot draw additional cards this turn.",
+        "local_image": "images_Ironclad_Cards\\Battle Trance.png"
+    },
+    {
+        "name": "Blood for Blood",
+        "url": "https://slay-the-spire.fandom.com/wiki/Blood_for_Blood",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/BloodforBlood.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "4(3)",
+        "description": "Costs 1 less energy for each time you lose HP in combat. Deal 18(22) damage.",
+        "local_image": "images_Ironclad_Cards\\Blood for Blood.png"
+    },
+    {
+        "name": "Bloodletting",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bloodletting",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/ff/Bloodletting.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Lose 3 HP. Gain 2(3) Energy.",
+        "local_image": "images_Ironclad_Cards\\Bloodletting.png"
+    },
+    {
+        "name": "Burning Pact",
+        "url": "https://slay-the-spire.fandom.com/wiki/Burning_Pact",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/98/BurningPact.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Exhaust1 card. Draw 2(3) cards.",
+        "local_image": "images_Ironclad_Cards\\Burning Pact.png"
+    },
+    {
+        "name": "Carnage",
+        "url": "https://slay-the-spire.fandom.com/wiki/Carnage",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/Carnage.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Ethereal. Deal 20(28) damage.",
+        "local_image": "images_Ironclad_Cards\\Carnage.png"
+    },
+    {
+        "name": "Combust",
+        "url": "https://slay-the-spire.fandom.com/wiki/Combust",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/Combust.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the end of your turn, lose 1 HP and deal 5(7) damage to ALL enemies.",
+        "local_image": "images_Ironclad_Cards\\Combust.png"
+    },
+    {
+        "name": "Dark Embrace",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dark_Embrace",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a6/DarkEmbrace.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "2(1)",
+        "description": "Whenever a card isExhausted, draw 1 card.",
+        "local_image": "images_Ironclad_Cards\\Dark Embrace.png"
+    },
+    {
+        "name": "Disarm",
+        "url": "https://slay-the-spire.fandom.com/wiki/Disarm",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Disarm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Enemy loses 2(3)Strength.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Disarm.png"
+    },
+    {
+        "name": "Dropkick",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dropkick",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/02/Dropkick.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 5(8) damage. If the enemy isVulnerable, gain 1 energy and draw 1 card.",
+        "local_image": "images_Ironclad_Cards\\Dropkick.png"
+    },
+    {
+        "name": "Dual Wield",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dual_Wield",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/61/DualWield.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Create a(2) copy(s) of an Attack or Power card in your hand.",
+        "local_image": "images_Ironclad_Cards\\Dual Wield.png"
+    },
+    {
+        "name": "Entrench",
+        "url": "https://slay-the-spire.fandom.com/wiki/Entrench",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Entrench.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2(1)",
+        "description": "Double your currentBlock.",
+        "local_image": "images_Ironclad_Cards\\Entrench.png"
+    },
+    {
+        "name": "Evolve",
+        "url": "https://slay-the-spire.fandom.com/wiki/Evolve",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5d/Evolve.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you draw a Status card, draw 1(2) card(s).",
+        "local_image": "images_Ironclad_Cards\\Evolve.png"
+    },
+    {
+        "name": "Feel No Pain",
+        "url": "https://slay-the-spire.fandom.com/wiki/Feel_No_Pain",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/41/FeelNoPain.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever a card isExhausted, gain 3(4)Block.",
+        "local_image": "images_Ironclad_Cards\\Feel No Pain.png"
+    },
+    {
+        "name": "Fire Breathing",
+        "url": "https://slay-the-spire.fandom.com/wiki/Fire_Breathing",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/60/FireBreathing.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you draw aStatusorCursecard, deal 6(10) damage to all enemies.",
+        "local_image": "images_Ironclad_Cards\\Fire Breathing.png"
+    },
+    {
+        "name": "Flame Barrier",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flame_Barrier",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/FlameBarrier.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 12(16)Block. Whenever you are attacked this turn, deal 4(6) damage to the attacker.",
+        "local_image": "images_Ironclad_Cards\\Flame Barrier.png"
+    },
+    {
+        "name": "Ghostly Armor",
+        "url": "https://slay-the-spire.fandom.com/wiki/Ghostly_Armor",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/GhostlyArmor.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Ethereal.Gain 10(13) Block.",
+        "local_image": "images_Ironclad_Cards\\Ghostly Armor.png"
+    },
+    {
+        "name": "Hemokinesis",
+        "url": "https://slay-the-spire.fandom.com/wiki/Hemokinesis",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/17/Hemokinesis.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Lose 2 HP. Deal 15(20) damage.",
+        "local_image": "images_Ironclad_Cards\\Hemokinesis.png"
+    },
+    {
+        "name": "Infernal Blade",
+        "url": "https://slay-the-spire.fandom.com/wiki/Infernal_Blade",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0b/InfernalBlade.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Add a random Attack to your hand. It costs 0 this turn.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Infernal Blade.png"
+    },
+    {
+        "name": "Inflame",
+        "url": "https://slay-the-spire.fandom.com/wiki/Inflame",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/02/Inflame.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Gain 2(3)Strength.",
+        "local_image": "images_Ironclad_Cards\\Inflame.png"
+    },
+    {
+        "name": "Intimidate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Intimidate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Intimidate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Apply 1(2)Weakto ALL enemies.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Intimidate.png"
+    },
+    {
+        "name": "Metallicize",
+        "url": "https://slay-the-spire.fandom.com/wiki/Metallicize",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Metallicize.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the end of your turn, gain 3(4)Block.",
+        "local_image": "images_Ironclad_Cards\\Metallicize.png"
+    },
+    {
+        "name": "Power Through",
+        "url": "https://slay-the-spire.fandom.com/wiki/Power_Through",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/PowerThrough.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Add 2Woundsto your hand. Gain 15(20)Block.",
+        "local_image": "images_Ironclad_Cards\\Power Through.png"
+    },
+    {
+        "name": "Pummel",
+        "url": "https://slay-the-spire.fandom.com/wiki/Pummel",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/Pummel.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 2 damage 4(5) times.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Pummel.png"
+    },
+    {
+        "name": "Rage",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rage",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Rage.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Whenever you play an Attack this turn, gain 3(5)Block.",
+        "local_image": "images_Ironclad_Cards\\Rage.png"
+    },
+    {
+        "name": "Rampage",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rampage",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e4/Rampage.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8 damage. Increase this card's damage by 5(8) this combat.",
+        "local_image": "images_Ironclad_Cards\\Rampage.png"
+    },
+    {
+        "name": "Reckless Charge",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reckless_Charge",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f7/RecklessCharge.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 7(10) damage. Shuffle aDazedinto your draw pile.",
+        "local_image": "images_Ironclad_Cards\\Reckless Charge.png"
+    },
+    {
+        "name": "Rupture",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rupture",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/38/Rupture.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you lose HP from a card, gain 1(2)Strength.",
+        "local_image": "images_Ironclad_Cards\\Rupture.png"
+    },
+    {
+        "name": "Searing Blow",
+        "url": "https://slay-the-spire.fandom.com/wiki/Searing_Blow",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dc/SearingBlow.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 12(16) damage. Can be upgraded any number of times.",
+        "local_image": "images_Ironclad_Cards\\Searing Blow.png"
+    },
+    {
+        "name": "Second Wind",
+        "url": "https://slay-the-spire.fandom.com/wiki/Second_Wind",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/ba/SecondWind.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Exhaustall non-Attack cards in your hand and gain 5(7)Blockfor each cardExhausted.",
+        "local_image": "images_Ironclad_Cards\\Second Wind.png"
+    },
+    {
+        "name": "Seeing Red",
+        "url": "https://slay-the-spire.fandom.com/wiki/Seeing_Red",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c2/SeeingRed.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Gain 2 energy.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Seeing Red.png"
+    },
+    {
+        "name": "Sentinel",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sentinel",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/91/Sentinel.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block. If this card isExhausted, gain 2(3) energy.",
+        "local_image": "images_Ironclad_Cards\\Sentinel.png"
+    },
+    {
+        "name": "Sever Soul",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sever_Soul",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/11/SeverSoul.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Exhaustall non-Attack cards in your hand. Deal 16(22) damage.",
+        "local_image": "images_Ironclad_Cards\\Sever Soul.png"
+    },
+    {
+        "name": "Shockwave",
+        "url": "https://slay-the-spire.fandom.com/wiki/Shockwave",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/65/Shockwave.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Apply 3(5)WeakandVulnerableto ALL enemies.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Shockwave.png"
+    },
+    {
+        "name": "Spot Weakness",
+        "url": "https://slay-the-spire.fandom.com/wiki/Spot_Weakness",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/56/SpotWeakness.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "If the enemy intends to attack, gain 3(4)Strength.",
+        "local_image": "images_Ironclad_Cards\\Spot Weakness.png"
+    },
+    {
+        "name": "Uppercut",
+        "url": "https://slay-the-spire.fandom.com/wiki/Uppercut",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Uppercut.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 13 damage. Apply 1(2)Weak. Apply 1(2)Vulnerable.",
+        "local_image": "images_Ironclad_Cards\\Uppercut.png"
+    },
+    {
+        "name": "Whirlwind",
+        "url": "https://slay-the-spire.fandom.com/wiki/Whirlwind",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e0/Whirlwind.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "X",
+        "description": "Deal 5(8) damage to ALL enemies X times.",
+        "local_image": "images_Ironclad_Cards\\Whirlwind.png"
+    },
+    {
+        "name": "Barricade",
+        "url": "https://slay-the-spire.fandom.com/wiki/Barricade",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/12/Barricade.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3(2)",
+        "description": "Blockis not removed at the start of your turn.",
+        "local_image": "images_Ironclad_Cards\\Barricade.png"
+    },
+    {
+        "name": "Berserk",
+        "url": "https://slay-the-spire.fandom.com/wiki/Berserk",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/Berserk.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "0",
+        "description": "Gain 2(1)Vulnerable. At the start of your turn, gain 1Energy.",
+        "local_image": "images_Ironclad_Cards\\Berserk.png"
+    },
+    {
+        "name": "Bludgeon",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bludgeon",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/96/Bludgeon.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "3",
+        "description": "Deal 32(42) damage.",
+        "local_image": "images_Ironclad_Cards\\Bludgeon.png"
+    },
+    {
+        "name": "Brutality",
+        "url": "https://slay-the-spire.fandom.com/wiki/Brutality",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/ba/Brutality.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "0",
+        "description": "(Innate.) At the start of your turn, lose 1 HP and draw 1 card.",
+        "local_image": "images_Ironclad_Cards\\Brutality.png"
+    },
+    {
+        "name": "Corruption",
+        "url": "https://slay-the-spire.fandom.com/wiki/Corruption",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/75/Corruption.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3(2)",
+        "description": "Skills cost 0. Whenever you play a Skill,Exhaustit.",
+        "local_image": "images_Ironclad_Cards\\Corruption.png"
+    },
+    {
+        "name": "Demon Form",
+        "url": "https://slay-the-spire.fandom.com/wiki/Demon_Form",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a1/DemonForm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3",
+        "description": "At the start of each turn, gain 2(3)Strength.",
+        "local_image": "images_Ironclad_Cards\\Demon Form.png"
+    },
+    {
+        "name": "Double Tap",
+        "url": "https://slay-the-spire.fandom.com/wiki/Double_Tap",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/DoubleTap.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "This turn, your next (2) Attack(s) is(are) played twice.",
+        "local_image": "images_Ironclad_Cards\\Double Tap.png"
+    },
+    {
+        "name": "Exhume",
+        "url": "https://slay-the-spire.fandom.com/wiki/Exhume",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1b/Exhume.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Put a card from yourExhaustpile into your hand.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Exhume.png"
+    },
+    {
+        "name": "Feed",
+        "url": "https://slay-the-spire.fandom.com/wiki/Feed",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/44/Feed.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 10(12) damage. If this kills a non-minion enemy, gain 3(4) permanent Max HP.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Feed.png"
+    },
+    {
+        "name": "Fiend Fire",
+        "url": "https://slay-the-spire.fandom.com/wiki/Fiend_Fire",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0a/FiendFire.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Exhaustall cards in your hand. Deal 7(10) damage for eachExhausted card.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Fiend Fire.png"
+    },
+    {
+        "name": "Immolate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Immolate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5f/Immolate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 21(28) damage to ALL enemies. Add aBurninto your discard pile.",
+        "local_image": "images_Ironclad_Cards\\Immolate.png"
+    },
+    {
+        "name": "Impervious",
+        "url": "https://slay-the-spire.fandom.com/wiki/Impervious",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Impervious.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 30(40)Block.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Impervious.png"
+    },
+    {
+        "name": "Juggernaut",
+        "url": "https://slay-the-spire.fandom.com/wiki/Juggernaut",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/07/Juggernaut.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2",
+        "description": "Whenever you gainBlock, deal 5(7) damage to a random enemy.",
+        "local_image": "images_Ironclad_Cards\\Juggernaut.png"
+    },
+    {
+        "name": "Limit Break",
+        "url": "https://slay-the-spire.fandom.com/wiki/Limit_Break",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8c/LimitBreak.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Double yourStrength.Exhaust(Don'tExhaust).",
+        "local_image": "images_Ironclad_Cards\\Limit Break.png"
+    },
+    {
+        "name": "Offering",
+        "url": "https://slay-the-spire.fandom.com/wiki/Offering",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Offering.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Lose 6 HP. Gain 2 energy. Draw 3(5) cards.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Offering.png"
+    },
+    {
+        "name": "Reaper",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reaper",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6a/Reaper.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 4(5) damage to ALL enemies. Heal HP equal to unblocked damage.Exhaust.",
+        "local_image": "images_Ironclad_Cards\\Reaper.png"
+    }
+]

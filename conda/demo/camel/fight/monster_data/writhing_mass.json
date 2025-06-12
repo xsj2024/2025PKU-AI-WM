@@ -1,0 +1,59 @@
+{
+  "name": "Writhing Mass",
+  "attributes": {
+    "hp": "160 175 (Ascension 7+)",
+    "in_party_with": "None",
+    "debut_act": "Act 3",
+    "powers": "Malleable 3 Reactive"
+  },
+  "moves": [
+    {
+      "name": "Implant",
+      "intent": "Debuff2",
+      "effect": "Permanently adds a Parasite to your deck."
+    },
+    {
+      "name": "Flail",
+      "intent": "Attack Defend",
+      "effect": "Deal 16 damage, gain 18 Block ."
+    },
+    {
+      "name": "Wither",
+      "intent": "Debuff - Sword",
+      "effect": "Deal 12 damage, apply 2 Weak and 2 Vulnerable ."
+    },
+    {
+      "name": "Multi-Strike",
+      "intent": "Attack intent 5",
+      "effect": "Deal 9 x 3 damage."
+    },
+    {
+      "name": "Strong Strike",
+      "intent": "Attack - Sickle",
+      "effect": "Deal 38 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5f/Writhing_Mass.png/revision/latest",
+      "source": "main",
+      "local_image": "writhing_mass_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "malleable",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/42/Icon_Mallable.png/revision/latest",
+      "source": "variant",
+      "local_image": "writhing_mass_malleable.png"
+    },
+    {
+      "type": "variant",
+      "name": "reactive",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/89/Icon_Reactive.png/revision/latest",
+      "source": "variant",
+      "local_image": "writhing_mass_reactive.png"
+    }
+  ]
+}

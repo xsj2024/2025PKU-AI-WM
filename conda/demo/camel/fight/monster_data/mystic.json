@@ -1,0 +1,35 @@
+{
+  "name": "Mystic",
+  "attributes": {
+    "hp": "48-56 50-58 7+",
+    "in_party_with": "Centurion",
+    "debut_act": "Act 2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Heal",
+      "intent": "Buff",
+      "effect": "Heal all enemies for 20."
+    },
+    {
+      "name": "Buff",
+      "intent": "Buff",
+      "effect": "All enemies gain 4 Strength ."
+    },
+    {
+      "name": "Attack/Debuff",
+      "intent": "Attack Debuff",
+      "effect": "Deal 9 damage, apply 2 Frail ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5e/Mystic.png/revision/latest",
+      "source": "main",
+      "local_image": "mystic_appearance.png"
+    }
+  ]
+}

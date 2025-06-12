@@ -1,0 +1,35 @@
+{
+  "name": "Centurion",
+  "attributes": {
+    "hp": "76-80 78-83 7+",
+    "in_party_with": "Mystic",
+    "debut_act": "Act 2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Slash",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 14 damage."
+    },
+    {
+      "name": "Fury",
+      "intent": "Attack intent 4",
+      "effect": "Deal 7 x 3 damage."
+    },
+    {
+      "name": "Defend",
+      "intent": "Defend",
+      "effect": "Ally gains 20 Block ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4a/Centurion-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "centurion_appearance.png"
+    }
+  ]
+}

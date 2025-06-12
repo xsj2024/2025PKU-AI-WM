@@ -1,0 +1,41 @@
+path: F:\AIJiChuZuoYe\mytest\annotator\yolo_dataset
+train: images
+val: images
+names:
+  0: relic
+  1: player
+  2: monster
+  3: cost
+  4: unupgraded_card
+  5: button
+  6: energy_state
+  7: deck
+  8: discard_deck
+  9: hp_bar
+  10: intent:give_debuff
+  11: intent:attack
+  12: hp
+  13: money
+  14: potion
+  15: empty_potion_slot
+  16: floor
+  17: difficulty
+  18: buff
+  19: upgraded_card
+  20: exhaust_deck
+  21: prompt
+  22: chest
+  23: loot
+  24: two choose one
+  25: intent:sleep
+  26: boss_chest
+  27: price
+  28: card_removal_service
+  29: merchant
+  30: intent:defensive
+  31: intent:strategic
+  32: intent:attack_and_give_debuff
+  33: intent:unknown
+  34: card
+  35: message_box
+  36: monster_name

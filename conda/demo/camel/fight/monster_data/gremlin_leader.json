@@ -1,0 +1,35 @@
+{
+  "name": "Gremlin Leader",
+  "attributes": {
+    "hp": "140-148 145-155 (Ascension 8+)",
+    "in_party_with": "2 random Gremlins",
+    "debut_act": "2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Encourage",
+      "intent": "Buff - Defend",
+      "effect": "All enemies gain 5 Strength . All minions gain 10 Block ."
+    },
+    {
+      "name": "Rally!",
+      "intent": "Unknown",
+      "effect": "Summons up to 2 random Gremlins ."
+    },
+    {
+      "name": "Stab",
+      "intent": "Attack intent 4",
+      "effect": "Deals 6 x 3 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d9/Gremlin_Leader.png/revision/latest",
+      "source": "main",
+      "local_image": "gremlin_leader_appearance.png"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+path: F:\AIJiChuZuoYe\mytest\annotator_card\yolo_dataset
+train: images
+val: images
+names:
+  0: name
+  1: upgrade_name
+  2: nameqqqqq

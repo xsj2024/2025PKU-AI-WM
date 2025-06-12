@@ -1,0 +1,43 @@
+{
+  "player_status": {
+    "energy": "3/3",
+    "health": "76/88",
+    "block": 0,
+    "statuses": {},
+    "hand": [
+      {
+        "name": "Strike",
+        "type": "Attack",
+        "cost": 1,
+        "effect": "Deal 6(9) damage."
+      },
+      {
+        "name": "Defend",
+        "type": "Skill",
+        "cost": 1,
+        "effect": "Gain 5(8)Block."
+      },
+      {
+        "name": "Headbutt",
+        "type": "Attack",
+        "cost": 1,
+        "effect": "Deal 9(12) damage. Place a card from your discard pile on top of your draw pile."
+      },
+      {
+        "name": "Bash",
+        "type": "Attack",
+        "cost": 2,
+        "effect": "Deal 8(10) damage. Apply 2(3)Vulnerable."
+      }
+    ]
+  },
+  "enemies": [
+    {
+      "name": "monster1",
+      "health": "38/44",
+      "block": 0,
+      "intent": "?",
+      "statuses": {}
+    }
+  ]
+}

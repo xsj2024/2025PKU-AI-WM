@@ -1,0 +1,30 @@
+{
+  "name": "Acid Slime (S)",
+  "attributes": {
+    "hp": "8-12 9-13 7+",
+    "in_party_with": "Act 1 3 Spike Slime (S) + 1 Acid Slime (S) 1 Spike Slime (M)",
+    "debut_act": "Act 1",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Lick",
+      "intent": "Debuff1",
+      "effect": "Inflict 1 Weak ."
+    },
+    {
+      "name": "Tackle",
+      "intent": "Attack intent 1",
+      "effect": "Deals 3 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f2/Acid-slime-s-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "acid_slime_(s)_appearance.png"
+    }
+  ]
+}

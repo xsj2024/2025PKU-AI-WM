@@ -1,0 +1,52 @@
+{
+  "name": "Chosen",
+  "attributes": {
+    "hp": "95-99 98-103 7+",
+    "in_party_with": "None Byrd Cultist",
+    "debut_act": "2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Poke",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 6 x 2 damage."
+    },
+    {
+      "name": "Zap",
+      "intent": "Attack intent 4",
+      "effect": "Deal 21 damage."
+    },
+    {
+      "name": "Debilitate",
+      "intent": "Debuff - Sword",
+      "effect": "Deal 12 damage and apply 2 Vulnerable ."
+    },
+    {
+      "name": "Drain",
+      "intent": "Debuff1",
+      "effect": "Apply 3 Weak . Gain 3 Strength ."
+    },
+    {
+      "name": "Hex",
+      "intent": "Debuff2",
+      "effect": "Apply 1 Hex ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/99/Chosen-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "chosen_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "hex",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c4/Icon_Hex.png/revision/latest",
+      "source": "variant",
+      "local_image": "chosen_hex.png"
+    }
+  ]
+}

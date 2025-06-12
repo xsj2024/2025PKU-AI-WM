@@ -1,0 +1,42 @@
+{
+  "name": "Spire Growth",
+  "attributes": {
+    "hp": "170 190 (Ascension 7+)",
+    "debut_act": "Act III",
+    "in_party_with": "None",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Quick Tackle",
+      "intent": "Attack intent 4",
+      "effect": "Deal 18 damage."
+    },
+    {
+      "name": "Smash",
+      "intent": "Attack intent 5",
+      "effect": "Deal 25 damage."
+    },
+    {
+      "name": "Constrict",
+      "intent": "Debuff2",
+      "effect": "Applies 12 Constricted ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/89/Spire_Growth.png/revision/latest",
+      "source": "main",
+      "local_image": "spire_growth_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "constricted",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/53/Icon_Restricted.png/revision/latest",
+      "source": "variant",
+      "local_image": "spire_growth_constricted.png"
+    }
+  ]
+}

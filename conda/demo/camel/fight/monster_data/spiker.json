@@ -1,0 +1,30 @@
+{
+  "name": "Spiker",
+  "attributes": {
+    "hp": "42-56 44-60 (Ascension 7+)",
+    "in_party_with": "2 other Shapes 3 other Shapes Spheric Guardian and 1 other Shape",
+    "debut_act": "Act 3",
+    "powers": "3 Thorns 4 Thorns (Ascension 2+) 7 Thorns (Ascension 17+)"
+  },
+  "moves": [
+    {
+      "name": "Cut",
+      "intent": "Attack Intent 2",
+      "effect": "Deal 9 damage."
+    },
+    {
+      "name": "Spike",
+      "intent": "Buff",
+      "effect": "Gains 2 Thorns ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/Spiker-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "spiker_appearance.png"
+    }
+  ]
+}

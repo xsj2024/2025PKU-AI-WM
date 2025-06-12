@@ -1,0 +1,15 @@
+{
+  "current_floor": 1,
+  "gold": 99,
+  "current_hp": 75,
+  "max_hp": 75,
+  "character": "Ironclad",
+  "deck_history": ["Strike", "Defend", "Bash"],
+  "relics_owned": ["Burning Blood"],
+  "map_nodes": [
+        {"type": "Enemy", "elite": false},
+        {"type": "?", "chance": 0.3},
+        {"type": "Elite", "elite": true},
+        {"type": "Rest"}
+    ]
+}

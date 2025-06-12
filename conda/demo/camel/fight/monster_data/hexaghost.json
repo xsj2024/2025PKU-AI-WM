@@ -1,0 +1,57 @@
+{
+  "name": "Hexaghost",
+  "attributes": {
+    "hp": "250 264 9+",
+    "debut_act": "Act 1",
+    "in_party_with": "None",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Activate",
+      "intent": "Unknown",
+      "effect": "Nothing."
+    },
+    {
+      "name": "Divider",
+      "intent": "Attack - Sickle",
+      "effect": "Deals (H+1) x 6 damage. H = (Current Player HP divided by 12), rounded down."
+    },
+    {
+      "name": "Inferno",
+      "intent": "Aggressive - Sword",
+      "effect": "Deals 2 x 6 damage, shuffles 3 Burn into the discard pile. Upgrades all Burn ."
+    },
+    {
+      "name": "Sear",
+      "intent": "Attack Debuff",
+      "effect": "Deals 6 damage, shuffles a Burn into the discard pile."
+    },
+    {
+      "name": "Tackle",
+      "intent": "Aggressive - Sword",
+      "effect": "Deals 5 x 2 damage."
+    },
+    {
+      "name": "Inflame",
+      "intent": "Buff - Defend",
+      "effect": "Gains 2 Strength and 12 Block ."
+    }
+  ],
+  "states": [
+    {
+      "type": "state",
+      "name": "boss",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/03/Hexaghust.png/revision/latest",
+      "source": "tabber",
+      "local_image": "hexaghost_boss.png"
+    },
+    {
+      "type": "state",
+      "name": "map icon",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/bd/Hexaghosticon.png/revision/latest",
+      "source": "tabber",
+      "local_image": "hexaghost_map icon.png"
+    }
+  ]
+}
