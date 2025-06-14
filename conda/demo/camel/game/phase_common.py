@@ -19,13 +19,22 @@ def card_selection_phase(handle, frame, detections):
         if handle.get_box_text(frame, b) == 'skip':
             skip_idx = len(card_infos) + 1
             print(f'{skip_idx}. Skip')
+    # 获取当前卡牌库前，按下D键进入deck
+    import pyautogui
+    pyautogui.press('d')
+    deck_cards = get_card_list_screenshots(handle.capture, handle.model)
+    deck_card_texts = [card['card_text'] for card in deck_cards]
+    deck_info = "\n".join([f"{i+1}: {text}" for i, text in enumerate(deck_card_texts)])
+    # 读取完卡组后，按下ESC退出deck
+    pyautogui.press('esc')
     # AI输入替换人工输入
     options = [f'{idx+1}. {info}' for idx, info in enumerate(card_infos)]
     if skip_idx:
         options.append(f'{skip_idx}. Skip')
     ai_prompt = {
-        "system": "你是杀戮尖塔自动选牌助手，请根据以下选项，返回你要选择的编号（只返回数字，不要解释）：",
-        "card_options": options
+        "system": "你是杀戮尖塔自动选牌助手，请根据以下选项，返回你要选择的编号、选择原因，并输出目前卡牌库中有哪些卡牌（格式：编号，原因: ...，卡牌库: ...，只返回一行，不要解释）：",
+        "card_options": options,
+        "deck_cards": deck_info
     }
     # --- 增加自动重试 ---
     while True:
@@ -41,12 +50,22 @@ def card_selection_phase(handle, frame, detections):
                 print(f"[AI请求异常] {e}")
                 import time
                 time.sleep(5)
-    choice = ai_response.msg.content.strip()
-    print(f"AI选择: {choice}")
-    try:
-        choice = int(choice)
-    except Exception:
-        choice = 1
+    ai_result = ai_response.msg.content.strip()
+    print(f"AI选择: {ai_result}")
+    import re
+    match = re.search(r'(\-?\d+)[,，]\s*原因[:：]?([^,，]*)[,，]\s*卡牌库[:：]?(.*)', ai_result)
+    if match:
+        choice = int(match.group(1))
+        reason = match.group(2).strip()
+        deck_cards_ai = match.group(3).strip()
+        print(f"AI决策原因: {reason}")
+        print(f"AI识别卡牌库: {deck_cards_ai}")
+    else:
+        # fallback: 只提取编号
+        digits = re.findall(r'-?\d+', ai_result)
+        choice = int(digits[0]) if digits else 1
+        reason = ''
+        deck_cards_ai = ''
     activate_game_window()
     if skip_idx and choice == skip_idx:
         handle.click_box_by_label('button', index=0, text='skip', frame=frame, detections=detections)

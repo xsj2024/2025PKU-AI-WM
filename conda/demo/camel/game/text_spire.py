@@ -5,7 +5,7 @@ from game.battle import BattleHandler
 from game.event import EventHandler
 from game.campfire import CampfireHandler
 from game.chest import ChestHandler
-from game.map import MapHandler
+from game.map import MapHandler 
 from game.shop import ShopHandler
 from annotator import game_capture
 from annotator import model_manager

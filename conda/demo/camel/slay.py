@@ -16,7 +16,7 @@ from move import Move
 from rest import Rest
 
 # File path constants
-DATA_DIR = "D:\\conda\\camel\\game_data"
+DATA_DIR = "D:Agit\\AI\\2025PKU-AI-WM\\conda\\demo\\camel\\game_data"
 STATUS_FILE = f"{DATA_DIR}/status.json"
 CARD_KB_FILE = f"./game_info/card_info.json"
 SHOP_FILE = f"{DATA_DIR}/shop.json"

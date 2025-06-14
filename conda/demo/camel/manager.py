@@ -13,10 +13,10 @@ from camel.types import ModelPlatformType
 
 
 # File path constants
-DATA_DIR = "D:\\conda\\camel\\game_data"
-INFO_DIR = "D:\\conda\\camel\\game_info"
+DATA_DIR = "D:\\Agit\\AI\\2025PKU-AI-WM\\conda\\demo\\camel\\game_data"
+INFO_DIR = "D:\\Agit\\AI\\2025PKU-AI-WM\\conda\\demo\\camel\\game_info"
 STATUS_FILE = f"{DATA_DIR}/status.json"
-CARD_KB_FILE = f"{INFO_DIR}/card_info.json"
+CARD_KB_FILE = f"{INFO_DIR}/card_knowledge.txt"
 SHOP_FILE = f"{DATA_DIR}/shop.json"
 HISTORY_FILE = f"{DATA_DIR}/history.json"
 class Manager:
@@ -30,8 +30,10 @@ class Manager:
         1. Must return JSON format
         2. Analysis factors should include: player health, relic effects, target node type priority
         3. Risk alerts need to be specifically explained"""
+        self.card_selection_knowledge = self.load_card_knowledge()
+        self.sys_prompt_tot = f"{self.sys_prompt}\n{self.card_selection_knowledge}"
         self.agent = ChatAgent(
-            system_message=self.sys_prompt,
+            system_message=self.sys_prompt_tot,
             model=self.model,  # Use the model initialized during setup
             output_language="en"
         )
@@ -48,19 +50,33 @@ class Manager:
             model_config_dict={"max_tokens": 5000, "temperature": 0.2},
             api_key="sk-eieolvuyjgclelvomvzicesknimiywsdmdpksaalfxntcamc"
         )
-    def load_card_knowledge(self) -> Dict[str, Dict]:
-        """加载卡牌知识库，返回以卡牌名为键的字典"""
-        if not os.path.exists(CARD_KB_FILE):
-            return {}
-        
-        try:
-            with open(CARD_KB_FILE, "r", encoding="utf-8") as f:
-                cards = json.load(f)
-                # 将数组转换为{name: card}的字典形式
-                return {card["name"]: card for card in cards}
-        except Exception as e:
-            print(f"加载卡牌知识库失败: {str(e)}")
-            return {}
+    def load_card_knowledge(self) -> str:
+        """加载卡牌知识库，返回一段文本，提示AI如何选择卡牌"""
+        info = """
+        Card Selection Knowledge:
+        1. You should first judge your current deck and health status, if your deck is weak, you should prioritize cards that help you go through.
+        2. You should also consider the synergy of cards, if you have many cards that can be upgraded, you should prioritize cards that is already upgraded.
+        Here are some examples of card selection:
+        # Example 1:
+        - Current Deck: [Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash]
+        - Current Health: 50/80
+        - Current options: [Dark Embrace, Corruption, Body Slam]
+        - Advice: Body Slam
+        - Reason: Body Slam synergizes with your current deck, which has many defense cards, allowing you to deal more damage.
+        In comparison, Dark Embrace and Corruption do not provide immediate benefits to your current deck.
+        For now, you only have basic attack and defense cards, so you should prioritize cards that can help you go through the game with less loss in health.
+        You might consider them later if you have more cards that can benefit from them.
+        # Example 2:
+        - Current Deck: [Strike, Strike, Strike, Strike, Strike, Defend, Defend, Defend, Defend, Bash]
+        - Current Health: 50/80
+        - Current options: [Demon Form, Feed, Reaper]
+        - Advice: Feed
+        - Reason: Feed is a card that add to your max health, which is helpful especially when you are at the bottom of the spire(means you can get more max hp through the game).
+        In comparison, Reaper calls more for a deck that provides buffs like strength, which you currently do not have.
+        And Demon Form is a card that requires 3 energies to play, which is not suitable for your current deck, neither is it suitable for your current health status(for you won't have enough energies to defend after playing this card).
+        """
+        return info
+
     def load_data(self) -> Dict:
         """Load game data"""
         with open(STATUS_FILE, "r", encoding='utf-8') as f:

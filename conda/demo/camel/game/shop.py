@@ -14,10 +14,6 @@ class ShopHandler:
         self.get_box_text = get_box_text
         self.click_box_by_label = click_box_by_label
         self.bot=bot
-        self.cleaner=Cleaner([
-        "D://conda//camel/game_info/card_info.json",
-        "D://conda//camel/game_info/card_info_Colorless_Cards.json"
-          ])
 
     def handle_shop(self, frame, detections):
         # 先点击 merchant
