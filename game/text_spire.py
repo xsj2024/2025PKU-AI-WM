@@ -1,6 +1,4 @@
 import time
-import cv2
-import numpy as np
 from game.battle import BattleHandler
 from game.event import EventHandler
 from game.campfire import CampfireHandler
@@ -12,12 +10,14 @@ from annotator import model_manager
 from text_reader import ascii_ocr
 from annotator.config import Config
 from annotator.game_capture import activate_game_window
+import annotator_map.model_manager
 import pyautogui
 
 class TextSlayTheSpire:
     def __init__(self):
         self.capture = game_capture.GameCapture()
         self.model = model_manager.ModelManager()
+        self.map_model = annotator_map.model_manager.ModelManager()
         self.last_scene = None
         self.running = True
         self.battle_handler = BattleHandler(
@@ -33,7 +33,7 @@ class TextSlayTheSpire:
             self.capture, self.model, self.get_box_text, self.click_box_by_label
         )
         self.map_handler = MapHandler(
-            self.capture, self.model, self.get_box_text, self.click_box_by_label
+            self.capture, self.map_model, self.get_box_text, self.click_box_by_label
         )
         self.shop_handler = ShopHandler(
             self.capture, self.model, self.get_box_text, self.click_box_by_label
@@ -52,7 +52,7 @@ class TextSlayTheSpire:
             return 'shop'
         if 'campfire_button' in labels:
             return 'campfire'
-        if "selectable_room" in labels or 'boss_room' in labels or 'selected_room' in labels:
+        if "legend" in labels:
             return 'map'
         return 'unknown'
 

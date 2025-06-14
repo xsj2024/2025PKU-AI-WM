@@ -6,6 +6,7 @@ from annotator.config import Config
 from text_reader.ascii_ocr import ascii_ocr
 from game.phase_common import card_selection_phase, choose_loot_phase
 from annotator.game_capture import activate_game_window
+from annotator_battle_unit.model_manager import ModelManager
 
 class BattleHandler:
     def __init__(self, capture, model, get_box_text, click_box_by_label):
@@ -13,6 +14,7 @@ class BattleHandler:
         self.model = model
         self.get_box_text = get_box_text
         self.click_box_by_label = click_box_by_label
+        self.battle_model = ModelManager()
 
     def handle_battle(self, frame, detections):
         while True:
@@ -93,7 +95,7 @@ class BattleHandler:
         if choice != '5': activate_game_window()
         if choice == '1':
             try:
-                cards = hand_card_reader.read_hand_cards(self.capture, self.model)
+                cards = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
                 print('Hand cards:')
                 for i, card in enumerate(cards):
                     print(f'{i+1}: {card}')

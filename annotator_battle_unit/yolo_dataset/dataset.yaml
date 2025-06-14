@@ -1,0 +1,14 @@
+path: F:\AIJiChuZuoYe\mytest\annotator_battle_unit\yolo_dataset
+train: images
+val: images
+names:
+  0: selectable_room
+  1: potion
+  2: boss_room
+  3: player
+  4: monster
+  5: hp
+  6: hand_card
+  7: block
+  8: upgraded
+  9: cost

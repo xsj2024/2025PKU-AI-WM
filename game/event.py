@@ -1,5 +1,5 @@
 import time
-from game.phase_common import choose_loot_phase, deck_selection_phase
+from game.phase_common import choose_loot_phase, deck_selection_phase, card_selection_phase
 from annotator import game_capture
 from annotator.game_capture import activate_game_window
 from info_reader.hand_card_reader import read_card
@@ -168,6 +168,10 @@ class EventHandler:
                 print("Match and Keep phase detected. (Not implemented, will exit if no card_back)")
                 self.match_and_keep_phase(frame, detections)
                 continue
+            if 'card' in labels and 'prompt' in labels:
+                print("Choose card phase in event.")
+                card_selection_phase
+                return
             if 'card' in labels:
                 print("Deck selection phase in event.")
                 deck_selection_phase(self, frame, detections)
