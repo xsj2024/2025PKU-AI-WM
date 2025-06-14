@@ -49,9 +49,9 @@ def get_feature_vector(image):
         return feature_vector.squeeze().numpy()
 
 # 图片集路径和查询图片路径
-images_dir = "images/card_images"
-features_file = "img_matcher/data/card_features.npy"
-names_file = "img_matcher/data/card_names.npy"
+images_dir = "image_matcher/images/card_images"
+features_file = "image_matcher/img_matcher/data/card_features.npy"
+names_file = "image_matcher/img_matcher/data/card_names.npy"
 
 # 加载模型
 model = load_model()
@@ -92,7 +92,7 @@ def get_card(query_image):
     return {"name":card_names[most_similar_index], "similarity":max_similarity}
 if __name__ == '__main__':
     # 提取查询图片特征(每次都重新提取)
-    query_image_path = "img_matcher/171e9455-1c47-4206-8760-491ef6c69338(1).png"
+    query_image_path = "image_matcher/img_matcher/18f419c8-c820-4ccb-a7a1-8f6e6667a2be.png"
     # query_image = Image.open(query_image_path).convert('RGB')
     query_image = cv2.imread(query_image_path)
 

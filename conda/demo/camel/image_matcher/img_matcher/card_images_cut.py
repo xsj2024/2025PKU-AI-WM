@@ -2,8 +2,8 @@ import os
 import cv2
 
 # 输入和输出目录
-input_dir = "images/card_images_whole"
-output_dir = "images/card_images"
+input_dir = "image_matcher/images/card_images_whole"
+output_dir = "image_matcher/images/card_images"
 
 # 确保输出目录存在
 os.makedirs(output_dir, exist_ok=True)
@@ -19,7 +19,7 @@ for filename in os.listdir(input_dir):
         if img is not None:
             # 计算裁剪高度，保留上半部分 60%
             h, w = img.shape[:2]
-            cropped_img = img[int(h*0.17):int(h * 0.532), int(w*0.15):int(w*0.85)]  # 裁剪上半部分
+            cropped_img = img[int(h*0.17):int(h * 0.58), int(w*0.15):int(w*0.85)]  # 裁剪上半部分
 
             # 保存到输出目录，相同文件名
             output_path = os.path.join(output_dir, filename)

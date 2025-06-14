@@ -1,5 +1,4 @@
 import time
-import cv2
 import numpy as np
 from game.battle import BattleHandler
 from game.event import EventHandler

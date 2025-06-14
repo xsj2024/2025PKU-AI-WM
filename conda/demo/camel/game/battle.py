@@ -13,6 +13,7 @@ import subprocess
 import ast
 import os
 import cv2
+from annotator_battle_unit.model_manager import ModelManager
 
 class BattleHandler:
     def __init__(self, capture, model, get_box_text, click_box_by_label, bot):
@@ -23,6 +24,7 @@ class BattleHandler:
         self.bot = bot
         self.history_lines = []  # 新增历史上下文链
         self.fight_ai = BattleCommander()  # 新增
+        self.battle_model = ModelManager()
 
     def handle_battle(self, frame, detections):
         while True:
@@ -200,11 +202,12 @@ class BattleHandler:
         if choice != '5': activate_game_window()
         if choice == '1':
             try:
-                add_history('Hand cards:')
-                for i, card in enumerate(hand_cards):
-                    add_history(f'{i+1}: {card}')
+                cards = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
+                print('Hand cards:')
+                for i, card in enumerate(cards):
+                    print(f'{i+1}: {card}')
             except Exception as e:
-                add_history(f'[ERROR] {e}')
+                print(f'[ERROR] {e}')
         elif choice == '2':
             try:
                 units = unit_status_reader.read_unit_status(self.capture, self.model)

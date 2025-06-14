@@ -27,6 +27,15 @@ def deserialize_keypoint(data):
         class_id=data['class_id']
     )
 
+def rootsift(descriptors):
+    """对SIFT描述子做L1归一化和开方（RootSIFT）"""
+    if descriptors is None:
+        return None
+    eps = 1e-7
+    descriptors = descriptors / (np.linalg.norm(descriptors, ord=1, axis=1, keepdims=True) + eps)
+    descriptors = np.sqrt(descriptors)
+    return descriptors
+
 class ImageFeatureDatabase:
     def __init__(self, feature_dim=128, k_clusters=100):
         self.feature_dim = feature_dim
@@ -42,20 +51,18 @@ class ImageFeatureDatabase:
         self.cluster_to_indices = defaultdict(list)
 
     def extract_features(self, image):
-        """完全保持原有特征提取逻辑"""
+        """集成RootSIFT特征提取"""
         if image is None:
             return None, None, None
-        
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         sift = cv2.SIFT_create()
         keypoints, descriptors = sift.detectAndCompute(gray, None)
-        
         if descriptors is None or len(descriptors) < 10:
             return None, None, None
-            
+        descriptors = rootsift(descriptors)
         return keypoints, descriptors, image.shape[:2]
     
-    def build_database(self, image_dir, force_rebuild=False, data_file="img_matcher/data/features_db.pkl"):
+    def build_database(self, image_dir, force_rebuild=False, data_file="image_matcher/img_matcher/data/features_db.pkl"):
         """构建数据库（保持原有流程+新增加速结构）"""
         if not force_rebuild and os.path.exists(data_file):
             self._load_database(data_file)
@@ -263,13 +270,14 @@ class ImageFeatureDatabase:
                 match_scores[img_path][1] += self.database[img_path]['feature_scores'][local_idx]
         
         # 筛选并排序结果
-        valid_matches = [(k, v[0], v[1]) for k, v in match_scores.items() if v[0] >= 4]
+        valid_matches = [(k, v[0], v[1]) for k, v in match_scores.items()]
         valid_matches.sort(key=lambda x: (-x[1], -x[2]))
+        print(valid_matches)
         
         return [os.path.basename(x[0])[:-4] for x in valid_matches[:top_n]]
 
-db = ImageFeatureDatabase(k_clusters=150)
-db.build_database("images/card_images")
+db = ImageFeatureDatabase(k_clusters=200)
+db.build_database("image_matcher/images/card_images")
 
 def get_card(img):
     res = db.match_image(img, top_n=1)
@@ -282,7 +290,7 @@ if __name__ == "__main__":
     
     import time
     tt = time.time()
-    query_img = cv2.imread("img_matcher/134e0ddc-a911-4b0a-9423-1ea9049a5e21.png")
+    query_img = cv2.imread("image_matcher/img_matcher/QQ_1749824634776.png")
     matches = db.match_image(query_img, top_n=1)
 
     print(time.time()-tt)

@@ -25,51 +25,32 @@ def read_card(card_img):
     card_text = ascii_ocr(card_img)
     return card_text
 
+from image_matcher.img_matcher.card_matcher33 import get_card
 def read_hand_cards(capture, model):
-    # 先将鼠标移动到游戏窗口中央
     frame = capture.wait_for_stable_frame()
     detections = model.detect_all(frame)
+
+    cost = [d for d in detections if d[0]=='cost']
+    upgraded = [d for d in detections if d[0]=='upgraded']
+    res = []
     for d in detections:
-        if d[0] == 'button':
-            game_capture.move_mouse_in_window((d[1]+d[3])//2, (d[2]+d[4])//2)
-    hand_cards = []
-    key_list = ['1','2','3','4','5','6','7','8','9','0']
-    for key in key_list:
-        # 按下数字键，等待动画展示
-        print(key)
-        keyboard.press_and_release(key)
-        frame = capture.wait_for_stable_frame()
-        if frame is None:
-            continue
-        detections = model.detect_all(frame)
-        card_box = None
-        for det in detections:
-            print(det)
-            label, x1, y1, x2, y2 = det
-            if label == 'card':
-                card_box = (x1, y1, x2, y2)
-                break
-        if card_box is None:
-            # try again
-            frame = capture.wait_for_stable_frame()
-            detections = model.detect_all(frame)
-            card_box = None
-            for det in detections:
-                label, x1, y1, x2, y2 = det
-                if label == 'card':
-                    card_box = (x1, y1, x2, y2)
-                    break
-        if not (card_box is None):
-            # 截取 card 区域图片
-            x1, y1, x2, y2 = card_box
-            card_img = frame[y1:y2, x1:x2]
-            hand_cards.append(read_card(card_img))
-        else : break
-        # 再次按下数字键收回手牌
-        time.sleep(0.25)
-        keyboard.press_and_release(key)
-        time.sleep(0.25)
-    return hand_cards
+        if d[0] == 'hand_card':
+            label, x1, y1, x2, y2 = d
+            name = get_card(frame[y1:y2, x1:x2])
+            if upgraded:
+                _, x11,y11,x22,y22 = upgraded[0]
+                if min(x22,x2) - max(x11,x1) >= 0.5 * (x22 - x11):
+                    name += '+'
+                    upgraded = upgraded[1:]
+            if cost:
+                _, x11,y11,x22,y22 = cost[0]
+                if x22 < (x1 + x2)/2:
+                    c = cost_reader(frame[y11:y22, x11:x22])
+                    name = c + ' ' + name
+                    cost = cost[1:]
+            
+            res.append(name)
+    return res
 
 # 用于测试
 if __name__ == '__main__':
