@@ -1,7 +1,7 @@
 {
   "player_status": {
-    "energy": "4/3",
-    "health": "45/80",
+    "energy": "3/3",
+    "health": "66/80",
     "block": 0,
     "statuses": {},
     "hand": []
@@ -9,13 +9,21 @@
   "enemies": [
     {
       "name": "monster1",
-      "health": "None",
+      "health": "15/15",
       "block": 0,
-      "intent": "Aggressive This enemy intends to Attack for22 damage",
+      "intent": "Strategic This enemy intends to inflict a Negative Effect on you",
       "statuses": {
-        "msg1": "Vulnerable Receive 50% more damage from Attacks for 1turn.",
-        "msg2": "Ritual At the end ofits turn, gains 4 Strength",
-        "msg3": "Strength Increases attack damage by16."
+        "msg1": "Curl Up On receiving attack damage,rolls sup and gains 8 Block (Once per combat"
+      }
+    },
+    {
+      "name": "monster2",
+      "health": "11/11",
+      "block": 0,
+      "intent": "Aggressive This enemy intends to Attack for10 damage",
+      "statuses": {
+        "msg1": "Strength Increases attack damage by 3.",
+        "msg2": "Curl Up On receiving a attack damage,rolls up and gains 7Block. (Once per combat)"
       }
     }
   ]

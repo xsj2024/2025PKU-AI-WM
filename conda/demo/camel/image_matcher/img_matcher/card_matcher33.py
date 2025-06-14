@@ -43,12 +43,11 @@ class ImageFeatureDatabase:
         self.database = {}
         self.cluster_centers = None
         self.feature_weights = None
-        
-        # 新增KDTree加速结构
         self.kdtree = None
         self.desc_cache = []
-        self.img_indices = []  # 记录每个特征所属图片索引
+        self.img_indices = []
         self.cluster_to_indices = defaultdict(list)
+        self.cluster_dists = None  # 新增
 
     def extract_features(self, image):
         """集成RootSIFT特征提取"""
@@ -63,16 +62,14 @@ class ImageFeatureDatabase:
         return keypoints, descriptors, image.shape[:2]
     
     def build_database(self, image_dir, force_rebuild=False, data_file="image_matcher/img_matcher/data/features_db.pkl"):
-        """构建数据库（保持原有流程+新增加速结构）"""
         if not force_rebuild and os.path.exists(data_file):
             self._load_database(data_file)
             return
-        
+
         print("Building feature database...")
         all_features = []
         image_data = {}
-        
-        # 第一阶段：收集特征（保持不变）
+
         for img_file in tqdm(os.listdir(image_dir)):
             if img_file.lower().endswith(('.png', '.jpg', '.jpeg')):
                 img_path = os.path.join(image_dir, img_file)
@@ -85,11 +82,10 @@ class ImageFeatureDatabase:
                         'descriptors': desc,
                         'shape': shape
                     }
-        
+
         if not image_data:
             raise ValueError("No valid images found")
-        
-        # 第二阶段：特征聚类（保持不变）
+
         print("Clustering features...")
         all_descriptors = np.vstack(all_features)
         criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 100, 0.2)
@@ -101,34 +97,29 @@ class ImageFeatureDatabase:
             10,
             cv2.KMEANS_RANDOM_CENTERS
         )
-        
-        # 新增：构建KDTree
+
         self.kdtree = cKDTree(self.cluster_centers)
-        
-        # 第三阶段：计算特征权重（保持不变）
+
         print("Calculating weights...")
         self._compute_feature_weights(image_data)
-        
-        # 第四阶段：构建优化后的数据库（新增缓存结构）
+
         print("Building accelerated index...")
         self.desc_cache = []
         self.img_indices = []
         img_paths = list(image_data.keys())
-        
+
         for img_idx, img_path in enumerate(img_paths):
             data = image_data[img_path]
             kp = data['keypoints']
             desc = data['descriptors']
             shape = data['shape']
-            
-            # 保持原有的特征选择逻辑
+
             distances = np.linalg.norm(desc[:, np.newaxis] - self.cluster_centers, axis=2)
             closest_clusters = np.argmin(distances, axis=1)
             feature_scores = self.feature_weights[closest_clusters] * [kp[i].response for i in range(len(kp))]
-            
+
             top_indices = np.argsort(feature_scores)[-100:] if len(feature_scores) > 100 else np.arange(len(feature_scores))
-            
-            # 存入数据库
+
             self.database[img_path] = {
                 'keypoints': [kp[i] for i in top_indices],
                 'descriptors': desc[top_indices],
@@ -136,20 +127,19 @@ class ImageFeatureDatabase:
                 'feature_scores': feature_scores[top_indices],
                 'cache_range': (len(self.desc_cache), len(self.desc_cache) + len(top_indices))
             }
-            
-            # 填充线性缓存
+
             self.desc_cache.extend(desc[top_indices])
             self.img_indices.extend([img_idx] * len(top_indices))
-        
-        # 构建聚类->特征索引映射
+
         print("Building cluster index...")
         all_desc = np.array(self.desc_cache)
         cluster_dists = np.linalg.norm(all_desc[:, np.newaxis] - self.cluster_centers, axis=2)
+        np.save("image_matcher/img_matcher/data/cluster_dists.npy", cluster_dists)  # 保存
         closest_clusters = np.argmin(cluster_dists, axis=1)
-        
+
         for feat_idx, cluster in enumerate(closest_clusters):
             self.cluster_to_indices[cluster].append(feat_idx)
-        
+
         self._save_database(data_file)
     
     def _compute_feature_weights(self, image_data):
@@ -168,11 +158,9 @@ class ImageFeatureDatabase:
         self.feature_weights = np.log(total_images / doc_freq)
     
     def _load_database(self, filename):
-        """加载数据库（新增加速结构重建）"""
         print(f"Loading database from {filename}...")
         with open(filename, 'rb') as f:
             loaded_data = pickle.load(f)
-            
             self.database = {}
             for img_path, data in loaded_data['database'].items():
                 self.database[img_path] = {
@@ -182,29 +170,23 @@ class ImageFeatureDatabase:
                     'feature_scores': data['feature_scores'],
                     'cache_range': data.get('cache_range', (0, len(data['descriptors'])))
                 }
-            
             self.cluster_centers = loaded_data['cluster_centers']
             self.feature_weights = loaded_data['feature_weights']
-        
-        # 重建加速结构
+
         self.desc_cache = []
         self.img_indices = []
         img_paths = list(self.database.keys())
-        
+
         for img_idx, img_path in enumerate(img_paths):
             data = self.database[img_path]
-            start = len(self.desc_cache)
             self.desc_cache.extend(data['descriptors'])
             self.img_indices.extend([img_idx] * len(data['descriptors']))
-        
-        # 重建KDTree和聚类映射
+
         self.kdtree = cKDTree(self.cluster_centers)
         self.cluster_to_indices = defaultdict(list)
-        
-        all_desc = np.array(self.desc_cache)
-        cluster_dists = np.linalg.norm(all_desc[:, np.newaxis] - self.cluster_centers, axis=2)
-        closest_clusters = np.argmin(cluster_dists, axis=1)
-        
+
+        self.cluster_dists = np.load("image_matcher/img_matcher/data/cluster_dists.npy")  # 加载
+        closest_clusters = np.argmin(self.cluster_dists, axis=1)
         for feat_idx, cluster in enumerate(closest_clusters):
             self.cluster_to_indices[cluster].append(feat_idx)
     
@@ -276,7 +258,7 @@ class ImageFeatureDatabase:
         
         return [os.path.basename(x[0])[:-4] for x in valid_matches[:top_n]]
 
-db = ImageFeatureDatabase(k_clusters=200)
+db = ImageFeatureDatabase(k_clusters=100)
 db.build_database("image_matcher/images/card_images")
 
 def get_card(img):
