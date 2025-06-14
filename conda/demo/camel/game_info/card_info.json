@@ -20,7 +20,27 @@
         "local_image": "images_Ironclad_Cards\\Defend.png"
     },
     {
+        "name": "Red_Defend",
+        "url": "https://slay-the-spire.fandom.com/wiki/Defend_(Ironclad)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7d/Defend_R.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block.",
+        "local_image": "images_Ironclad_Cards\\Defend.png"
+    },
+    {
         "name": "Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Strike_(Ironclad)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/06/Strike_R.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage.",
+        "local_image": "images_Ironclad_Cards\\Strike.png"
+    },
+    {
+        "name": "Red_Strike",
         "url": "https://slay-the-spire.fandom.com/wiki/Strike_(Ironclad)",
         "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/06/Strike_R.png/revision/latest/scale-to-width-down/155",
         "rarity": "Starter",

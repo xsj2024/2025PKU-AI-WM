@@ -155,10 +155,12 @@ class BattleHandler:
         add_history('4. Show discard pile')
         add_history('5. Play a card')
         add_history('6. End turn')
-        hand_cards = hand_card_reader.read_hand_cards(self.capture, self.model)
+        hand_cards = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
         hand_cards_str = [str(card) for card in hand_cards]
         units = unit_status_reader.read_unit_status(self.capture, self.model)
         units_str = [str(u) for u in units]
+        # 鼠标归位
+        self.capture.move_to_edge()
         # === 新增：解析unit_status，自动填充intent和statuses ===
         # 解析unit_status，假设顺序与enemies一致
         print(units)

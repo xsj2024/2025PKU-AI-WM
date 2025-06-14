@@ -1,30 +1,24 @@
 {
   "player_status": {
-    "energy": "3/3",
-    "health": "66/80",
+    "energy": "1/3",
+    "health": "49/80",
     "block": 0,
     "statuses": {},
-    "hand": []
+    "hand": [
+      "1 Red Defend",
+      "1 Red Defend",
+      "1 Perfected Strike"
+    ]
   },
   "enemies": [
     {
       "name": "monster1",
-      "health": "15/15",
+      "health": "41/54",
       "block": 0,
       "intent": "?",
       "statuses": {
-        "msg1": "Curl Up On receiving attack damage,rolls sup and gains 8 Block (Once per combat",
-        "msg2": "Strategic This enemy intends to inflict a Negative Effect on you"
-      }
-    },
-    {
-      "name": "monster2",
-      "health": "11/11",
-      "block": 0,
-      "intent": "?",
-      "statuses": {
-        "msg1": "Strength Increases attack damage by 3.",
-        "msg2": "Curl Up On receiving a attack damage,rolls up and gains 7Block. (Once per combat)",
+        "msg1": "Ritual At the end ofits turn gains 4 Strength",
+        "msg2": "Strength Increases attack damage by 4.",
         "msg3": "Aggressive This enemy intends to Attack for10 damage"
       }
     }

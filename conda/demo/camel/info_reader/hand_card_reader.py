@@ -4,6 +4,7 @@ from annotator import game_capture
 from annotator.model_manager import ModelManager
 from text_reader.ascii_ocr import ascii_ocr
 import time
+from text_reader.easyocr_ import ascii_ocr as cost_reader
 
 # 可选：你可以根据实际情况更换为更强的OCR方法
 
