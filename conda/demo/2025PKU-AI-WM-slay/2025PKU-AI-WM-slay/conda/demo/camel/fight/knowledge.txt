@@ -1,0 +1,56 @@
+关于卡牌的分类：
+游戏中的卡牌分为Attack、Skill、Power、Status和Curse。
+Attack是可以直接造成伤害的卡牌。
+Skill不能直接造成伤害，它们通常用于提供Block、给自己或敌人施加buffs/debuffs、给予Energy、提供其他卡牌等。
+Power是可以给予持续整场战斗的能力的卡牌，打出后，它们在本场战斗内会从Deck中消失。
+Status是阻碍你战斗的卡牌，它们通常由某些敌人在战斗内添加到你的牌堆中。所有Status会在战斗结束后从牌堆中消失。
+Curse同样是阻碍你战斗的卡牌，它们的负面效果通常比Status更强，且不会在战斗结束后从牌堆中消失。
+
+回合与意图：
+一般情况下，Player与Enemy交替进行回合（第一个回合总是Player的）。Enemy会在它们的回合中执行它们的Intent（对于多个Enemy，Intent从左到右执行）。
+
+Draw Pile、Hand、Discard Pile、Exhaust Pile
+在一场战斗中，卡牌可能会处于四个位置：Draw Pile、Hand、Discard Pile、Exhaust Pile。
+在战斗开始时，你Deck中的所有卡牌会被以随机顺序放入你的Draw Pile中。
+在你的回合开始时，你draw五张卡（draw指将Draw Pile顶部的若干张卡依次移动到Hand中）。
+一般情况下，你只能打出Hand中的卡。
+一些效果可以让你额外进行draw。
+在你打出一张卡后，它会被放入Discard Pile。
+在你的回合结束时，你的所有Hand将会被放入Discard Pile。
+一些卡可以让你discard手牌（discard指将Hand中的卡放入Discard Pile而不打出它们）。
+在你draw卡时，如果Draw Pile中没有卡，Discard Pile中的卡将会被以随机顺序放入Draw Pile，然后draw。
+如果Discard Pile中也没有卡，draw效果无效。
+带有"Exhaust"的卡在打出后会被放入Exhaust Pile而不是Discard Pile。
+一些卡可以让你exhaust手牌，被exhaust的手牌同样会进入Exhaust Pile。
+类型为"Power"的卡在打出后不会出现在任何区域。
+
+关于Block：
+Block是角色或怪物在伤害影响其Health之前可以承受的攻击伤害量。Block通常在您的回合开始时被全部移除。一般来说，任何描述为"lose X Health"的卡或效果都会忽略Block。
+
+关于Energy：
+打出卡需要消耗Energy。Energy通常在您的回合结束时全部消失。
+
+关于各种Status的定义：
+1.Weak：Attack伤害减少25%，层数为持续回合数。(Weak状态影响公式：[攻击卡基础伤害] × (1 -0.25))
+2.Vulnerable：受到的伤害增加50%，层数为持续回合数。(Vulnerability状态影响公式：[攻击卡基础伤害] × (1 + 0.5))
+3.Strength：当Strength为X时每次Attack伤害+X。(Strength状态影响公式：[攻击卡基础伤害] +Strength)
+4.Frail：从卡牌中获得的Block减少25%，层数为持续回合数。(Block状态影响公式：[技能卡基础防御]  × (1-0.25))
+5.Poison：当层数为X时在回合开始时受到X点伤害，每个回合开始时层数-1。
+
+参考策略：
+1.如果你可以通过在本回合中eliminate Enemy结束战斗，优先eliminate Enemy。
+2.当Enemy Intent为Attack时，你应当通过Block尽可能减少自己可能受到的伤害。
+3.如果你可以通过在本回合中eliminate Enemy来避免受到伤害，优先eliminate Enemy而不是Block。
+4.无论何时你都需要考虑到当前自己和敌人的 Buff 和 Debuff 的影响。
+5.你当前的Energy是你本回合剩余的Energy，你可以利用这些Energy进行一回合的整体规划。例如当你发现用一回合的所有Energy可以eliminate一个Enemy就可以不用Block。
+6.保证自己不死的优先级高于所有其他操作。
+7.如果有多个Enemy，优先打击对你threat最大的或者可以在一回合内eliminate的。
+8.Negative effects与Positive effects的层数是其持续的回合数，你需要通过预计战斗持续的回合数来评估其对战略的影响。
+9.你需要精确计算每回合能造成的最大伤害，考虑卡牌打出顺序通过施加Vulnerable/Weak等Status带来的增/减益影响。
+10.所有Status从被施加的时刻起立即生效，不需要等到下一回合开始。
+11.计算对敌人造成的伤害时需要考虑Vulnerable造成的加伤影响和Weak造成的减伤影响。
+12. 伤害计算公式：
+   基础攻击伤害 = 卡牌描述伤害 + Strength加成
+   如果玩家存在虚弱，玩家攻击伤害=基础攻击伤害*0.75（向下取整）；否则玩家攻击伤害=基础攻击伤害。
+   如果敌人存在易伤，最终攻击伤害=玩家攻击伤害*1.5（向下取整）；否则最终攻击伤害=玩家攻击伤害。
+13. 精确击杀原则：当计算后伤害 ≥ 敌方当前生命值时，优先使用该攻击卡

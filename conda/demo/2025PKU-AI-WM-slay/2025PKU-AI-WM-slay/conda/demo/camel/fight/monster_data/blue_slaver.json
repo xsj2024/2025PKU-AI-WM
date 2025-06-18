@@ -1,0 +1,30 @@
+{
+  "name": "Blue Slaver",
+  "attributes": {
+    "hp": "46-50 48-52 7+",
+    "debut_act": "Act 1",
+    "in_party_with": "Act 1 Solo 1 Acid Slime (M) 1 Spike Slime (M) 1 Red Louse 1 Green Louse Act 2 Taskmaster + Red Slaver",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Stab",
+      "intent": "Aggressive - Sword",
+      "effect": "Deals 12 damage."
+    },
+    {
+      "name": "Rake",
+      "intent": "Attack Debuff",
+      "effect": "Deals 7 damage and applies 1 Weak ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/Slaver-blue-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "blue_slaver_appearance.png"
+    }
+  ]
+}

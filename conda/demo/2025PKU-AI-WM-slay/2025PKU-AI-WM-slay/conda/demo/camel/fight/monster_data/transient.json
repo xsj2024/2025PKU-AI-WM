@@ -1,0 +1,39 @@
+{
+  "name": "Transient",
+  "attributes": {
+    "hp": "999",
+    "debut_act": "Act 3",
+    "in_party_with": "None",
+    "powers": "Fading 5 + Shifting Fading 6 + Shifting (Ascension 17+)"
+  },
+  "moves": [
+    {
+      "name": "Attack",
+      "intent": "Attack - Sickle",
+      "effect": "Deals 40 + X*10 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b4/The_Transient.png/revision/latest",
+      "source": "main",
+      "local_image": "transient_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "fading",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d2/Icon_Fading.png/revision/latest",
+      "source": "variant",
+      "local_image": "transient_fading.png"
+    },
+    {
+      "type": "variant",
+      "name": "shifting",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/Icon_Shifting.png/revision/latest",
+      "source": "variant",
+      "local_image": "transient_shifting.png"
+    }
+  ]
+}

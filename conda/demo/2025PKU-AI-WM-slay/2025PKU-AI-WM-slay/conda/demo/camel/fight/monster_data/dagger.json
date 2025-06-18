@@ -1,0 +1,30 @@
+{
+  "name": "Dagger",
+  "attributes": {
+    "hp": "20-25",
+    "debut_act": "Act 3",
+    "in_party_with": "Reptomancer + Dagger",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Stab",
+      "intent": "Attack Debuff",
+      "effect": "Deal 9 damage and shuffle 1 Wound into the discard pile."
+    },
+    {
+      "name": "Explode",
+      "intent": "Intent Attack 6",
+      "effect": "Deal 25 damage. Dagger instantly dies after this attack."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/45/Dagger.png/revision/latest",
+      "source": "main",
+      "local_image": "dagger_appearance.png"
+    }
+  ]
+}

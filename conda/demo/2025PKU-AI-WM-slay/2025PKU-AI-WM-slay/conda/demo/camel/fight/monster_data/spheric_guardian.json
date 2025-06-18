@@ -1,0 +1,47 @@
+{
+  "name": "Spheric Guardian",
+  "attributes": {
+    "hp": "20 (+40 Block )",
+    "in_party_with": "Nothing Sentry 2 Shapes(Act 3)",
+    "debut_act": "Act 2",
+    "powers": "Barricade Artifact 3"
+  },
+  "moves": [
+    {
+      "name": "Slam",
+      "intent": "Attack intent 5",
+      "effect": "Deal 11 x 2 damage."
+    },
+    {
+      "name": "Activate",
+      "intent": "Defend",
+      "effect": "Gain 35 Block ."
+    },
+    {
+      "name": "Harden",
+      "intent": "Attack-Defend-Sword",
+      "effect": "Deal 11 damage, gain 15 Block ."
+    },
+    {
+      "name": "Attack/Debuff",
+      "intent": "Debuff - Sword",
+      "effect": "Deal 11 damage, apply 5 Frail ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/91/Spheric-guardian-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "spheric_guardian_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "barricade",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/af/Icon_Barricade.png/revision/latest",
+      "source": "variant",
+      "local_image": "spheric_guardian_barricade.png"
+    }
+  ]
+}

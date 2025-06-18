@@ -1,0 +1,16 @@
+{
+  "1": {
+    "type": "monster", 
+    "next": ["2", "3"],
+    "data": {"enemy": "Jaw Worm"}
+  },
+  "2": {
+    "type": "elite",
+    "next": ["4"],
+    "data": {"enemy": "Lagavulin"}
+  },
+  "meta": {
+    "act": 1,
+    "floors": 15
+  }
+}

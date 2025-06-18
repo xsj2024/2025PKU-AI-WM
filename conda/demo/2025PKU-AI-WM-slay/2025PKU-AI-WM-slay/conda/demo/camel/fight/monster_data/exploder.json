@@ -1,0 +1,37 @@
+{
+  "name": "Exploder",
+  "attributes": {
+    "hp": "30 30-35 (Ascension 7+)",
+    "in_party_with": "2 other Shapes 3 other Shapes Spheric Guardian and 1 other Shape",
+    "debut_act": "Act 3",
+    "powers": "Explode 3"
+  },
+  "moves": [
+    {
+      "name": "Slam",
+      "intent": "Attack Intent 2",
+      "effect": "Deal 11 damage."
+    },
+    {
+      "name": "Explode",
+      "intent": "Unknown",
+      "effect": "Dies and deals 30 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/Exploder-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "exploder_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "explode",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/07/Icon_Combust.png/revision/latest",
+      "source": "variant",
+      "local_image": "exploder_explode.png"
+    }
+  ]
+}

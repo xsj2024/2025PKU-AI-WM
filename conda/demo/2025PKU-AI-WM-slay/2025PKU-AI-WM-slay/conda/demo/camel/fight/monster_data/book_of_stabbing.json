@@ -1,0 +1,30 @@
+{
+  "name": "Book of Stabbing",
+  "attributes": {
+    "hp": "160-162 168-172 (Ascension 8+)",
+    "in_party_with": "None",
+    "debut_act": "Act 2",
+    "powers": "Painful Stabs"
+  },
+  "moves": [
+    {
+      "name": "Multi-Stab",
+      "intent": "Aggressive - Sword",
+      "effect": "Deals 7 x N** damage."
+    },
+    {
+      "name": "Single Stab",
+      "intent": "Attack intent 5",
+      "effect": "Deals 24 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b9/Book-of-stabbing-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "book_of_stabbing_appearance.png"
+    }
+  ]
+}

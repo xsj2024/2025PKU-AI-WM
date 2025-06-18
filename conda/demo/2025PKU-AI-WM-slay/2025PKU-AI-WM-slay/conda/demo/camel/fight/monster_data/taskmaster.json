@@ -1,0 +1,25 @@
+{
+  "name": "Taskmaster",
+  "attributes": {
+    "hp": "54-60 57-64 (Ascension 8+)",
+    "in_party_with": "Blue Slaver + Red Slaver Gremlin Nob ( The Colosseum event)",
+    "debut_act": "Act 2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Scouring Whip",
+      "intent": "Attack Debuff",
+      "effect": "Deal 7 damage, gain 1 Strength , and shuffle 3 Wounds into the discard pile."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/26/Slaver-leader-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "taskmaster_appearance.png"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "player_status": {
+    "energy": "3/3",
+    "health": "10 62/80",
+    "block": null,
+    "statuses": {},
+    "hand": [
+      {
+        "name": "Defend SE Gain 5 Block",
+        "type": "",
+        "cost": 1,
+        "effect": "1 Defend SE Gain 5 Block"
+      },
+      {
+        "name": "Strike Att",
+        "type": "Attack",
+        "cost": 1,
+        "effect": "1 Strike Att. Deal 6 damage"
+      },
+      {
+        "name": "Pummel Att",
+        "type": "Attack",
+        "cost": 1,
+        "effect": "1 Pummel Att. Deal 2 damage 4 times. Exhaust."
+      },
+      {
+        "name": "Defend SE Gain 5 Block",
+        "type": "",
+        "cost": 1,
+        "effect": "1 Defend SE Gain 5 Block"
+      },
+      {
+        "name": "Strike Att",
+        "type": "Attack",
+        "cost": 1,
+        "effect": "1 Strike Att. Deal 6 damage"
+      }
+    ]
+  },
+  "enemies": [
+    {
+      "name": "怪物1",
+      "health": null,
+      "block": 0,
+      "intent": "",
+      "statuses": {}
+    },
+    {
+      "name": "怪物2",
+      "health": null,
+      "block": 0,
+      "intent": "",
+      "statuses": {}
+    }
+  ]
+}

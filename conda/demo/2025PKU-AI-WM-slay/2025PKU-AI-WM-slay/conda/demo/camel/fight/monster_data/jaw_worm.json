@@ -1,0 +1,35 @@
+{
+  "name": "Jaw Worm",
+  "attributes": {
+    "hp": "40-44 42-46 7+",
+    "in_party_with": "Act 1 Solo 1 Louse 1 Acid Slime (M) 1 Spike Slime (M) Act 3 2 other Jaw Worms",
+    "debut_act": "Act 1",
+    "powers": "Act 1 None Act 3 Strength and Block from Bellow"
+  },
+  "moves": [
+    {
+      "name": "Chomp",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 11 damage."
+    },
+    {
+      "name": "Thrash",
+      "intent": "Attack Defend",
+      "effect": "Deal 7 damage, gain 5 Block ."
+    },
+    {
+      "name": "Bellow",
+      "intent": "Buff - Defend",
+      "effect": "Gain 3 Strength and 6 Block ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/Jaw-worm-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "jaw_worm_appearance.png"
+    }
+  ]
+}

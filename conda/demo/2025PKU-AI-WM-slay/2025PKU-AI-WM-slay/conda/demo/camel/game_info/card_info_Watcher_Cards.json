@@ -1,0 +1,752 @@
+[
+    {
+        "name": "Defend",
+        "url": "https://slay-the-spire.fandom.com/wiki/Defend_(Watcher)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Defend_P.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block.",
+        "local_image": "images_Watcher_Cards\\Defend.png"
+    },
+    {
+        "name": "Eruption",
+        "url": "https://slay-the-spire.fandom.com/wiki/Eruption",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/52/Eruption.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "2(1)",
+        "description": "Deal 9 damage. EnterWrath.",
+        "local_image": "images_Watcher_Cards\\Eruption.png"
+    },
+    {
+        "name": "Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Strike_(Watcher)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5e/Strike_P.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage.",
+        "local_image": "images_Watcher_Cards\\Strike.png"
+    },
+    {
+        "name": "Vigilance",
+        "url": "https://slay-the-spire.fandom.com/wiki/Vigilance",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d3/Vigilance.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Enter Calm. Gain 8(12)Block.",
+        "local_image": "images_Watcher_Cards\\Vigilance.png"
+    },
+    {
+        "name": "Bowling Bash",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bowling_Bash",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/BowlingBash.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(10) damage for each enemy in combat.",
+        "local_image": "images_Watcher_Cards\\Bowling Bash.png"
+    },
+    {
+        "name": "Consecrate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Consecrate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c2/Consecrate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 5(8) damage to ALL enemies.",
+        "local_image": "images_Watcher_Cards\\Consecrate.png"
+    },
+    {
+        "name": "Crescendo",
+        "url": "https://slay-the-spire.fandom.com/wiki/Crescendo",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b1/Crescendo.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Retain. EnterWrath.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Crescendo.png"
+    },
+    {
+        "name": "Crush Joints",
+        "url": "https://slay-the-spire.fandom.com/wiki/Crush_Joints",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/34/CrushJoints.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(10) damage. If the previous card played was a skill, apply 1(2)Vulnerable.",
+        "local_image": "images_Watcher_Cards\\Crush Joints.png"
+    },
+    {
+        "name": "Cut Through Fate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Cut_Through_Fate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a3/CutThroughFate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(9) damage.Scry2(3). Draw 1 card.",
+        "local_image": "images_Watcher_Cards\\Cut Through Fate.png"
+    },
+    {
+        "name": "Empty Body",
+        "url": "https://slay-the-spire.fandom.com/wiki/Empty_Body",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/EmptyBody.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 7(10)Block. Exit yourStance.",
+        "local_image": "images_Watcher_Cards\\Empty Body.png"
+    },
+    {
+        "name": "Empty Fist",
+        "url": "https://slay-the-spire.fandom.com/wiki/Empty_Fist",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/76/EmptyFist.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 9(14) damage. Exit yourStance.",
+        "local_image": "images_Watcher_Cards\\Empty Fist.png"
+    },
+    {
+        "name": "Evaluate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Evaluate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/59/Evaluate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 6(10)Block. Shuffle anInsightinto your draw pile.",
+        "local_image": "images_Watcher_Cards\\Evaluate.png"
+    },
+    {
+        "name": "Flurry of Blows",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flurry_of_Blows",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlurryOfBlows.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 4(6) damage. OnStancechange, returns from the Discard Pile into your hand.",
+        "local_image": "images_Watcher_Cards\\Flurry of Blows.png"
+    },
+    {
+        "name": "Flying Sleeves",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flying_Sleeves",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/77/FlyingSleeves.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Retain. Deal 4(6) damage twice.",
+        "local_image": "images_Watcher_Cards\\Flying Sleeves.png"
+    },
+    {
+        "name": "Follow-Up",
+        "url": "https://slay-the-spire.fandom.com/wiki/Follow-Up",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Follow-Up.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(11) damage. If the previous card played was an Attack, gain 1Energy.",
+        "local_image": "images_Watcher_Cards\\Follow-Up.png"
+    },
+    {
+        "name": "Halt",
+        "url": "https://slay-the-spire.fandom.com/wiki/Halt",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/Halt.png/revision/latest/scale-to-width-down/153",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 3(4)Block.Wrath: Gain 9(14) additionalBlock.",
+        "local_image": "images_Watcher_Cards\\Halt.png"
+    },
+    {
+        "name": "Just Lucky",
+        "url": "https://slay-the-spire.fandom.com/wiki/Just_Lucky",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/6d/JustLucky.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Scry1(2). Gain 2(3)Block. Deal 3(4) damage.",
+        "local_image": "images_Watcher_Cards\\Just Lucky.png"
+    },
+    {
+        "name": "Pressure Points",
+        "url": "https://slay-the-spire.fandom.com/wiki/Pressure_Points",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4f/PressurePoints.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Apply 8(11) Mark. ALL enemies lose HP equal to their Mark.",
+        "local_image": "images_Watcher_Cards\\Pressure Points.png"
+    },
+    {
+        "name": "Prostrate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Prostrate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Prostrate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 2(3)Mantra. Gain 4Block.",
+        "local_image": "images_Watcher_Cards\\Prostrate.png"
+    },
+    {
+        "name": "Protect",
+        "url": "https://slay-the-spire.fandom.com/wiki/Protect",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f6/Protect.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Retain. Gain 12(16)Block.",
+        "local_image": "images_Watcher_Cards\\Protect.png"
+    },
+    {
+        "name": "Sash Whip",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sash_Whip",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4a/SashWhip.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(10) damage. If the last card played this combat was an Attack, apply 1(2)Weak.",
+        "local_image": "images_Watcher_Cards\\Sash Whip.png"
+    },
+    {
+        "name": "Third Eye",
+        "url": "https://slay-the-spire.fandom.com/wiki/Third_Eye",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fc/ThirdEye.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 7(9)Block.Scry3(5).",
+        "local_image": "images_Watcher_Cards\\Third Eye.png"
+    },
+    {
+        "name": "Tranquility",
+        "url": "https://slay-the-spire.fandom.com/wiki/Tranquility",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ee/Tranquility.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Retain. EnterCalm.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Tranquility.png"
+    },
+    {
+        "name": "Battle Hymn",
+        "url": "https://slay-the-spire.fandom.com/wiki/Battle_Hymn",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/67/BattleHymn.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.) At the start of each turn add aSmiteinto your hand.",
+        "local_image": "images_Watcher_Cards\\Battle Hymn.png"
+    },
+    {
+        "name": "Carve Reality",
+        "url": "https://slay-the-spire.fandom.com/wiki/Carve_Reality",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/CarveReality.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(10) damage. Add aSmiteinto your hand.",
+        "local_image": "images_Watcher_Cards\\Carve Reality.png"
+    },
+    {
+        "name": "Collect",
+        "url": "https://slay-the-spire.fandom.com/wiki/Collect",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Collect.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Put anMiracle+into your hand at the start of your next X(+1) turns.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Collect.png"
+    },
+    {
+        "name": "Conclude",
+        "url": "https://slay-the-spire.fandom.com/wiki/Conclude",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e1/Conclude.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 12(16) damage to ALL enemies. End your turn.",
+        "local_image": "images_Watcher_Cards\\Conclude.png"
+    },
+    {
+        "name": "Deceive Reality",
+        "url": "https://slay-the-spire.fandom.com/wiki/Deceive_Reality",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/DeceiveReality.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 4(7)Block. Add aSafetyto your hand.",
+        "local_image": "images_Watcher_Cards\\Deceive Reality.png"
+    },
+    {
+        "name": "Empty Mind",
+        "url": "https://slay-the-spire.fandom.com/wiki/Empty_Mind",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/35/EmptyMind.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Exit yourStance. Draw 2(3) cards.",
+        "local_image": "images_Watcher_Cards\\Empty Mind.png"
+    },
+    {
+        "name": "Fasting",
+        "url": "https://slay-the-spire.fandom.com/wiki/Fasting",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fb/Fasting.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "2",
+        "description": "Gain 3(4)Strength. Gain 3(4)Dexterity. Gain 1 lessEnergyat the start of each turn.",
+        "local_image": "images_Watcher_Cards\\Fasting.png"
+    },
+    {
+        "name": "Fear No Evil",
+        "url": "https://slay-the-spire.fandom.com/wiki/Fear_No_Evil",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/49/FearNoEvil.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(11) damage. If the enemy intends to Attack, enterCalm.",
+        "local_image": "images_Watcher_Cards\\Fear No Evil.png"
+    },
+    {
+        "name": "Foreign Influence",
+        "url": "https://slay-the-spire.fandom.com/wiki/Foreign_Influence",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/ForeignInfluence.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Choose 1 of 3 Attacks of any color to add to your hand. (It costs 0 this turn.)Exhaust.",
+        "local_image": "images_Watcher_Cards\\Foreign Influence.png"
+    },
+    {
+        "name": "Foresight",
+        "url": "https://slay-the-spire.fandom.com/wiki/Foresight",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e5/Foresight.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the start of your turn,Scry3(4).",
+        "local_image": "images_Watcher_Cards\\Foresight.png"
+    },
+    {
+        "name": "Indignation",
+        "url": "https://slay-the-spire.fandom.com/wiki/Indignation",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8b/Indignation.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "If you are inWrath, apply 3(5)Vulnerableto ALL enemies, otherwise enterWrath.",
+        "local_image": "images_Watcher_Cards\\Indignation.png"
+    },
+    {
+        "name": "Inner Peace",
+        "url": "https://slay-the-spire.fandom.com/wiki/Inner_Peace",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8f/InnerPeace.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "If you are inCalm, draw 3(4) cards, otherwise EnterCalm.",
+        "local_image": "images_Watcher_Cards\\Inner Peace.png"
+    },
+    {
+        "name": "Like Water",
+        "url": "https://slay-the-spire.fandom.com/wiki/Like_Water",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/99/LikeWater.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the end of your turn, if you are inCalm, gain 5(7)Block.",
+        "local_image": "images_Watcher_Cards\\Like Water.png"
+    },
+    {
+        "name": "Meditate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Meditate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/61/Meditate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Put 1(2) card(s) from your discard pile into your hand andRetainit. EnterCalm. End your turn.",
+        "local_image": "images_Watcher_Cards\\Meditate.png"
+    },
+    {
+        "name": "Mental Fortress",
+        "url": "https://slay-the-spire.fandom.com/wiki/Mental_Fortress",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c1/MentalFortress.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you switchStances, gain 4(6)Block.",
+        "local_image": "images_Watcher_Cards\\Mental Fortress.png"
+    },
+    {
+        "name": "Nirvana",
+        "url": "https://slay-the-spire.fandom.com/wiki/Nirvana",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/37/Nirvana.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever youScry, gain 3(4)Block.",
+        "local_image": "images_Watcher_Cards\\Nirvana.png"
+    },
+    {
+        "name": "Perseverance",
+        "url": "https://slay-the-spire.fandom.com/wiki/Perseverance",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7f/Perseverance.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Retain. Gain 5(7)Block. Whenever this card isRetained, increase itsBlockby 2(3).",
+        "local_image": "images_Watcher_Cards\\Perseverance.png"
+    },
+    {
+        "name": "Pray",
+        "url": "https://slay-the-spire.fandom.com/wiki/Pray",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Pray.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 3(4)Mantra. Shuffle anInsightinto your draw pile.",
+        "local_image": "images_Watcher_Cards\\Pray.png"
+    },
+    {
+        "name": "Reach Heaven",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reach_Heaven",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8d/ReachHeaven.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 10(15) damage. Shuffle aThrough Violenceinto your draw pile.",
+        "local_image": "images_Watcher_Cards\\Reach Heaven.png"
+    },
+    {
+        "name": "Rushdown",
+        "url": "https://slay-the-spire.fandom.com/wiki/Rushdown",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e8/Rushdown.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1(0)",
+        "description": "Whenever you enterWrath, draw 2 cards.",
+        "local_image": "images_Watcher_Cards\\Rushdown.png"
+    },
+    {
+        "name": "Sanctity",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sanctity",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/71/Sanctity.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 6(9)Block. If the previous card played was a Skill, draw 2 card.",
+        "local_image": "images_Watcher_Cards\\Sanctity.png"
+    },
+    {
+        "name": "Sands of Time",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sands_of_Time",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/SandsofTime.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "4",
+        "description": "Retain. Deal 20(26) damage. Whenever this card isRetained, lower its cost by 1.",
+        "local_image": "images_Watcher_Cards\\Sands of Time.png"
+    },
+    {
+        "name": "Signature Move",
+        "url": "https://slay-the-spire.fandom.com/wiki/Signature_Move",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a4/SignatureMove.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Can only be played if this is the only attack in your hand. Deal 30(40) damage.",
+        "local_image": "images_Watcher_Cards\\Signature Move.png"
+    },
+    {
+        "name": "Simmering Fury",
+        "url": "https://slay-the-spire.fandom.com/wiki/Simmering_Fury",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/06/SimmeringFury.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "At the start of your next turn, enterWrathand draw 2(3) cards.",
+        "local_image": "images_Watcher_Cards\\Simmering Fury.png"
+    },
+    {
+        "name": "Study",
+        "url": "https://slay-the-spire.fandom.com/wiki/Study",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/26/Study.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "2(1)",
+        "description": "At the end of your turn, shuffle anInsightinto your draw pile.",
+        "local_image": "images_Watcher_Cards\\Study.png"
+    },
+    {
+        "name": "Swivel",
+        "url": "https://slay-the-spire.fandom.com/wiki/Swivel",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/21/Swivel.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 8(11)Block. The next Attack you play costs 0.",
+        "local_image": "images_Watcher_Cards\\Swivel.png"
+    },
+    {
+        "name": "Talk to the Hand",
+        "url": "https://slay-the-spire.fandom.com/wiki/Talk_to_the_Hand",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f8/TalktotheHand.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 5(7) damage. Whenever you attack this enemy, gain 2(3)Block.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Talk to the Hand.png"
+    },
+    {
+        "name": "Tantrum",
+        "url": "https://slay-the-spire.fandom.com/wiki/Tantrum",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b3/Tantrum.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 3 damage 3(4) times. EnterWrath. Shuffle this card into your draw pile.",
+        "local_image": "images_Watcher_Cards\\Tantrum.png"
+    },
+    {
+        "name": "Wallop",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wallop",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/27/Wallop.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 9(12) damage. GainBlockequal to unblocked damage dealt.",
+        "local_image": "images_Watcher_Cards\\Wallop.png"
+    },
+    {
+        "name": "Wave of the Hand",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wave_of_the_Hand",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e7/WaveoftheHand.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Whenever you gainBlockthis turn, apply 1(2)Weakto ALL enemies.",
+        "local_image": "images_Watcher_Cards\\Wave of the Hand.png"
+    },
+    {
+        "name": "Weave",
+        "url": "https://slay-the-spire.fandom.com/wiki/Weave",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/63/Weave.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 4(6) damage. Whenever youScry, return this from the discard pile to your Hand.",
+        "local_image": "images_Watcher_Cards\\Weave.png"
+    },
+    {
+        "name": "Wheel Kick",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wheel_Kick",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/86/WheelKick.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 15(20) damage. Draw 2 cards.",
+        "local_image": "images_Watcher_Cards\\Wheel Kick.png"
+    },
+    {
+        "name": "Windmill Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Windmill_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/aa/WindmillStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Retain. Deal 7(10) damage. Whenever this card isRetained, increase its damage by 4(5).",
+        "local_image": "images_Watcher_Cards\\Windmill Strike.png"
+    },
+    {
+        "name": "Worship",
+        "url": "https://slay-the-spire.fandom.com/wiki/Worship",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d4/Worship.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "(Retain.) Gain 5Mantra.",
+        "local_image": "images_Watcher_Cards\\Worship.png"
+    },
+    {
+        "name": "Wreath of Flame",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wreath_of_Flame",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d8/WreathofFlame.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Your next Attack deals 5(8) additional damage.",
+        "local_image": "images_Watcher_Cards\\Wreath of Flame.png"
+    },
+    {
+        "name": "Alpha",
+        "url": "https://slay-the-spire.fandom.com/wiki/Alpha",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/Alpha.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "(Innate.) Shuffle aBetainto your draw pile.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Alpha.png"
+    },
+    {
+        "name": "Blasphemy",
+        "url": "https://slay-the-spire.fandom.com/wiki/Blasphemy",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/22/Blasphemy.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "(Retain.) EnterDivinity. Die next turn.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Blasphemy.png"
+    },
+    {
+        "name": "Brilliance",
+        "url": "https://slay-the-spire.fandom.com/wiki/Brilliance",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/Brilliance.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 12(16) damage. Deals additional damage for allMantragained this combat.",
+        "local_image": "images_Watcher_Cards\\Brilliance.png"
+    },
+    {
+        "name": "Conjure Blade",
+        "url": "https://slay-the-spire.fandom.com/wiki/Conjure_Blade",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/35/ConjureBlade.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Shuffle anExpungerwith X(+1) into your draw pile.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Conjure Blade.png"
+    },
+    {
+        "name": "Deus Ex Machina",
+        "url": "https://slay-the-spire.fandom.com/wiki/Deus_Ex_Machina",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/DeusExMachina.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "Unplayable",
+        "description": "Unplayable. When you draw this card, add 2(3)Miraclesinto your hand.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Deus Ex Machina.png"
+    },
+    {
+        "name": "Deva Form",
+        "url": "https://slay-the-spire.fandom.com/wiki/Deva_Form",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/DevaForm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3",
+        "description": "Ethereal. At the start of your turn, gainEnergyand increase this gain by 1. (notEthereal.)",
+        "local_image": "images_Watcher_Cards\\Deva Form.png"
+    },
+    {
+        "name": "Devotion",
+        "url": "https://slay-the-spire.fandom.com/wiki/Devotion",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4b/Devotion.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the start of your turn, gain 2(3)Mantra.",
+        "local_image": "images_Watcher_Cards\\Devotion.png"
+    },
+    {
+        "name": "Establishment",
+        "url": "https://slay-the-spire.fandom.com/wiki/Establishment",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Establishment.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.) Whenever a card isRetained, lower its cost by 1.",
+        "local_image": "images_Watcher_Cards\\Establishment.png"
+    },
+    {
+        "name": "Judgment",
+        "url": "https://slay-the-spire.fandom.com/wiki/Judgment",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/15/Judgment.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "If the enemy has 30(40) or less HP, set their HP to 0.",
+        "local_image": "images_Watcher_Cards\\Judgment.png"
+    },
+    {
+        "name": "Lesson Learned",
+        "url": "https://slay-the-spire.fandom.com/wiki/Lesson_Learned",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/38/LessonLearned.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 10(13) damage. IfFatal,Upgradea random card in your deck.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Lesson Learned.png"
+    },
+    {
+        "name": "Master Reality",
+        "url": "https://slay-the-spire.fandom.com/wiki/Master_Reality",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c8/MasterReality.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1(0)",
+        "description": "Whenever a card is created during combat,Upgradeit.",
+        "local_image": "images_Watcher_Cards\\Master Reality.png"
+    },
+    {
+        "name": "Omniscience",
+        "url": "https://slay-the-spire.fandom.com/wiki/Omniscience",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a1/Omniscience.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "4(3)",
+        "description": "Choose a card in your draw pile. Play the chosen card twice and Exhaust it. Exhaust.",
+        "local_image": "images_Watcher_Cards\\Omniscience.png"
+    },
+    {
+        "name": "Ragnarok",
+        "url": "https://slay-the-spire.fandom.com/wiki/Ragnarok",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/68/Ragnarok.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "3",
+        "description": "Deal 5(6) damage to a random enemy 5(6) times.",
+        "local_image": "images_Watcher_Cards\\Ragnarok.png"
+    },
+    {
+        "name": "Scrawl",
+        "url": "https://slay-the-spire.fandom.com/wiki/Scrawl",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/df/Scrawl.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Draw cards until your hand is full.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Scrawl.png"
+    },
+    {
+        "name": "Spirit Shield",
+        "url": "https://slay-the-spire.fandom.com/wiki/Spirit_Shield",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/52/SpiritShield.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Gain 3(4)Blockfor each card in your hand.",
+        "local_image": "images_Watcher_Cards\\Spirit Shield.png"
+    },
+    {
+        "name": "Vault",
+        "url": "https://slay-the-spire.fandom.com/wiki/Vault",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c9/Vault.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "3(2)",
+        "description": "Take an extra turn after this one. End your turn.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Vault.png"
+    },
+    {
+        "name": "Wish",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wish",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f3/Wish.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "3",
+        "description": "Choose one: Gain 6(8)Plated Armor, 3(4)Strength, or 25(30) Gold.Exhaust.",
+        "local_image": "images_Watcher_Cards\\Wish.png"
+    }
+]

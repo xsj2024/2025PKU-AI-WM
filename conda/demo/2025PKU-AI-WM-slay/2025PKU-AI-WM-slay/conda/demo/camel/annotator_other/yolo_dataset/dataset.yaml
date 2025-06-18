@@ -1,0 +1,8 @@
+path: F:\AIJiChuZuoYe\mytest\annotator_scene\yolo_dataset
+train: images
+val: images
+names:
+  0: bottom_prompt
+  1: hand_card
+  2: upgraded
+  3: cost

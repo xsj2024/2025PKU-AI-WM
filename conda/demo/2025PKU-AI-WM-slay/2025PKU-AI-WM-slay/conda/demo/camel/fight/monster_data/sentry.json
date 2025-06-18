@@ -1,0 +1,30 @@
+{
+  "name": "Sentry",
+  "attributes": {
+    "hp": "38-42 39-45 (Ascension 8+)",
+    "in_party_with": "Act 1 - 2 other Sentries; Act 2 - Spheric Guardian",
+    "debut_act": "1 + 2",
+    "powers": "Artifact 1"
+  },
+  "moves": [
+    {
+      "name": "Beam",
+      "intent": "Attack Intent 2",
+      "effect": "Deal 10 damage."
+    },
+    {
+      "name": "Bolt",
+      "intent": "Debuff1",
+      "effect": "Shuffles 3 Dazed into the discard pile."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5f/Sentry-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "sentry_appearance.png"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Red Louse",
+  "attributes": {
+    "hp": "10-15 11-16 7+",
+    "in_party_with": "Act 1 1 other Louse 2 other Louses 1 Cultist 1 Looter 1 Blue Slaver 1 Red Slaver 1 Jaw Worm 1 Fungi Beast",
+    "debut_act": "Act 1",
+    "powers": "Curl Up 3-7 Curl Up 4-8 7+ Curl Up 9-12 17+"
+  },
+  "moves": [
+    {
+      "name": "Bite",
+      "intent": "Attack Intent 2",
+      "effect": "Deals D damage."
+    },
+    {
+      "name": "Grow",
+      "intent": "Buff",
+      "effect": "Gains 3 Strength ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/ae/Louse-red-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "red_louse_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "curl_up",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fc/Icon_CurlUp.png/revision/latest",
+      "source": "variant",
+      "local_image": "red_louse_curl_up.png"
+    }
+  ]
+}

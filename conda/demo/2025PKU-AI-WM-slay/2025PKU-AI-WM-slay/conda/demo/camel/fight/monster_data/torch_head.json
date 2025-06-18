@@ -1,0 +1,25 @@
+{
+  "name": "Torch Head",
+  "attributes": {
+    "hp": "38-40 40-45 9+",
+    "in_party_with": "Only summoned by The Collector",
+    "debut_act": "Act 2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Tackle",
+      "intent": "Attack Intent 2",
+      "effect": "Deals 7 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/02/Torchhead.png/revision/latest",
+      "source": "main",
+      "local_image": "torch_head_appearance.png"
+    }
+  ]
+}

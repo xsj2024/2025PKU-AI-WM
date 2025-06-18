@@ -1,0 +1,30 @@
+{
+  "name": "Spike Slime (M)",
+  "attributes": {
+    "hp": "28-32 29-34 7+",
+    "in_party_with": "Act 1 1 Spike Slime (S) 1 Blue Slaver 1 Red Slaver 1 Cultist 1 Looter 1 Jaw Worm 1 Fungi Beast",
+    "debut_act": "Act 1",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Flame Tackle",
+      "intent": "Attack Debuff",
+      "effect": "Deals 8 damage, shuffles 1 Slimed into the discard pile."
+    },
+    {
+      "name": "Lick",
+      "intent": "Debuff1",
+      "effect": "Inflicts 1 Frail ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/Spike_Slime_M.png/revision/latest",
+      "source": "main",
+      "local_image": "spike_slime_(m)_appearance.png"
+    }
+  ]
+}

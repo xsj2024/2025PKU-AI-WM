@@ -1,0 +1,19 @@
+{
+  "archetype_preferences": {
+    "Shiv": {"win_rate": 0.65, "signatures": ["a1b2c3..."]},
+    "Poison": {"win_rate": 0.58, "signatures": ["x9y8z7..."]}
+  },
+  "card_evaluations": {
+    "Corruption": {
+      "positive": 12,
+      "negative": 3,
+      "score": 0.8,
+      "last_chosen": "2024-03-15T14:30:00"
+    }
+  },
+  "player_stats": {
+    "win_rate": 0.42,
+    "avg_floor": 32.7,
+    "run_count": 50
+  }
+}
