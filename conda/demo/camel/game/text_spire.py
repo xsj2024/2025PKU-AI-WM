@@ -144,7 +144,7 @@ class TextSlayTheSpire:
 
 if __name__ == '__main__':
     from annotator.config import Config
-
+    print("Starting Text-based Slay the Spire...")
     # hwnd = win32gui.FindWindow(None, Config.GAME_WINDOW_TITLE)
     # win32gui.SetForegroundWindow(hwnd)
     activate_game_window()
