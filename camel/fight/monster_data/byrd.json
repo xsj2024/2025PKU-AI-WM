@@ -1,0 +1,59 @@
+{
+  "name": "Byrd",
+  "attributes": {
+    "hp": "25-31 26-33 7+",
+    "debut_act": "2",
+    "in_party_with": "2 other Byrds Chosen",
+    "powers": "Flying 3 Flying 4 17+"
+  },
+  "moves": [
+    {
+      "name": "Caw",
+      "intent": "Buff",
+      "effect": "Gains 1 Strength ."
+    },
+    {
+      "name": "Peck",
+      "intent": "Attack Intent 2",
+      "effect": "Deals 1x5 damage."
+    },
+    {
+      "name": "Swoop",
+      "intent": "Aggressive - Sword",
+      "effect": "Deals 12 damage"
+    },
+    {
+      "name": "Fly",
+      "intent": "Unknown",
+      "effect": "Gains Flying 3."
+    },
+    {
+      "name": "Headbutt",
+      "intent": "Attack intent 1",
+      "effect": "Deals 3 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "state",
+      "name": "flying",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Byrd.png/revision/latest",
+      "source": "tabber",
+      "local_image": "byrd_flying.png"
+    },
+    {
+      "type": "state",
+      "name": "grounded",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/60/Byrd_Grounded.png/revision/latest",
+      "source": "tabber",
+      "local_image": "byrd_grounded.png"
+    },
+    {
+      "type": "variant",
+      "name": "flying",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ea/Icon_Flight.png/revision/latest",
+      "source": "variant",
+      "local_image": "byrd_flying.png"
+    }
+  ]
+}

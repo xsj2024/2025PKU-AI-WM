@@ -1,0 +1,42 @@
+{
+  "name": "Gremlin Nob",
+  "attributes": {
+    "hp": "82-86 85-90 8+",
+    "in_party_with": "Act 1 Solo Act 2 1 Taskmaster The Colosseum",
+    "debut_act": "Act 1",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Bellow",
+      "intent": "Buff",
+      "effect": "Gains 2 Enrage ."
+    },
+    {
+      "name": "Rush",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 14 damage."
+    },
+    {
+      "name": "Skull Bash",
+      "intent": "Attack Debuff",
+      "effect": "Deal 6 damage and apply 2 Vulnerable ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3b/Gremlin-nob-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "gremlin_nob_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "enrage",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d0/Icon_Rage.png/revision/latest",
+      "source": "variant",
+      "local_image": "gremlin_nob_enrage.png"
+    }
+  ]
+}

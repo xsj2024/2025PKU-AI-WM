@@ -1,0 +1,35 @@
+{
+  "name": "Giant Head",
+  "attributes": {
+    "hp": "500 520 8+",
+    "in_party_with": "None",
+    "debut_act": "Act 3",
+    "powers": "Slow"
+  },
+  "moves": [
+    {
+      "name": "Count",
+      "intent": "Aggressive - Sword",
+      "effect": "Deals 13 damage."
+    },
+    {
+      "name": "Glare",
+      "intent": "Debuff1",
+      "effect": "Applies 1 Weak ."
+    },
+    {
+      "name": "It Is Time",
+      "intent": "Attack - Sickle",
+      "effect": "Deals 40 + T* damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/Giant-head-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "giant_head_appearance.png"
+    }
+  ]
+}

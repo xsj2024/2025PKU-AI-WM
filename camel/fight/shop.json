@@ -1,0 +1,38 @@
+{
+  "cards": [
+    [
+      "1",
+      "Flash of Steel",
+      83
+    ],
+    [
+      "2",
+      "Magnetism",
+      173
+    ],
+    [
+      "3",
+      "Warcry",
+      54
+    ],
+    [
+      "8",
+      "Entrench",
+      76
+    ],
+    [
+      "10",
+      "Inflame",
+      76
+    ]
+  ],
+  "relics": [],
+  "potions": [],
+  "remove_cost": [
+    "11",
+    75
+  ],
+  "leave": [
+    "12"
+  ]
+}

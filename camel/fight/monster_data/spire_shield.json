@@ -1,0 +1,35 @@
+{
+  "name": "Spire Shield",
+  "attributes": {
+    "hp": "110 125 8+",
+    "in_party_with": "Spire Spear",
+    "debut_act": "4",
+    "powers": "Artifact 1 Artifact 2 (Ascension 18+)"
+  },
+  "moves": [
+    {
+      "name": "Bash",
+      "intent": "Debuff - Sword",
+      "effect": "Deals 14 damage. If the player has at least 1 Orb slot, has a 50% chance to apply -1 Focus . Otherwise, applies -1 Strength ."
+    },
+    {
+      "name": "Fortify",
+      "intent": "Defend",
+      "effect": "All enemies gain 30 Block ."
+    },
+    {
+      "name": "Smash",
+      "intent": "Attack-Defend-Sickle",
+      "effect": "Deals 38 damage. Gains 99 Block ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d6/SpireShield.png/revision/latest",
+      "source": "main",
+      "local_image": "spire_shield_appearance.png"
+    }
+  ]
+}

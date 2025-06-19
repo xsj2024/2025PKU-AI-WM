@@ -1,0 +1,482 @@
+[
+    {
+        "name": "Bandage Up",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bandage_Up",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4e/BandageUp.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Heal 4(6) HP.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Bandage Up.png"
+    },
+    {
+        "name": "Blind",
+        "url": "https://slay-the-spire.fandom.com/wiki/Blind",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/68/Blind.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Apply 2Weak(to ALL enemies).",
+        "local_image": "images_Colorless_Cards\\Blind.png"
+    },
+    {
+        "name": "Dark Shackles",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dark_Shackles",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/79/DarkShackles.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Enemy loses 9(15)Strengthfor the rest of this turn.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Dark Shackles.png"
+    },
+    {
+        "name": "Deep Breath",
+        "url": "https://slay-the-spire.fandom.com/wiki/Deep_Breath",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/62/DeepBreath.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Shuffle your discard pile into your draw pile.Draw 1(2) card(s).",
+        "local_image": "images_Colorless_Cards\\Deep Breath.png"
+    },
+    {
+        "name": "Discovery",
+        "url": "https://slay-the-spire.fandom.com/wiki/Discovery",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Discovery.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Choose 1 of 3 random cards to add to your hand. It costs 0 this turn.Exhaust. (Don'tExhaust.)",
+        "local_image": "images_Colorless_Cards\\Discovery.png"
+    },
+    {
+        "name": "Dramatic Entrance",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dramatic_Entrance",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/42/DramaticEntrance.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Innate.Deal 8(12) damage to ALL enemies.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Dramatic Entrance.png"
+    },
+    {
+        "name": "Enlightenment",
+        "url": "https://slay-the-spire.fandom.com/wiki/Enlightenment",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fa/Enlightenment.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Reduce the cost of cards in your hand to 1 this turn(combat).",
+        "local_image": "images_Colorless_Cards\\Enlightenment.png"
+    },
+    {
+        "name": "Finesse",
+        "url": "https://slay-the-spire.fandom.com/wiki/Finesse",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/67/Finesse.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 2(4)Block.Draw 1 card.",
+        "local_image": "images_Colorless_Cards\\Finesse.png"
+    },
+    {
+        "name": "Flash of Steel",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flash_of_Steel",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9c/FlashofSteel.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 3(6) damage.Draw 1 card.",
+        "local_image": "images_Colorless_Cards\\Flash of Steel.png"
+    },
+    {
+        "name": "Forethought",
+        "url": "https://slay-the-spire.fandom.com/wiki/Forethought",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/Forethought.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Place a card(any number of cards) from your hand on the bottom of your draw pile. It (They) costs 0 until played.",
+        "local_image": "images_Colorless_Cards\\Forethought.png"
+    },
+    {
+        "name": "Good Instincts",
+        "url": "https://slay-the-spire.fandom.com/wiki/Good_Instincts",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/GoodInstincts.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 6(9)Block.",
+        "local_image": "images_Colorless_Cards\\Good Instincts.png"
+    },
+    {
+        "name": "Impatience",
+        "url": "https://slay-the-spire.fandom.com/wiki/Impatience",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/Impatience.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "If you have noAttackcards in your hand, draw 2(3) cards.",
+        "local_image": "images_Colorless_Cards\\Impatience.png"
+    },
+    {
+        "name": "Jack Of All Trades",
+        "url": "https://slay-the-spire.fandom.com/wiki/Jack_Of_All_Trades",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d9/JackOfAllTrades.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Add 1(2) random Colorless card(s) to your hand.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Jack Of All Trades.png"
+    },
+    {
+        "name": "Madness",
+        "url": "https://slay-the-spire.fandom.com/wiki/Madness",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ee/Madness.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "A random card in your hand costs 0 for the rest of combat.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Madness.png"
+    },
+    {
+        "name": "Mind Blast",
+        "url": "https://slay-the-spire.fandom.com/wiki/Mind_Blast",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/26/MindBlast.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2(1)",
+        "description": "Innate.Deal damage equal to the number of cards in your draw pile.",
+        "local_image": "images_Colorless_Cards\\Mind Blast.png"
+    },
+    {
+        "name": "Panacea",
+        "url": "https://slay-the-spire.fandom.com/wiki/Panacea",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/37/Panacea.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 1(2)Artifact.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Panacea.png"
+    },
+    {
+        "name": "Panic Button",
+        "url": "https://slay-the-spire.fandom.com/wiki/Panic_Button",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/08/PanicButton.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 30(40)Block. You cannot gainBlockfrom cards for the next 2 turns.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Panic Button.png"
+    },
+    {
+        "name": "Purity",
+        "url": "https://slay-the-spire.fandom.com/wiki/Purity",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Purity.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Choose andExhaust3(5) cards in your hand.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Purity.png"
+    },
+    {
+        "name": "Swift Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Swift_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8b/SwiftStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 7(10) damage.",
+        "local_image": "images_Colorless_Cards\\Swift Strike.png"
+    },
+    {
+        "name": "Trip",
+        "url": "https://slay-the-spire.fandom.com/wiki/Trip",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cf/Trip.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Apply 2Vulnerable(to ALL enemies).",
+        "local_image": "images_Colorless_Cards\\Trip.png"
+    },
+    {
+        "name": "Apotheosis",
+        "url": "https://slay-the-spire.fandom.com/wiki/Apotheosis",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/93/Apotheosis.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2(1)",
+        "description": "UpgradeALL of your cards for the rest of combat.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Apotheosis.png"
+    },
+    {
+        "name": "Chrysalis",
+        "url": "https://slay-the-spire.fandom.com/wiki/Chrysalis",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/01/Chrysalis.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Add 3(5) randomSkillsinto your Draw Pile. They cost 0 this combat.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Chrysalis.png"
+    },
+    {
+        "name": "Hand of Greed",
+        "url": "https://slay-the-spire.fandom.com/wiki/Hand_of_Greed",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/HandOfGreed.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 20(25) damage. If this kills a non-minion enemy, gain 20(25) Gold.",
+        "local_image": "images_Colorless_Cards\\Hand of Greed.png"
+    },
+    {
+        "name": "Magnetism",
+        "url": "https://slay-the-spire.fandom.com/wiki/Magnetism",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8d/Magnetism.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2(1)",
+        "description": "At the start of each turn, add a random colorless card to your hand.",
+        "local_image": "images_Colorless_Cards\\Magnetism.png"
+    },
+    {
+        "name": "Master Of Strategy",
+        "url": "https://slay-the-spire.fandom.com/wiki/Master_Of_Strategy",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/33/MasterOfStrategy.png/revision/latest/scale-to-width-down/153",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 3(4) cards.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Master Of Strategy.png"
+    },
+    {
+        "name": "Mayhem",
+        "url": "https://slay-the-spire.fandom.com/wiki/Mayhem",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/dd/Mayhem.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2(1)",
+        "description": "At the start of your turn, play the top card of your draw pile.",
+        "local_image": "images_Colorless_Cards\\Mayhem.png"
+    },
+    {
+        "name": "Metamorphosis",
+        "url": "https://slay-the-spire.fandom.com/wiki/Metamorphosis",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4e/Metamorphosis.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Add 3(5) randomAttacksinto your Draw Pile. They cost 0 this combat.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Metamorphosis.png"
+    },
+    {
+        "name": "Panache",
+        "url": "https://slay-the-spire.fandom.com/wiki/Panache",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/19/Panache.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "0",
+        "description": "Every time you play 5 cards in a single turn, deal 10(14) damage to ALL enemies.",
+        "local_image": "images_Colorless_Cards\\Panache.png"
+    },
+    {
+        "name": "Sadistic Nature",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sadistic_Nature",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a8/SadisticNature.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "0",
+        "description": "Whenever you apply aDebuffto an enemy, they take 5(7) damage.",
+        "local_image": "images_Colorless_Cards\\Sadistic Nature.png"
+    },
+    {
+        "name": "Secret Technique",
+        "url": "https://slay-the-spire.fandom.com/wiki/Secret_Technique",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/SecretTechnique.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Choose aSkillfrom your draw pile and place it into your hand.Exhaust. (Don'tExhaust)",
+        "local_image": "images_Colorless_Cards\\Secret Technique.png"
+    },
+    {
+        "name": "Secret Weapon",
+        "url": "https://slay-the-spire.fandom.com/wiki/Secret_Weapon",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5a/SecretWeapon.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Choose anAttackfrom your draw pile and place it into your hand.Exhaust. (Don'tExhaust)",
+        "local_image": "images_Colorless_Cards\\Secret Weapon.png"
+    },
+    {
+        "name": "The Bomb",
+        "url": "https://slay-the-spire.fandom.com/wiki/The_Bomb",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/69/TheBomb.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "At the end of 3 turns, deal 40(50) damage to ALL enemies.",
+        "local_image": "images_Colorless_Cards\\The Bomb.png"
+    },
+    {
+        "name": "Thinking Ahead",
+        "url": "https://slay-the-spire.fandom.com/wiki/Thinking_Ahead",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0c/ThinkingAhead.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 2 cards. Place a card from your hand on top of your draw pile.Exhaust.(Don'tExhaust)",
+        "local_image": "images_Colorless_Cards\\Thinking Ahead.png"
+    },
+    {
+        "name": "Transmutation",
+        "url": "https://slay-the-spire.fandom.com/wiki/Transmutation",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cd/Transmutation.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Add X random (Upgraded) colorless cards into your hand. They cost 0 this turn.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Transmutation.png"
+    },
+    {
+        "name": "Violence",
+        "url": "https://slay-the-spire.fandom.com/wiki/Violence",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e4/Violence.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Place 3(4) randomAttackcards from your draw pile into your hand.Exhaust.",
+        "local_image": "images_Colorless_Cards\\Violence.png"
+    },
+    {
+        "name": "Apparition",
+        "url": "https://slay-the-spire.fandom.com/wiki/Apparition",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/Apparition.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 1Intangible.Exhaust.Ethereal. (no longerEthereal.)(Obtained from event:Council of Ghosts).",
+        "local_image": "images_Colorless_Cards\\Apparition.png"
+    },
+    {
+        "name": "Beta",
+        "url": "https://slay-the-spire.fandom.com/wiki/Beta",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/Beta.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Skill",
+        "cost": "2(1)",
+        "description": "Shuffle anOmegainto your draw pile.Exhaust.(Obtained fromAlpha).",
+        "local_image": "images_Colorless_Cards\\Beta.png"
+    },
+    {
+        "name": "Bite",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bite",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Bite.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(8) damage. Heal 2(3) HP.(Obtained from event:Vampires(?)).",
+        "local_image": "images_Colorless_Cards\\Bite.png"
+    },
+    {
+        "name": "Expunger",
+        "url": "https://slay-the-spire.fandom.com/wiki/Expunger",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/Expunger.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 9(15) damage X times.(Obtained fromConjure Blade).",
+        "local_image": "images_Colorless_Cards\\Expunger.png"
+    },
+    {
+        "name": "Insight",
+        "url": "https://slay-the-spire.fandom.com/wiki/Insight",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5b/Insight.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Retain. Draw 2(3) cards.Exhaust.(Obtained fromEvaluate,PrayandStudy).",
+        "local_image": "images_Colorless_Cards\\Insight.png"
+    },
+    {
+        "name": "J.A.X.",
+        "url": "https://slay-the-spire.fandom.com/wiki/J.A.X.",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/08/J.A.X..png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Lose 3 HP.Gain 2(3)Strength.(Obtained from event:Augmenter).",
+        "local_image": "images_Colorless_Cards\\J.A.X..png"
+    },
+    {
+        "name": "Miracle",
+        "url": "https://slay-the-spire.fandom.com/wiki/Miracle",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/Miracle.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Retain. Gain (2)Energy.Exhaust.(Obtained fromCollect,Deus Ex Machina,Pure Water, andHoly Water).",
+        "local_image": "images_Colorless_Cards\\Miracle.png"
+    },
+    {
+        "name": "Omega",
+        "url": "https://slay-the-spire.fandom.com/wiki/Omega",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Omega.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Power",
+        "cost": "3",
+        "description": "At the end of your turn deal 50(60) damage to ALL enemies.(Obtained fromBeta).",
+        "local_image": "images_Colorless_Cards\\Omega.png"
+    },
+    {
+        "name": "Ritual Dagger",
+        "url": "https://slay-the-spire.fandom.com/wiki/Ritual_Dagger",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a9/RitualDagger.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 15 damage. If this kills an enemy then permanently increase this card's damage by 3(5).Exhaust.(Obtained during event:The Nest)",
+        "local_image": "images_Colorless_Cards\\Ritual Dagger.png"
+    },
+    {
+        "name": "Safety",
+        "url": "https://slay-the-spire.fandom.com/wiki/Safety",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Safety.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Retain. Gain 12(16)Block.Exhaust.(Obtained fromDeceive Reality).",
+        "local_image": "images_Colorless_Cards\\Safety.png"
+    },
+    {
+        "name": "Shiv",
+        "url": "https://slay-the-spire.fandom.com/wiki/Shiv",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b6/Shiv.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 4(6) damage.Exhaust.(Obtained fromBlade Dance,Cloak and Dagger,Infinite Blades,Storm of Steel, andNinja Scroll).",
+        "local_image": "images_Colorless_Cards\\Shiv.png"
+    },
+    {
+        "name": "Smite",
+        "url": "https://slay-the-spire.fandom.com/wiki/Smite",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/05/Smite.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Retain. Deal 12(16) damage.Exhaust.(Obtained fromCarve RealityandBattle Hymn).",
+        "local_image": "images_Colorless_Cards\\Smite.png"
+    },
+    {
+        "name": "Through Violence",
+        "url": "https://slay-the-spire.fandom.com/wiki/Through_Violence",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e6/ThroughViolence.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Special",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Retain. Deal 20(30) damage.Exhaust.(Obtained fromReach Heaven).",
+        "local_image": "images_Colorless_Cards\\Through Violence.png"
+    }
+]

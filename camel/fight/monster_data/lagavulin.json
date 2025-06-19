@@ -1,0 +1,37 @@
+{
+  "name": "Lagavulin",
+  "attributes": {
+    "hp": "109-111 112-115 (Ascension 8+)",
+    "in_party_with": "None",
+    "debut_act": "1",
+    "powers": "Metallicize 8 Asleep"
+  },
+  "moves": [
+    {
+      "name": "Attack",
+      "intent": "Attack intent 4",
+      "effect": "Deal 20 damage."
+    },
+    {
+      "name": "Siphon Soul",
+      "intent": "Debuff2",
+      "effect": "Inflicts -2 Dexterity , then -2 Strength ."
+    }
+  ],
+  "states": [
+    {
+      "type": "state",
+      "name": "asleep",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c0/Lagavulin-zzz-pretty.png/revision/latest",
+      "source": "tabber",
+      "local_image": "lagavulin_asleep.png"
+    },
+    {
+      "type": "state",
+      "name": "awake",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/af/Lagavulin-awake-pretty.png/revision/latest",
+      "source": "tabber",
+      "local_image": "lagavulin_awake.png"
+    }
+  ]
+}

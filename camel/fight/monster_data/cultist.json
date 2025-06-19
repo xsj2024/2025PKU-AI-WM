@@ -1,0 +1,37 @@
+{
+  "name": "Cultist",
+  "attributes": {
+    "hp": "48-54 50-56 7+",
+    "in_party_with": "Act 1 Solo 1 Acid Slime (M) 1 Spike Slime (M) 1 Red Louse 1 Green Louse Act 2 2 other Cultists 1 Chosen Act 3 1 other Cultist and Awakened One",
+    "debut_act": "Act 1",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Incantation",
+      "intent": "Buff",
+      "effect": "Gains 3 Ritual ."
+    },
+    {
+      "name": "Dark Strike",
+      "intent": "Attack Intent 2",
+      "effect": "Deal 6 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c6/Cultist-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "cultist_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "ritual",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5e/Icon_Ritual.png/revision/latest",
+      "source": "variant",
+      "local_image": "cultist_ritual.png"
+    }
+  ]
+}

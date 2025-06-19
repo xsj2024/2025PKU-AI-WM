@@ -1,0 +1,47 @@
+{
+  "name": "Looter",
+  "attributes": {
+    "hp": "44-48 46-50 7+",
+    "in_party_with": "Act 1 Solo 1 Acid Slime (M) 1 Spike Slime (M) 1 Red Louse 1 Green Louse Act 2 Mugger",
+    "debut_act": "Act 1",
+    "powers": "Thievery 15 Thievery 20 17+"
+  },
+  "moves": [
+    {
+      "name": "Mug",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 10 damage."
+    },
+    {
+      "name": "Lunge",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 12 damage."
+    },
+    {
+      "name": "Smoke Bomb",
+      "intent": "Defend",
+      "effect": "Gain 6 Block ."
+    },
+    {
+      "name": "Escape",
+      "intent": "Escape",
+      "effect": "Escape from combat, taking all stolen gold."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/Looter-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "looter_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "thievery",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Icon_Thievery.png/revision/latest",
+      "source": "variant",
+      "local_image": "looter_thievery.png"
+    }
+  ]
+}

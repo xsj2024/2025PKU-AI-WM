@@ -1,0 +1,37 @@
+{
+  "name": "Orb Walker",
+  "attributes": {
+    "hp": "90-96 92-102 (Ascension 7+)",
+    "in_party_with": "None Orb Walker (Event)",
+    "debut_act": "Act 3",
+    "powers": "Strength Up 3 Strength Up 5 (Ascension 17+)"
+  },
+  "moves": [
+    {
+      "name": "Laser",
+      "intent": "Debuff - Sword",
+      "effect": "Deals 11 damage. Shuffles 1 Burn into the draw pile and adds another into the discard pile."
+    },
+    {
+      "name": "Claw",
+      "intent": "Attack intent 4",
+      "effect": "Deals 16 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ee/Orb-walker-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "orb_walker_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "strength_up",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/db/Icon_Stasis.png/revision/latest",
+      "source": "variant",
+      "local_image": "orb_walker_strength_up.png"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Fungi Beast",
+  "attributes": {
+    "hp": "22-28 24-28 7+",
+    "in_party_with": "Act 1 1 other Fungi Beast 2 other Fungi Beasts Hypnotizing Colored Mushrooms 1 Green Louse 1 Red Louse 1 Acid Slime (M) 1 Spike Slime (M) Act 2 1 Shelled Parasite",
+    "debut_act": "Act 1",
+    "powers": "Spore Cloud 2"
+  },
+  "moves": [
+    {
+      "name": "Bite",
+      "intent": "Attack Intent 2",
+      "effect": "Deal 6 damage."
+    },
+    {
+      "name": "Grow",
+      "intent": "Buff",
+      "effect": "Gain 3 Strength ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b0/Fungi-beast-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "fungi_beast_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "spore_cloud",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a0/Icon_SporeCloud.png/revision/latest",
+      "source": "variant",
+      "local_image": "fungi_beast_spore_cloud.png"
+    }
+  ]
+}

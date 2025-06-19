@@ -1,0 +1,37 @@
+{
+  "name": "Green Louse",
+  "attributes": {
+    "hp": "11-17 12-18 7+",
+    "in_party_with": "Act 1 1 other Louse 2 other Louses 1 Cultist 1 Looter 1 Blue Slaver 1 Red Slaver 1 Jaw Worm 1 Fungi Beast",
+    "debut_act": "Act 1",
+    "powers": "Curl Up 3-7 Curl Up 4-8 7+ Curl Up 9-12 17+"
+  },
+  "moves": [
+    {
+      "name": "Bite",
+      "intent": "Attack Intent 2",
+      "effect": "Deals D damage."
+    },
+    {
+      "name": "Spit Web",
+      "intent": "Debuff1",
+      "effect": "Applies 2 Weak ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/03/Louse-green-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "green_louse_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "curl_up",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fc/Icon_CurlUp.png/revision/latest",
+      "source": "variant",
+      "local_image": "green_louse_curl_up.png"
+    }
+  ]
+}

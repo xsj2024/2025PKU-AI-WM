@@ -1,0 +1,35 @@
+{
+  "name": "Reptomancer",
+  "attributes": {
+    "hp": "180-190 190-200 (Ascension 8+)",
+    "debut_act": "Act 3",
+    "in_party_with": "2 Daggers",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Summon",
+      "intent": "Unknown",
+      "effect": "Summons 2 Daggers ."
+    },
+    {
+      "name": "Snake Strike",
+      "intent": "Attack - Debuff - Axe",
+      "effect": "Deals 16 x 2 damage and applies 1 Weak ."
+    },
+    {
+      "name": "Big Bite",
+      "intent": "Attack - Sickle",
+      "effect": "Deals 34 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/14/Reptomancer.png/revision/latest",
+      "source": "main",
+      "local_image": "reptomancer_appearance.png"
+    }
+  ]
+}

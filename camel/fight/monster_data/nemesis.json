@@ -1,0 +1,35 @@
+{
+  "name": "Nemesis",
+  "attributes": {
+    "hp": "185 200 (Ascension 8+)",
+    "in_party_with": "None",
+    "debut_act": "3",
+    "powers": "Intangible every 2nd turn"
+  },
+  "moves": [
+    {
+      "name": "Debuff",
+      "intent": "Debuff1",
+      "effect": "Shuffles 5 Burns into your discard pile."
+    },
+    {
+      "name": "Attack",
+      "intent": "Attack intent 4",
+      "effect": "Deals 7 x 3 damage."
+    },
+    {
+      "name": "Scythe",
+      "intent": "Attack - Sickle",
+      "effect": "Deals 45 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/60/Nemesis-pretty.png/revision/latest",
+      "source": "main",
+      "local_image": "nemesis_appearance.png"
+    }
+  ]
+}

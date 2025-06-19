@@ -1,0 +1,52 @@
+{
+  "name": "Darkling",
+  "attributes": {
+    "hp": "48-56 50-59 (Ascension 7+)",
+    "in_party_with": "2 other Darklings",
+    "debut_act": "Act 3",
+    "powers": "Life Link"
+  },
+  "moves": [
+    {
+      "name": "Nip",
+      "intent": "Attack Intent 2",
+      "effect": "Deal D* + 2 damage."
+    },
+    {
+      "name": "Chomp",
+      "intent": "Attack intent 4",
+      "effect": "Deal 9 x 2 damage."
+    },
+    {
+      "name": "Harden",
+      "intent": "Defend",
+      "effect": "Gain 12 Block and 2 Strength ."
+    },
+    {
+      "name": "Reincarnate",
+      "intent": "Buff",
+      "effect": "Revives with 50% HP."
+    },
+    {
+      "name": "Regrow",
+      "intent": "Unknown",
+      "effect": "Does nothing."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d0/Darkling.png/revision/latest",
+      "source": "main",
+      "local_image": "darkling_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "life_link",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c7/Icon_LifeLink.png/revision/latest",
+      "source": "variant",
+      "local_image": "darkling_life_link.png"
+    }
+  ]
+}

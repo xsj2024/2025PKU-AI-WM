@@ -1,0 +1,752 @@
+[
+    {
+        "name": "Defend",
+        "url": "https://slay-the-spire.fandom.com/wiki/Defend_(Silent)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/88/Defend_G.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block.",
+        "local_image": "images_Silent_Cards\\Defend.png"
+    },
+    {
+        "name": "Neutralize",
+        "url": "https://slay-the-spire.fandom.com/wiki/Neutralize",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/c5/Neutralize.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 3(4) damage. Apply 1(2)Weak.",
+        "local_image": "images_Silent_Cards\\Neutralize.png"
+    },
+    {
+        "name": "Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Strike_(Silent)",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3d/Strike_G.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(9) damage.",
+        "local_image": "images_Silent_Cards\\Strike.png"
+    },
+    {
+        "name": "Survivor",
+        "url": "https://slay-the-spire.fandom.com/wiki/Survivor",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/fa/Survivor.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Starter",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 8(11)Block. Discard a card.",
+        "local_image": "images_Silent_Cards\\Survivor.png"
+    },
+    {
+        "name": "Acrobatics",
+        "url": "https://slay-the-spire.fandom.com/wiki/Acrobatics",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/db/Acrobatics.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Draw 3(4) cards. Discard 1 card.",
+        "local_image": "images_Silent_Cards\\Acrobatics.png"
+    },
+    {
+        "name": "Backflip",
+        "url": "https://slay-the-spire.fandom.com/wiki/Backflip",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/74/Backflip.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block. Draw 2 cards.",
+        "local_image": "images_Silent_Cards\\Backflip.png"
+    },
+    {
+        "name": "Bane",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bane",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9a/Bane.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(10) damage. If the enemy isPoisoned, deal 7(10) damage again.",
+        "local_image": "images_Silent_Cards\\Bane.png"
+    },
+    {
+        "name": "Blade Dance",
+        "url": "https://slay-the-spire.fandom.com/wiki/Blade_Dance",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/5c/BladeDance.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Add 3(4)Shivsto your hand.",
+        "local_image": "images_Silent_Cards\\Blade Dance.png"
+    },
+    {
+        "name": "Cloak And Dagger",
+        "url": "https://slay-the-spire.fandom.com/wiki/Cloak_And_Dagger",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/CloakAndDagger.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 6Block. Add 1(2)Shiv(s)to your hand.",
+        "local_image": "images_Silent_Cards\\Cloak And Dagger.png"
+    },
+    {
+        "name": "Dagger Spray",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dagger_Spray",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/46/DaggerSpray.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 4(6) damage to ALL enemies twice.",
+        "local_image": "images_Silent_Cards\\Dagger Spray.png"
+    },
+    {
+        "name": "Dagger Throw",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dagger_Throw",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3f/R_dagger-throw.png/revision/latest/scale-to-width-down/153",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 9(12) damage. Draw 1 card. Discard 1 card.",
+        "local_image": "images_Silent_Cards\\Dagger Throw.png"
+    },
+    {
+        "name": "Deadly Poison",
+        "url": "https://slay-the-spire.fandom.com/wiki/Deadly_Poison",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b7/DeadlyPoison.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Apply 5(7)Poison.",
+        "local_image": "images_Silent_Cards\\Deadly Poison.png"
+    },
+    {
+        "name": "Deflect",
+        "url": "https://slay-the-spire.fandom.com/wiki/Deflect",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/29/Deflect.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 4(7)Block.",
+        "local_image": "images_Silent_Cards\\Deflect.png"
+    },
+    {
+        "name": "Dodge and Roll",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dodge_and_Roll",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/DodgeandRoll.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 4(6)Block. Next turn, gain 4(6)Block.",
+        "local_image": "images_Silent_Cards\\Dodge and Roll.png"
+    },
+    {
+        "name": "Flying Knee",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flying_Knee",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/FlyingKnee.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(11) damage. Next turn, gain 1Energy.",
+        "local_image": "images_Silent_Cards\\Flying Knee.png"
+    },
+    {
+        "name": "Outmaneuver",
+        "url": "https://slay-the-spire.fandom.com/wiki/Outmaneuver",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/ff/Outmaneuver.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Next turn, gain 2(3)Energy.",
+        "local_image": "images_Silent_Cards\\Outmaneuver.png"
+    },
+    {
+        "name": "Piercing Wail",
+        "url": "https://slay-the-spire.fandom.com/wiki/Piercing_Wail",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/0a/PiercingWail.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "1",
+        "description": "ALL enemies lose 6(8)Strengthfor 1 turn.Exhaust.",
+        "local_image": "images_Silent_Cards\\Piercing Wail.png"
+    },
+    {
+        "name": "Poisoned Stab",
+        "url": "https://slay-the-spire.fandom.com/wiki/Poisoned_Stab",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9e/PoisonedStab.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(8) damage. Apply 3(4)Poison.",
+        "local_image": "images_Silent_Cards\\Poisoned Stab.png"
+    },
+    {
+        "name": "Prepared",
+        "url": "https://slay-the-spire.fandom.com/wiki/Prepared",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/83/Prepared.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 1(2) card(s). Discard 1(2) card(s).",
+        "local_image": "images_Silent_Cards\\Prepared.png"
+    },
+    {
+        "name": "Quick Slash",
+        "url": "https://slay-the-spire.fandom.com/wiki/Quick_Slash",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f5/QuickSlash.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(12) damage. Draw 1 card.",
+        "local_image": "images_Silent_Cards\\Quick Slash.png"
+    },
+    {
+        "name": "Slice",
+        "url": "https://slay-the-spire.fandom.com/wiki/Slice",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/ad/Slice.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 6(9) damage.",
+        "local_image": "images_Silent_Cards\\Slice.png"
+    },
+    {
+        "name": "Sneaky Strike",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sneaky_Strike",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ed/SneakyStrike.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 12(16) damage. If you have discarded a card this turn, gain 2Energy.",
+        "local_image": "images_Silent_Cards\\Sneaky Strike.png"
+    },
+    {
+        "name": "Sucker Punch",
+        "url": "https://slay-the-spire.fandom.com/wiki/Sucker_Punch",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/89/SuckerPunch.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Common",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 7(9) damage. Apply 1(2)Weak.",
+        "local_image": "images_Silent_Cards\\Sucker Punch.png"
+    },
+    {
+        "name": "Accuracy",
+        "url": "https://slay-the-spire.fandom.com/wiki/Accuracy",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/4c/Accuracy.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Shivsdeal 4(6) additional damage.",
+        "local_image": "images_Silent_Cards\\Accuracy.png"
+    },
+    {
+        "name": "All-Out Attack",
+        "url": "https://slay-the-spire.fandom.com/wiki/All-Out_Attack",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/68/All-OutAttack.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 10(14) damage to ALL enemies. Discard 1 card at random.",
+        "local_image": "images_Silent_Cards\\All-Out Attack.png"
+    },
+    {
+        "name": "Backstab",
+        "url": "https://slay-the-spire.fandom.com/wiki/Backstab",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7a/Backstab.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Deal 11(15) damage.Innate.Exhaust.",
+        "local_image": "images_Silent_Cards\\Backstab.png"
+    },
+    {
+        "name": "Blur",
+        "url": "https://slay-the-spire.fandom.com/wiki/Blur",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f4/Blur.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Gain 5(8)Block.Blockis not removed at the start of your next turn.",
+        "local_image": "images_Silent_Cards\\Blur.png"
+    },
+    {
+        "name": "Bouncing Flask",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bouncing_Flask",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/3c/BouncingFlask.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Apply 3Poisonto a random enemy 3(4) times.",
+        "local_image": "images_Silent_Cards\\Bouncing Flask.png"
+    },
+    {
+        "name": "Calculated Gamble",
+        "url": "https://slay-the-spire.fandom.com/wiki/Calculated_Gamble",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/89/CalculatedGamble.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Discard your hand, then draw that many cards.Exhaust. (Don't exhaust)",
+        "local_image": "images_Silent_Cards\\Calculated Gamble.png"
+    },
+    {
+        "name": "Caltrops",
+        "url": "https://slay-the-spire.fandom.com/wiki/Caltrops",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/3/31/Caltrops.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Whenever you are attacked, deal 3(5) damage back.",
+        "local_image": "images_Silent_Cards\\Caltrops.png"
+    },
+    {
+        "name": "Catalyst",
+        "url": "https://slay-the-spire.fandom.com/wiki/Catalyst",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Catalyst.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Double(Triple) an enemy'sPoison.Exhaust.",
+        "local_image": "images_Silent_Cards\\Catalyst.png"
+    },
+    {
+        "name": "Choke",
+        "url": "https://slay-the-spire.fandom.com/wiki/Choke",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/0/09/Choke.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 12 damage. Whenever you play a card this turn, the targeted enemy loses 3(5) HP.",
+        "local_image": "images_Silent_Cards\\Choke.png"
+    },
+    {
+        "name": "Concentrate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Concentrate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/Concentrate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Discard 3(2) cards. Gain 2Energy.",
+        "local_image": "images_Silent_Cards\\Concentrate.png"
+    },
+    {
+        "name": "Crippling Cloud",
+        "url": "https://slay-the-spire.fandom.com/wiki/Crippling_Cloud",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/15/CripplingCloud.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Apply 4(7)Poisonand 2Weakto ALL enemies.Exhaust.",
+        "local_image": "images_Silent_Cards\\Crippling Cloud.png"
+    },
+    {
+        "name": "Dash",
+        "url": "https://slay-the-spire.fandom.com/wiki/Dash",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/55/Dash.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Gain 10(13)Block. Deal 10(13) damage.",
+        "local_image": "images_Silent_Cards\\Dash.png"
+    },
+    {
+        "name": "Distraction",
+        "url": "https://slay-the-spire.fandom.com/wiki/Distraction",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Distraction.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Add a randomSkillto your hand. It costs 0 this turn.Exhaust.",
+        "local_image": "images_Silent_Cards\\Distraction.png"
+    },
+    {
+        "name": "Endless Agony",
+        "url": "https://slay-the-spire.fandom.com/wiki/Endless_Agony",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1e/EndlessAgony.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Whenever you draw this card, add a copy of it to your hand. Deal 4(6) damage.Exhaust.",
+        "local_image": "images_Silent_Cards\\Endless Agony.png"
+    },
+    {
+        "name": "Escape Plan",
+        "url": "https://slay-the-spire.fandom.com/wiki/Escape_Plan",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/EscapePlan.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Draw 1 card. If you draw aSkill, gain 3(5)Block.",
+        "local_image": "images_Silent_Cards\\Escape Plan.png"
+    },
+    {
+        "name": "Eviscerate",
+        "url": "https://slay-the-spire.fandom.com/wiki/Eviscerate",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Eviscerate.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "3",
+        "description": "Costs 1 lessEnergyfor each card discarded this turn. Deal 7(9) damage three times.",
+        "local_image": "images_Silent_Cards\\Eviscerate.png"
+    },
+    {
+        "name": "Expertise",
+        "url": "https://slay-the-spire.fandom.com/wiki/Expertise",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b8/Expertise.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Draw cards until you have 6(7) in your hand.",
+        "local_image": "images_Silent_Cards\\Expertise.png"
+    },
+    {
+        "name": "Finisher",
+        "url": "https://slay-the-spire.fandom.com/wiki/Finisher",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/Finisher.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 6(8) damage for eachAttackplayed this turn.",
+        "local_image": "images_Silent_Cards\\Finisher.png"
+    },
+    {
+        "name": "Flechettes",
+        "url": "https://slay-the-spire.fandom.com/wiki/Flechettes",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/Flechettes.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 4(6) damage for eachSkillin your hand.",
+        "local_image": "images_Silent_Cards\\Flechettes.png"
+    },
+    {
+        "name": "Footwork",
+        "url": "https://slay-the-spire.fandom.com/wiki/Footwork",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/84/Footwork.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "Gain 2(3)Dexterity.",
+        "local_image": "images_Silent_Cards\\Footwork.png"
+    },
+    {
+        "name": "Heel Hook",
+        "url": "https://slay-the-spire.fandom.com/wiki/Heel_Hook",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/75/HeelHook.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 5(8) damage. If the enemy isWeak, Gain 1Energyand draw 1 card.",
+        "local_image": "images_Silent_Cards\\Heel Hook.png"
+    },
+    {
+        "name": "Infinite Blades",
+        "url": "https://slay-the-spire.fandom.com/wiki/Infinite_Blades",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cb/InfiniteBlades.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.)At the start of your turn, add aShivto your hand.",
+        "local_image": "images_Silent_Cards\\Infinite Blades.png"
+    },
+    {
+        "name": "Leg Sweep",
+        "url": "https://slay-the-spire.fandom.com/wiki/Leg_Sweep",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/65/LegSweep.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Apply 2(3)Weak. Gain 11(14)Block.",
+        "local_image": "images_Silent_Cards\\Leg Sweep.png"
+    },
+    {
+        "name": "Masterful Stab",
+        "url": "https://slay-the-spire.fandom.com/wiki/Masterful_Stab",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/a2/MasterfulStab.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Costs 1 additionalEnergyfor each time you lose HP this combat. Deal 12(16) damage.",
+        "local_image": "images_Silent_Cards\\Masterful Stab.png"
+    },
+    {
+        "name": "Noxious Fumes",
+        "url": "https://slay-the-spire.fandom.com/wiki/Noxious_Fumes",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9f/NoxiousFumes.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the start of your turn, apply 2(3)Poisonto ALL enemies.",
+        "local_image": "images_Silent_Cards\\Noxious Fumes.png"
+    },
+    {
+        "name": "Predator",
+        "url": "https://slay-the-spire.fandom.com/wiki/Predator",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e9/Predator.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 15(20) damage. Draw 2 more cards next turn.",
+        "local_image": "images_Silent_Cards\\Predator.png"
+    },
+    {
+        "name": "Reflex",
+        "url": "https://slay-the-spire.fandom.com/wiki/Reflex",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/b2/Reflex.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "",
+        "description": "Unplayable. If this card is discarded from your hand, draw 2(3) cards.",
+        "local_image": "images_Silent_Cards\\Reflex.png"
+    },
+    {
+        "name": "Riddle With Holes",
+        "url": "https://slay-the-spire.fandom.com/wiki/Riddle_With_Holes",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d5/RiddleWithHoles.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "2",
+        "description": "Deal 3(4) damage 5 times.",
+        "local_image": "images_Silent_Cards\\Riddle With Holes.png"
+    },
+    {
+        "name": "Setup",
+        "url": "https://slay-the-spire.fandom.com/wiki/Setup",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/98/Setup.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Place a card in your hand on top of your draw pile. It costs 0 until it is played.",
+        "local_image": "images_Silent_Cards\\Setup.png"
+    },
+    {
+        "name": "Skewer",
+        "url": "https://slay-the-spire.fandom.com/wiki/Skewer",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Skewer.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Attack",
+        "cost": "X",
+        "description": "Deal 7(10) damage X times.",
+        "local_image": "images_Silent_Cards\\Skewer.png"
+    },
+    {
+        "name": "Tactician",
+        "url": "https://slay-the-spire.fandom.com/wiki/Tactician",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/77/Tactician.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "",
+        "description": "Unplayable. If this card is discarded from your hand, gain 1(2)Energy.",
+        "local_image": "images_Silent_Cards\\Tactician.png"
+    },
+    {
+        "name": "Terror",
+        "url": "https://slay-the-spire.fandom.com/wiki/Terror",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/c/cc/Terror.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Apply 99Vulnerable.Exhaust.",
+        "local_image": "images_Silent_Cards\\Terror.png"
+    },
+    {
+        "name": "Well-Laid Plans",
+        "url": "https://slay-the-spire.fandom.com/wiki/Well-Laid_Plans",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/85/Well-LaidPlans.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Uncommon",
+        "type": "Power",
+        "cost": "1",
+        "description": "At the end of your turn,Retainup to 1(2) card(s).",
+        "local_image": "images_Silent_Cards\\Well-Laid Plans.png"
+    },
+    {
+        "name": "A Thousand Cuts",
+        "url": "https://slay-the-spire.fandom.com/wiki/A_Thousand_Cuts",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/5/52/AThousandCuts.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2",
+        "description": "Whenever you play a card, deal 1(2) damage to ALL enemies.",
+        "local_image": "images_Silent_Cards\\A Thousand Cuts.png"
+    },
+    {
+        "name": "Adrenaline",
+        "url": "https://slay-the-spire.fandom.com/wiki/Adrenaline",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/Adrenaline.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "0",
+        "description": "Gain 1(2)Energy. Draw 2 cards.Exhaust.",
+        "local_image": "images_Silent_Cards\\Adrenaline.png"
+    },
+    {
+        "name": "After Image",
+        "url": "https://slay-the-spire.fandom.com/wiki/After_Image",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/73/AfterImage.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1",
+        "description": "(Innate.)Whenever you play a card, gain 1Block.",
+        "local_image": "images_Silent_Cards\\After Image.png"
+    },
+    {
+        "name": "Alchemize",
+        "url": "https://slay-the-spire.fandom.com/wiki/Alchemize",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/7d/Alchemize.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "Obtain a random potion.Exhaust.",
+        "local_image": "images_Silent_Cards\\Alchemize.png"
+    },
+    {
+        "name": "Bullet Time",
+        "url": "https://slay-the-spire.fandom.com/wiki/Bullet_Time",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/1e/BulletTime.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "3(2)",
+        "description": "You cannot draw additional cards this turn. Reduce the cost of all cards in your hand to 0 this turn.",
+        "local_image": "images_Silent_Cards\\Bullet Time.png"
+    },
+    {
+        "name": "Burst",
+        "url": "https://slay-the-spire.fandom.com/wiki/Burst",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/4/47/Burst.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "This turn, your next 1(2)Skill(s) is(are) played twice.",
+        "local_image": "images_Silent_Cards\\Burst.png"
+    },
+    {
+        "name": "Corpse Explosion",
+        "url": "https://slay-the-spire.fandom.com/wiki/Corpse_Explosion",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/28/CorpseExplosion.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "2",
+        "description": "Apply 6(9)Poison. When the enemy dies, deal damage equal to its max HP to ALL enemies.",
+        "local_image": "images_Silent_Cards\\Corpse Explosion.png"
+    },
+    {
+        "name": "Die Die Die",
+        "url": "https://slay-the-spire.fandom.com/wiki/Die_Die_Die",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/2/25/DieDieDie.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 13(17) damage to ALL enemies.Exhaust.",
+        "local_image": "images_Silent_Cards\\Die Die Die.png"
+    },
+    {
+        "name": "Doppelganger",
+        "url": "https://slay-the-spire.fandom.com/wiki/Doppelganger",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/75/Doppelganger.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Next turn, draw X(+1) cards and gain X(+1)Energy.",
+        "local_image": "images_Silent_Cards\\Doppelganger.png"
+    },
+    {
+        "name": "Envenom",
+        "url": "https://slay-the-spire.fandom.com/wiki/Envenom",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/1/17/Envenom.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "2(1)",
+        "description": "Whenever an attack deals unblocked damage, apply 1Poison.",
+        "local_image": "images_Silent_Cards\\Envenom.png"
+    },
+    {
+        "name": "Glass Knife",
+        "url": "https://slay-the-spire.fandom.com/wiki/Glass_Knife",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/6/62/GlassKnife.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 8(12) damage twice. Decrease the damage of this card by 2 this combat.",
+        "local_image": "images_Silent_Cards\\Glass Knife.png"
+    },
+    {
+        "name": "Grand Finale",
+        "url": "https://slay-the-spire.fandom.com/wiki/Grand_Finale",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/94/GrandFinale.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "0",
+        "description": "Can only be played if there are no cards in your draw pile. Deal 50(60) damage to ALL enemies.",
+        "local_image": "images_Silent_Cards\\Grand Finale.png"
+    },
+    {
+        "name": "Malaise",
+        "url": "https://slay-the-spire.fandom.com/wiki/Malaise",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/d1/Malaise.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "X",
+        "description": "Enemy loses X(+1)Strength. Apply X(+1)Weak.Exhaust.",
+        "local_image": "images_Silent_Cards\\Malaise.png"
+    },
+    {
+        "name": "Nightmare",
+        "url": "https://slay-the-spire.fandom.com/wiki/Nightmare",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/9/9b/Nightmare.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "3(2)",
+        "description": "Choose a card.Next turn, add 3 copies of that card into your hand.Exhaust.",
+        "local_image": "images_Silent_Cards\\Nightmare.png"
+    },
+    {
+        "name": "Phantasmal Killer",
+        "url": "https://slay-the-spire.fandom.com/wiki/Phantasmal_Killer",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/87/PhantasmalKiller.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1(0)",
+        "description": "On your next turn, yourAttacksdeal double damage.",
+        "local_image": "images_Silent_Cards\\Phantasmal Killer.png"
+    },
+    {
+        "name": "Storm of Steel",
+        "url": "https://slay-the-spire.fandom.com/wiki/Storm_of_Steel",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/b/bd/StormofSteel.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Skill",
+        "cost": "1",
+        "description": "Discard your hand. Add 1Shiv(+)into your hand for each card discarded.",
+        "local_image": "images_Silent_Cards\\Storm of Steel.png"
+    },
+    {
+        "name": "Tools of the Trade",
+        "url": "https://slay-the-spire.fandom.com/wiki/Tools_of_the_Trade",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/d/db/ToolsoftheTrade.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "1(0)",
+        "description": "At the start of your turn, draw 1 card and discard 1 card.",
+        "local_image": "images_Silent_Cards\\Tools of the Trade.png"
+    },
+    {
+        "name": "Unload",
+        "url": "https://slay-the-spire.fandom.com/wiki/Unload",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/f/f0/Unload.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Attack",
+        "cost": "1",
+        "description": "Deal 14(18) damage. Discard all non-Attackcards in your hand.",
+        "local_image": "images_Silent_Cards\\Unload.png"
+    },
+    {
+        "name": "Wraith Form",
+        "url": "https://slay-the-spire.fandom.com/wiki/Wraith_Form",
+        "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/ec/WraithForm.png/revision/latest/scale-to-width-down/155",
+        "rarity": "Rare",
+        "type": "Power",
+        "cost": "3",
+        "description": "Gain 2(3)Intangible. At the end of your turn, lose 1Dexterity.",
+        "local_image": "images_Silent_Cards\\Wraith Form.png"
+    }
+]

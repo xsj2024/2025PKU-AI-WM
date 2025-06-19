@@ -1,0 +1,47 @@
+{
+  "name": "Mugger",
+  "attributes": {
+    "hp": "48-52 50-54 7+",
+    "in_party_with": "Act 2 Looter",
+    "debut_act": "Act 2",
+    "powers": "Thievery 15 Thievery 20 17+"
+  },
+  "moves": [
+    {
+      "name": "Mug",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 10 damage."
+    },
+    {
+      "name": "Lunge",
+      "intent": "Attack intent 4",
+      "effect": "Deal 16 damage."
+    },
+    {
+      "name": "Smoke Bomb",
+      "intent": "Defend",
+      "effect": "Gain 11 Block ."
+    },
+    {
+      "name": "Escape",
+      "intent": "Escape",
+      "effect": "Escape from combat, taking all stolen Gold ."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/a/af/Mugger.png/revision/latest",
+      "source": "main",
+      "local_image": "mugger_appearance.png"
+    },
+    {
+      "type": "variant",
+      "name": "thievery",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/7/72/Icon_Thievery.png/revision/latest",
+      "source": "variant",
+      "local_image": "mugger_thievery.png"
+    }
+  ]
+}

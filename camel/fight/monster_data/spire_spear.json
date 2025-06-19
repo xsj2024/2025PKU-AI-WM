@@ -1,0 +1,35 @@
+{
+  "name": "Spire Spear",
+  "attributes": {
+    "hp": "160 180 8+",
+    "in_party_with": "Spire Shield",
+    "debut_act": "4",
+    "powers": "Artifact 1 Artifact 2 (Ascension 18+)"
+  },
+  "moves": [
+    {
+      "name": "Burn Strike",
+      "intent": "Debuff - Sword",
+      "effect": "Deals 6x2 damage. Adds 2 Burns on top of your draw pile."
+    },
+    {
+      "name": "Piercer",
+      "intent": "Buff",
+      "effect": "All enemies gain 2 Strength ."
+    },
+    {
+      "name": "Skewer",
+      "intent": "Attack - Sickle",
+      "effect": "Deals 10x4 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/e/e3/SpireSpear.png/revision/latest",
+      "source": "main",
+      "local_image": "spire_spear_appearance.png"
+    }
+  ]
+}

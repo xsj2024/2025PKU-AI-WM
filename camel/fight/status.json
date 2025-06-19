@@ -1,0 +1,47 @@
+{
+  "player_status": {
+    "energy": "0/3",
+    "health": "4786",
+    "block": "8",
+    "statuses": {},
+    "hand": [
+      {
+        "cost": "1",
+        "name": "Strike"
+      },
+      {
+        "cost": "Unknown",
+        "name": ""
+      },
+      {
+        "cost": "1",
+        "name": "Strike"
+      },
+      {
+        "cost": "1",
+        "name": "Defend"
+      },
+      {
+        "cost": "1",
+        "name": "Defend"
+      },
+      {
+        "cost": "1",
+        "name": "Rampage"
+      },
+      {
+        "cost": "1",
+        "name": "Strike"
+      }
+    ]
+  },
+  "enemies": [
+    {
+      "name": "monster1",
+      "health": "43/250",
+      "block": null,
+      "intent": "?",
+      "statuses": {}
+    }
+  ]
+}

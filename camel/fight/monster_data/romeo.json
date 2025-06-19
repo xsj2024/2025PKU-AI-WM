@@ -1,0 +1,35 @@
+{
+  "name": "Romeo",
+  "attributes": {
+    "hp": "35-39 37-41 7+",
+    "in_party_with": "Pointy Bear",
+    "debut_act": "Act 2",
+    "powers": "None"
+  },
+  "moves": [
+    {
+      "name": "Mock",
+      "intent": "Unknown",
+      "effect": "Nothing."
+    },
+    {
+      "name": "Agonizing Slash",
+      "intent": "Debuff - Sword",
+      "effect": "Deal 10 damage. Applies 2 Weak ."
+    },
+    {
+      "name": "Cross Slash",
+      "intent": "Aggressive - Sword",
+      "effect": "Deal 15 damage."
+    }
+  ],
+  "states": [
+    {
+      "type": "main",
+      "name": "appearance",
+      "image_url": "https://static.wikia.nocookie.net/slay-the-spire/images/8/8c/Romeo.png/revision/latest",
+      "source": "main",
+      "local_image": "romeo_appearance.png"
+    }
+  ]
+}

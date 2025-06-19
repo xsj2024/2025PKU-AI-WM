@@ -1,0 +1,1 @@
+['bottom_prompt', 'hand_card', 'upgraded', 'cost']

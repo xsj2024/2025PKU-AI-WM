@@ -1,0 +1,61 @@
+{
+  "player_status": {
+    "energy": "0/3",
+    "health": "4786",
+    "block": "8",
+    "statuses": {},
+    "hand": [
+      {
+        "cost": "1",
+        "name": "Strike",
+        "type": "Attack",
+        "effect": "Deal 6 damage."
+      },
+      {
+        "cost": "Unknown",
+        "name": "",
+        "type": "unknown",
+        "effect": "Not playable"
+      },
+      {
+        "cost": "1",
+        "name": "Strike",
+        "type": "Attack",
+        "effect": "Deal 6 damage."
+      },
+      {
+        "cost": "1",
+        "name": "Defend",
+        "type": "Skill",
+        "effect": "Gain 5Block."
+      },
+      {
+        "cost": "1",
+        "name": "Defend",
+        "type": "Skill",
+        "effect": "Gain 5Block."
+      },
+      {
+        "cost": "1",
+        "name": "Rampage",
+        "type": "Attack",
+        "effect": "Deal 8 damage. Increase this card's damage by 5 this combat."
+      },
+      {
+        "cost": "1",
+        "name": "Strike",
+        "type": "Attack",
+        "effect": "Deal 6 damage."
+      }
+    ]
+  },
+  "enemies": [
+    {
+      "name": "monster1",
+      "health": "43/250",
+      "block": null,
+      "intent": "?",
+      "statuses": {}
+    }
+  ]
+}

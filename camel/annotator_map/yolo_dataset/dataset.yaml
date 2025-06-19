@@ -1,0 +1,7 @@
+path: F:\AIJiChuZuoYe\mytest\annotator_map\yolo_dataset
+train: images
+val: images
+names:
+  0: selectable_room
+  1: potion
+  2: boss_room

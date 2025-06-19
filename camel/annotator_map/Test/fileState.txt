@@ -1,0 +1,6 @@
+Test/test2.png	1
+Test/test3.png	1
+Test/test1.png	1
+Test/test.png	1
+Test/ttt.png	1
+Test/zzz.png	1
