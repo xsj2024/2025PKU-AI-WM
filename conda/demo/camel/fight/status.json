@@ -1,26 +1,47 @@
 {
   "player_status": {
-    "energy": "1/3",
-    "health": "49/80",
-    "block": 0,
+    "energy": "0/3",
+    "health": "4786",
+    "block": "8",
     "statuses": {},
     "hand": [
-      "1 Red Defend",
-      "1 Red Defend",
-      "1 Perfected Strike"
+      {
+        "cost": "1",
+        "name": "Strike"
+      },
+      {
+        "cost": "Unknown",
+        "name": ""
+      },
+      {
+        "cost": "1",
+        "name": "Strike"
+      },
+      {
+        "cost": "1",
+        "name": "Defend"
+      },
+      {
+        "cost": "1",
+        "name": "Defend"
+      },
+      {
+        "cost": "1",
+        "name": "Rampage"
+      },
+      {
+        "cost": "1",
+        "name": "Strike"
+      }
     ]
   },
   "enemies": [
     {
       "name": "monster1",
-      "health": "41/54",
-      "block": 0,
+      "health": "43/250",
+      "block": null,
       "intent": "?",
-      "statuses": {
-        "msg1": "Ritual At the end ofits turn gains 4 Strength",
-        "msg2": "Strength Increases attack damage by 4.",
-        "msg3": "Aggressive This enemy intends to Attack for10 damage"
-      }
+      "statuses": {}
     }
   ]
 }

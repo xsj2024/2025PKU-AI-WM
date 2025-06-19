@@ -98,8 +98,14 @@ class BattleHandler:
                         from collections import Counter
                         most_common = Counter(ocr_results).most_common(1)
                         hp_text_final = most_common[0][0] if most_common else ''
-                        info['hp'] = hp_text_final
-                        print("hp:", hp_text_final)
+                        # 新增：处理形如 '3 3/10' 的情况
+                        if ' ' in hp_text_final:
+                            block_str, hp_str = hp_text_final.split(' ', 1)
+                            info['block'] = block_str
+                            info['hp'] = hp_str
+                        else:
+                            info['hp'] = hp_text_final
+                        print("hp:", info['hp'])
                     hp_info.append(info)
                 # --- end ---
                 # 找到 detections 中的能量状态
@@ -155,19 +161,16 @@ class BattleHandler:
         add_history('4. Show discard pile')
         add_history('5. Play a card')
         add_history('6. End turn')
-        hand_cards = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
+        hand_cards_raw = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
+        hand_cards = hand_card_reader.parse_hand_card(hand_cards_raw)
         hand_cards_str = [str(card) for card in hand_cards]
         units = unit_status_reader.read_unit_status(self.capture, self.model)
         units_str = [str(u) for u in units]
-        # 鼠标归位
-        self.capture.move_to_edge()
         # === 新增：解析unit_status，自动填充intent和statuses ===
         # 解析unit_status，假设顺序与enemies一致
-        print(units)
         parsed_units = [ast.literal_eval(u) if isinstance(u, str) else u for u in units]
         enemy_units = [u for u in parsed_units if u.get('unit_label') == 'monster']
         enemies = []
-        print(enemy_units)
         for i, hp in enumerate(hp_info[1:], 0):
             statuses = {}
             if i < len(enemy_units):
@@ -176,23 +179,35 @@ class BattleHandler:
                 for idx, msg in enumerate(messages, 1):
                     statuses[f"msg{idx}"] = msg
                 print(f"enemy {i+1} statuses:", statuses)
+            enemy_block = hp.get('block', 0)
             enemies.append({
                 "name": f"monster{i+1}",
                 "health": str(hp['hp']),
-                "block": 0,
+                "block": enemy_block,
                 "intent": "?",
                 "statuses": statuses
             })
+        # 取player block
+        player_block = hp_info[0].get('block', 0)
+        # 取player statuses，仿照enemies
+        player_statuses = {}
+        if parsed_units:
+            player_unit = next((u for u in parsed_units if u.get('unit_label') == 'player'), None)
+            if player_unit:
+                messages = player_unit.get('messages', [])
+                for idx, msg in enumerate(messages, 1):
+                    player_statuses[f"msg{idx}"] = msg
         status_dict = {
             "player_status": {
                 "energy": str(energy_state),
                 "health": str(hp_info[0]['hp']),
-                "block": 0,
-                "statuses": {},
+                "block": player_block,
+                "statuses": player_statuses,
                 "hand": hand_cards
             },
             "enemies": enemies
         }
+        print(status_dict)
         with open("fight/status.json", "w", encoding="utf-8") as f:
             json.dump(status_dict, f, ensure_ascii=False, indent=2)
         # === 新增：调用fix_status_hand.py修正hand结构 ===
@@ -255,7 +270,7 @@ class BattleHandler:
                 card_idx = info["choice"]
                 target_idx = info["target_idx"]
                 # 新增：如果AI决策为End Turn，直接执行结束回合
-                if info.get('card', '').strip().lower() == 'end turn':
+                if info.get('card', '').lower() == 'end turn':
                     try:
                         self.click_box_by_label('button', index=0)
                         add_history('AI决策为End Turn，已结束回合。')
@@ -293,10 +308,35 @@ class BattleHandler:
         print(f'Prompt: {prompt_text}')
         print(f'Button: {button_text}')
         while True:
-            idx = int(input('Enter hand card index (or -1 to confirm): '))
+            hand_cards_raw = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
+            hand_cards = hand_card_reader.parse_hand_card(hand_cards_raw)
+            hand_names = [card['name'] for card in hand_cards]
+            ai_prompt = {
+                "system": "你是杀戮尖塔自动手牌选择助手，请根据提示和手牌，返回你要选择的编号（只返回数字，不要解释）：",
+                "prompt": prompt_text,
+                "hand_cards": hand_names
+            }
+            print(ai_prompt)
+            # --- 增加自动重试 ---
+            while True:
+                try:
+                    ai_response = self.bot.manager.agent.step(json.dumps(ai_prompt, ensure_ascii=False))
+                    break
+                except Exception as e:
+                    if '429' in str(e) or 'rate limit' in str(e).lower():
+                        print("[AI限流] 等待10秒后重试...")
+                        import time
+                        time.sleep(10)
+                    else:
+                        print(f"[AI请求异常] {e}")
+                        import time
+                        time.sleep(5)
+            idx = int(ai_response.msg.content.strip())
             activate_game_window()
             if idx == -1:
                 self.click_box_by_label('button', index=0, frame=frame, detections=detections)
                 break
             else:
                 pyautogui.press(str(idx))
+            self.click_box_by_label('button', index=0, frame=frame, detections=detections)
+            break

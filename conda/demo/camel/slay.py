@@ -16,7 +16,7 @@ from move import Move
 from rest import Rest
 
 # File path constants
-DATA_DIR = "D:Agit\\AI\\2025PKU-AI-WM\\conda\\demo\\camel\\game_data"
+DATA_DIR = "./game_data"
 STATUS_FILE = f"{DATA_DIR}/status.json"
 CARD_KB_FILE = f"./game_info/card_info.json"
 SHOP_FILE = f"{DATA_DIR}/shop.json"
@@ -24,8 +24,10 @@ HISTORY_FILE = f"{DATA_DIR}/history.json"
 class SlaytheSpire:
     def __init__(self):
         # Ensure data directory exists
+        print(f"Initializing game data directory: {DATA_DIR}")
         os.makedirs(DATA_DIR, exist_ok=True)
         self.manager=Manager()
+        print("Manager initialized.")
         self.shop=Shop(self.manager)
         self.move=Move(self.manager)
         self.rest=Rest(self.manager)

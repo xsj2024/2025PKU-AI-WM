@@ -3,7 +3,7 @@ import re
 from difflib import get_close_matches
 import os
 
-# 你可以根据实际路径调整
+# 修改为正确的 card_info 路径
 CARD_INFO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'fight', 'card.json'))
 
 def load_card_db(path):
@@ -43,48 +43,65 @@ def find_closest_card_name(text: str, card_names, name_lookup) -> str:
                 return matches[0]
     return f"Unknown_{clean_text[:15].strip('_')}"
 
+def parse_effect_with_upgrade(description, upgraded):
+    """
+    将 description 形如 'Deal 8(10) damage. Apply 2(3)Vulnerable.'
+    解析为升级前/后效果，返回升级前或升级后效果字符串
+    """
+    def repl(m):
+        a, b = m.group(1), m.group(2)
+        return b if upgraded else a
+    # 替换所有 a(b) 为 b 或 a
+    return re.sub(r'(\d+)\((\d+)\)', repl, description)
+
 def parse_hand_card(card_str, card_names, name_lookup, card_info):
-    # 例: "1 Entrench S Double your Block" 或 "1 Feel No Pain Poi Whenever ..."
+    # 例: "1 Red Strike"、"1 Red Defend"、"1 Enlightenment"、"1 Bash+"
     m = re.match(r"(\d+)\s+(.+)", card_str)
     if not m:
         return {"name": card_str, "type": "", "cost": 1, "effect": card_str}
     cost = int(m.group(1))
     rest = m.group(2).strip()
     parts = rest.split()
+    # 只有 Strike 和 Defend 才有颜色前缀，且直接跳过颜色
+    if len(parts) >= 2 and parts[1] in ["Strike", "Defend"] and parts[0] in ["Red", "Green", "Blue", "Purple"]:
+        card_name = parts[1]
+        name_start = 2
+    else:
+        card_name = parts[0]
+        name_start = 1
+    # 检查是否升级
+    upgraded = False
+    if card_name.endswith('+'):
+        upgraded = True
+        card_name = card_name[:-1]
     # 1. 按前缀递减做模糊匹配，找到最长能匹配的卡牌名
     match_name = None
     match_len = 0
-    for i in range(len(parts), 0, -1):
-        prefix = ' '.join(parts[:i])
+    for i in range(len(parts)-name_start+1, 0, -1):
+        prefix = ' '.join([card_name] + parts[name_start:name_start+i])
         name = find_closest_card_name(prefix, card_names, name_lookup)
-        # 只接受非Unknown匹配
         if not name.startswith('Unknown_'):
             match_name = name
             match_len = i
             break
     if match_name:
-        # 直接查数据库
         card_db = next((c for c in card_info if c.get("name") == match_name), None)
         card_type = card_db.get("type", "") if card_db else ""
-        effect = card_db.get("description", "") if card_db else ""
+        description = card_db.get("description", "") if card_db else ""
+        effect = parse_effect_with_upgrade(description, upgraded)
         return {
-            "name": match_name,
+            "name": match_name + ('+' if upgraded else ''),
             "type": card_type,
             "cost": cost,
             "effect": effect
         }
     else:
-        # fallback: 只用第一个单词为名
-        name_raw = parts[0]
-        match_name = find_closest_card_name(name_raw, card_names, name_lookup)
-        card_db = next((c for c in card_info if c.get("name") == match_name), None)
-        card_type = card_db.get("type", "") if card_db else ""
-        effect = card_db.get("description", "") if card_db else ""
+        # 没有匹配到名字，type=unknown，effect=Not playable
         return {
-            "name": match_name,
-            "type": card_type,
+            "name": card_name + ('+' if upgraded else ''),
+            "type": "unknown",
             "cost": cost,
-            "effect": effect
+            "effect": "Not playable"
         }
 
 def fix_status_hand(path, out_path=None):
@@ -92,9 +109,37 @@ def fix_status_hand(path, out_path=None):
     with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     hand = data.get('player_status', {}).get('hand', [])
-    if hand and isinstance(hand[0], str):
-        new_hand = [parse_hand_card(card, card_names, name_lookup, card_info) for card in hand]
-        data['player_status']['hand'] = new_hand
+    # 兼容字符串和 dict 两种 hand
+    new_hand = []
+    for card in hand:
+        if isinstance(card, str):
+            card_obj = parse_hand_card(card, card_names, name_lookup, card_info)
+        else:
+            print(f"处理手牌: {card}")
+            # 兼容升级卡牌：如果名字以+结尾，匹配时去掉+
+            card_obj = card.copy()
+            card_name = card_obj.get("name", "")
+            upgraded = False
+            if card_name.endswith('+'):
+                upgraded = True
+                base_name = card_name[:-1]
+            else:
+                base_name = card_name
+            match = next((c for c in card_info if c.get("name") == base_name), None)
+            if match:
+                card_obj.setdefault("type", match.get("type", ""))
+                description = match.get("description", "")
+                # effect 字段根据升级与否替换 a(b)
+                def repl(m):
+                    a, b = m.group(1), m.group(2)
+                    return b if upgraded else a
+                effect = re.sub(r'(\d+)\((\d+)\)', repl, description)
+                card_obj.setdefault("effect", effect)
+            else:
+                card_obj["type"] = "unknown"
+                card_obj["effect"] = "Not playable"
+            new_hand.append(card_obj)
+    data['player_status']['hand'] = new_hand
     # === 新增：整理enemies的intent ===
     for enemy in data.get('enemies', []):
         statuses = enemy.get('statuses', {})

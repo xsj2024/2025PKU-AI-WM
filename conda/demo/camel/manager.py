@@ -13,8 +13,8 @@ from camel.types import ModelPlatformType
 
 
 # File path constants
-DATA_DIR = "D:\\Agit\\AI\\2025PKU-AI-WM\\conda\\demo\\camel\\game_data"
-INFO_DIR = "D:\\Agit\\AI\\2025PKU-AI-WM\\conda\\demo\\camel\\game_info"
+DATA_DIR = "./game_data"
+INFO_DIR = "./game_info"
 STATUS_FILE = f"{DATA_DIR}/status.json"
 CARD_KB_FILE = f"{INFO_DIR}/card_knowledge.txt"
 SHOP_FILE = f"{DATA_DIR}/shop.json"
@@ -23,20 +23,24 @@ class Manager:
     def __init__(self):
         # Ensure data directory exists
         os.makedirs(DATA_DIR, exist_ok=True)
-
+        print(f"Initializing game data directory: {DATA_DIR}")
         self.model = self.initialize_model()
+        print("AI model initialized.")
         self.data = self.load_data()
+        print("Game data loaded.")
         self.sys_prompt = """You are an AI that analyzes the entire game of "Slay the Spire". Please provide movement, card selection, rest, and shop suggestions based on the following structured data:
         1. Must return JSON format
         2. Analysis factors should include: player health, relic effects, target node type priority
         3. Risk alerts need to be specifically explained"""
         self.card_selection_knowledge = self.load_card_knowledge()
         self.sys_prompt_tot = f"{self.sys_prompt}\n{self.card_selection_knowledge}"
+        print("System prompt initialized.")
         self.agent = ChatAgent(
             system_message=self.sys_prompt_tot,
             model=self.model,  # Use the model initialized during setup
             output_language="en"
         )
+        print("AI model initialized.")
         with open(HISTORY_FILE, "w") as f:
             json.dump([], f)
         self.card_knowledge = self.load_card_knowledge()

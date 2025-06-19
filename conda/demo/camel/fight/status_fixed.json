@@ -1,40 +1,61 @@
 {
   "player_status": {
-    "energy": "1/3",
-    "health": "49/80",
-    "block": 0,
+    "energy": "0/3",
+    "health": "4786",
+    "block": "8",
     "statuses": {},
     "hand": [
       {
-        "name": "Defend",
-        "type": "Skill",
-        "cost": 1,
-        "effect": "Gain 5(8)Block."
-      },
-      {
-        "name": "Defend",
-        "type": "Skill",
-        "cost": 1,
-        "effect": "Gain 5(8)Block."
-      },
-      {
-        "name": "Perfected Strike",
+        "cost": "1",
+        "name": "Strike",
         "type": "Attack",
-        "cost": 1,
-        "effect": "Deal 6 damage. Deals an additional 2(3) damage for ALL of your cards containing \"Strike\"."
+        "effect": "Deal 6 damage."
+      },
+      {
+        "cost": "Unknown",
+        "name": "",
+        "type": "unknown",
+        "effect": "Not playable"
+      },
+      {
+        "cost": "1",
+        "name": "Strike",
+        "type": "Attack",
+        "effect": "Deal 6 damage."
+      },
+      {
+        "cost": "1",
+        "name": "Defend",
+        "type": "Skill",
+        "effect": "Gain 5Block."
+      },
+      {
+        "cost": "1",
+        "name": "Defend",
+        "type": "Skill",
+        "effect": "Gain 5Block."
+      },
+      {
+        "cost": "1",
+        "name": "Rampage",
+        "type": "Attack",
+        "effect": "Deal 8 damage. Increase this card's damage by 5 this combat."
+      },
+      {
+        "cost": "1",
+        "name": "Strike",
+        "type": "Attack",
+        "effect": "Deal 6 damage."
       }
     ]
   },
   "enemies": [
     {
       "name": "monster1",
-      "health": "41/54",
-      "block": 0,
-      "intent": "Aggressive This enemy intends to Attack for10 damage",
-      "statuses": {
-        "msg1": "Ritual At the end ofits turn gains 4 Strength",
-        "msg2": "Strength Increases attack damage by 4."
-      }
+      "health": "43/250",
+      "block": null,
+      "intent": "?",
+      "statuses": {}
     }
   ]
 }

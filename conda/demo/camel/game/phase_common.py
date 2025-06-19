@@ -2,6 +2,7 @@ from info_reader.hand_card_reader import read_card
 from info_reader.deck_card_reader import get_card_list_screenshots
 from annotator.game_capture import activate_game_window
 import json
+from annotator_other import model_manager
 
 def card_selection_phase(handle, frame, detections):
     card_boxes = [d for d in detections if d[0] == 'card']
@@ -141,6 +142,8 @@ def choose_loot_phase(handle, frame, detections):
 import pyautogui
 import time
 from functools import cmp_to_key
+
+from annotator.game_capture import GameCapture
 def deck_selection_phase(handle, frame, detections, button_text=None):
     """
     公用卡牌选择阶段。AI只返回一个最优选择编号。
@@ -148,16 +151,21 @@ def deck_selection_phase(handle, frame, detections, button_text=None):
     2. 只允许选择一张卡。
     """
     deck_cards = get_card_list_screenshots(handle.capture, handle.model)
+    eframe = handle.capture.wait_for_stable_frame()
+    detections = model_manager.ModelManager().detect_all(eframe)
     output_lines = ["Deck cards:"]
     for i, card in enumerate(deck_cards):
         output_lines.append(f"{i+1}: {card['card_text']}")
     output_lines.append("请选择你认为最优的一张卡牌编号：")
     ai_prompt = {
-        "system": "你是杀戮尖塔自动选牌助手，请根据以下卡牌列表，返回你要选择的最优卡牌编号和理由（格式：数字，理由: ...），你需要根据button_text的内容分析是要删牌还是升级牌之类的。",
+        "system": "你是杀戮尖塔自动选牌助手，请根据以下卡牌列表，返回你要选择的最优卡牌编号和理由（格式：数字，理由: ...），你需要根据prompt_text的内容分析是要删牌还是升级牌之类的。",
         "deck_info": "\n".join(output_lines)
     }
-    if button_text is not None:
-        ai_prompt["button_text"] = button_text
+        # 检查是否有 prompt 类别，提取其内容
+    prompt_boxes = [d for d in detections if 'prompt' in d[0]]
+    if prompt_boxes:
+        prompt_text = handle.get_box_text(eframe, prompt_boxes[0])
+        ai_prompt["prompt_text"] = prompt_text
     print(ai_prompt)
     # --- 增加自动重试 ---
     while True:

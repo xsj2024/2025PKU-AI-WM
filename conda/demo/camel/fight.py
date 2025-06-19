@@ -251,9 +251,9 @@ class BattleCommander:
         typewriter_print(f"🔁 回合 #{self.session.round_count+1} 状态已加载")
         
         # 特殊情况处理：无敌人或能量不足
-        #if not game_state["enemies"]:
-        #    typewriter_print("🛑 战场无敌人，结束回合")
-        #    return "〖End turn〗"
+        if not game_state["enemies"]:
+            typewriter_print("🛑 战场无敌人，结束回合")
+            return "〖结束回合〗"
         
         # 构建用户提示（包含历史记忆）
         user_prompt = self.session.build_current_prompt(game_state)

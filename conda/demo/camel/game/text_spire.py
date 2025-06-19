@@ -19,14 +19,18 @@ import json
 class TextSlayTheSpire:
     def __init__(self):
         self.capture = game_capture.GameCapture()
+        print('Game capture initialized.')
         self.model = model_manager.ModelManager()
+        print('Model manager initialized.')
         self.last_scene = None
         self.running = True
         
         self.bot=SlaytheSpire()
+        print('Slay the Spire bot initialized.')
         self.battle_handler = BattleHandler(
             self.capture, self.model, self.get_box_text, self.click_box_by_label,self.bot
         )
+        print('Battle handler initialized.')
         self.event_handler = EventHandler(
             self.capture, self.model, self.get_box_text, self.click_box_by_label, self.bot
         )
@@ -43,6 +47,7 @@ class TextSlayTheSpire:
             self.capture, self.model, self.get_box_text, self.click_box_by_label,
             self.bot
         )
+        print('Handlers initialized.')
 
     def get_scene(self, detections):
         # Priority: long_button > chest/boss chest > monster > merchant/card_removal_service > button > map
@@ -66,41 +71,39 @@ class TextSlayTheSpire:
         self.capture.start_capture()
         try:
             while self.running:
-                frame = self.capture.get_frame()
-                if frame is None:
-                    time.sleep(0.1)
-                    continue
-                detections = self.model.detect_all(frame)
-                scene = self.get_scene(detections)
-                # 收集场景信息并喂给AI
-                # scene_info = f"--- Scene switched to: {scene} ---"
-                # ai_prompt = {
-                #     "system": "你是杀戮尖塔自动场景助手，请根据当前场景信息，判断并返回你要执行的操作（只返回操作名，不要解释）：",
-                #     "scene_info": scene_info
-                # }
-                # ai_response = self.bot.manager.agent.step(json.dumps(ai_prompt, ensure_ascii=False))
-                # ai_result = ai_response.msg.content.strip()
-                # print(f"AI场景决策: {ai_result}")
-                self.last_scene = scene
-                if scene == 'battle':
-                    self.battle_handler.handle_battle(frame, detections)
-                elif scene == 'event':
-                    self.event_handler.handle_event(frame, detections)
-                elif scene == 'campfire':
-                    self.campfire_handler.handle_campfire(frame, detections)
-                elif scene == 'chest':
-                    self.chest_handler.handle_chest(frame, detections)
-                elif scene == 'map':
+                try:
+                    frame = self.capture.get_frame()
+                    if frame is None:
+                        time.sleep(0.1)
+                        continue
+                    detections = self.model.detect_all(frame)
+                    scene = self.get_scene(detections)
+                    self.last_scene = scene
+                    if scene == 'battle':
+                        self.battle_handler.handle_battle(frame, detections)
+                    elif scene == 'event':
+                        self.event_handler.handle_event(frame, detections)
+                    elif scene == 'campfire':
+                        self.campfire_handler.handle_campfire(frame, detections)
+                    elif scene == 'chest':
+                        self.chest_handler.handle_chest(frame, detections)
+                    elif scene == 'map':
+                        time.sleep(1)
+                        self.map_handler.handle_map(frame, detections)
+                        self.capture.move_to_edge()  # 确保地图处理后鼠标不在游戏区域
+                        time.sleep(1)
+                    elif scene == 'shop':
+                        self.shop_handler.handle_shop(frame, detections)
+                    elif scene == 'unknown':
+                        print('Unknown scene detected.')
+                        continue
+                    # TODO: handle other scenes
+                except Exception as e:
+                    print(f"[场景处理异常] {e}, 自动重试...")
+                    import traceback
+                    traceback.print_exc()
                     time.sleep(1)
-                    self.map_handler.handle_map(frame, detections)
-                    self.capture.move_to_edge()  # 确保地图处理后鼠标不在游戏区域
-                    time.sleep(1)
-                elif scene == 'shop':
-                    self.shop_handler.handle_shop(frame, detections)
-                elif scene == 'unknown':
-                    print('Unknown scene detected.')
                     continue
-                # TODO: handle other scenes
         except KeyboardInterrupt:
             print('Exiting game...')
             self.capture.stop_capture()
@@ -144,7 +147,7 @@ class TextSlayTheSpire:
 
 if __name__ == '__main__':
     from annotator.config import Config
-    print("Starting Text-based Slay the Spire...")
+
     # hwnd = win32gui.FindWindow(None, Config.GAME_WINDOW_TITLE)
     # win32gui.SetForegroundWindow(hwnd)
     activate_game_window()
