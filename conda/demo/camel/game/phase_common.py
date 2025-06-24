@@ -3,6 +3,8 @@ from info_reader.deck_card_reader import get_card_list_screenshots
 from annotator.game_capture import activate_game_window
 import json
 from annotator_other import model_manager
+# ===== 引入typewriter美观输出 =====
+from fight import typewriter
 
 def card_selection_phase(handle, frame, detections):
     card_boxes = [d for d in detections if d[0] == 'card']
@@ -12,14 +14,12 @@ def card_selection_phase(handle, frame, detections):
         roi = frame[y1:y2, x1:x2]
         info = read_card(roi)
         card_infos.append(info)
-    for idx, info in enumerate(card_infos):
-        print(f'{idx+1}. {info}')
     skip_idx = None
     button_boxes = [d for d in detections if d[0] == 'button']
     for b in button_boxes:
         if handle.get_box_text(frame, b) == 'skip':
             skip_idx = len(card_infos) + 1
-            print(f'{skip_idx}. Skip')
+            typewriter(f'{skip_idx}. Skip')
     # 获取当前卡牌库前，按下D键进入deck
     import pyautogui
     pyautogui.press('d')
@@ -44,23 +44,23 @@ def card_selection_phase(handle, frame, detections):
             break
         except Exception as e:
             if '429' in str(e) or 'rate limit' in str(e).lower():
-                print("[AI限流] 等待10秒后重试...")
+                typewriter("[AI限流] 等待10秒后重试...")
                 import time
                 time.sleep(10)
             else:
-                print(f"[AI请求异常] {e}")
+                typewriter(f"[AI请求异常] {e}")
                 import time
                 time.sleep(5)
     ai_result = ai_response.msg.content.strip()
-    print(f"AI选择: {ai_result}")
+    typewriter(f"AI选择: {ai_result}")
     import re
     match = re.search(r'(\-?\d+)[,，]\s*原因[:：]?([^,，]*)[,，]\s*卡牌库[:：]?(.*)', ai_result)
     if match:
         choice = int(match.group(1))
         reason = match.group(2).strip()
         deck_cards_ai = match.group(3).strip()
-        print(f"AI决策原因: {reason}")
-        print(f"AI识别卡牌库: {deck_cards_ai}")
+        typewriter(f"AI决策原因: {reason}")
+        typewriter(f"AI识别卡牌库: {deck_cards_ai}")
     else:
         # fallback: 只提取编号
         digits = re.findall(r'-?\d+', ai_result)
@@ -79,14 +79,14 @@ def choose_loot_phase(handle, frame, detections):
         loot_with_index = [(i, d) for i, d in enumerate(loot_boxes)]
         loot_with_index.sort(key=lambda x: x[1][2])
         has_two_choose_one = any(d[0] == 'two choose one' for d in detections)
-        print("choose your loots, or -1 to skip" + (" (You can only choose one of the last two loots)" if has_two_choose_one else ""))
+        typewriter("choose your loots, or -1 to skip" + (" (You can only choose one of the last two loots)" if has_two_choose_one else ""))
         loot_infos = []
         for _, d in loot_with_index:
             info = handle.get_box_text(frame, d)
             loot_infos.append(info)
         for idx, info in enumerate(loot_infos):
-            print(f'{idx+1}. {info}')
-        print('-1. Skip')
+            typewriter(f'{idx+1}. {info}')
+        typewriter('-1. Skip')
         # AI输入替换人工输入
         options = [f'{idx+1}. {info}' for idx, info in enumerate(loot_infos)]
         options.append('-1. Skip')
@@ -101,13 +101,13 @@ def choose_loot_phase(handle, frame, detections):
                 break
             except Exception as e:
                 if '429' in str(e) or 'rate limit' in str(e).lower():
-                    print("[AI限流] 等待10秒后重试...")
+                    typewriter("[AI限流] 等待10秒后重试...")
                     time.sleep(10)
                 else:
-                    print(f"[AI请求异常] {e}")
+                    typewriter(f"[AI请求异常] {e}")
                     time.sleep(5)
         ai_result = ai_response.msg.content.strip()
-        print(f"AI选择: {ai_result}")
+        typewriter(f"AI选择: {ai_result}")
         import re
         match = re.search(r'"action"\s*:\s*"?(-?\d+)"?', ai_result)
         if match:
@@ -117,7 +117,7 @@ def choose_loot_phase(handle, frame, detections):
             choice = int(digits[0]) if digits else 1
         activate_game_window()
         if choice == -1:
-            print('Skipped loot selection.')
+            typewriter('Skipped loot selection.')
             handle.click_box_by_label('button', index=0, frame=frame, detections=detections)
             return
         original_index = loot_with_index[choice-1][0]
@@ -166,7 +166,6 @@ def deck_selection_phase(handle, frame, detections, button_text=None):
     if prompt_boxes:
         prompt_text = handle.get_box_text(eframe, prompt_boxes[0])
         ai_prompt["prompt_text"] = prompt_text
-    print(ai_prompt)
     # --- 增加自动重试 ---
     while True:
         try:
@@ -174,20 +173,20 @@ def deck_selection_phase(handle, frame, detections, button_text=None):
             break
         except Exception as e:
             if '429' in str(e) or 'rate limit' in str(e).lower():
-                print("[AI限流] 等待10秒后重试...")
+                typewriter("[AI限流] 等待10秒后重试...")
                 import time
                 time.sleep(10)
             else:
-                print(f"[AI请求异常] {e}")
+                typewriter(f"[AI请求异常] {e}")
                 import time
                 time.sleep(5)
     ai_result = ai_response.msg.content.strip()
-    print(f"AI选择: {ai_result}")
+    typewriter(f"AI选择: {ai_result}",color="#ffd600")
     # 输出AI决策理由（如有）
     import re
     reason_match = re.search(r'理由[:：]?(.+)', ai_result)
     if reason_match:
-        print(f"AI决策理由: {reason_match.group(1).strip()}")
+        typewriter(f"AI决策理由: {reason_match.group(1).strip()}",color="#ffd600")
     # 只取一个编号
     match = re.search(r'(\d+)', ai_result)
     idx= int(match.group(1)) - 1 if match else 0
@@ -223,10 +222,10 @@ def deck_selection_phase(handle, frame, detections, button_text=None):
         if len(buttons) == 2:
             right_btn = max(buttons, key=lambda d: d[1])
             handle.click_box_by_label('button', index=buttons.index(right_btn), frame=frame, detections=detections)
-            print("Two buttons detected, clicked right button and exited card selection phase.")
+            typewriter("Two buttons detected, clicked right button and exited card selection phase.")
             return
         if not any(d[0] == 'card' for d in detections):
-            print("No more cards, exited card selection phase.")
+            typewriter("No more cards, exited card selection phase.")
             return
         if clicked_count >= len(idxs_set):
             assert False, "Clicked all indices but still in card selection phase, something went wrong."
@@ -254,7 +253,6 @@ def deck_selection_phase(handle, frame, detections, button_text=None):
                 handle.capture.move_to_edge()
                 clicked_count += 1
             current_card_index += 1
-            print(current_card_index)
         if card_boxes:
             last_max_y2 = max(d[4] for d in card_boxes if d[4] <= bottom)
         pyautogui.scroll(-1)

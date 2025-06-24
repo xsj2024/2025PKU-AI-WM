@@ -5,6 +5,8 @@ from game.phase_common import choose_loot_phase, deck_selection_phase
 from annotator import game_capture
 from annotator.game_capture import activate_game_window
 from info_reader.hand_card_reader import read_card
+# ===== 引入typewriter美观输出 =====
+from fight import typewriter
 
 class EventHandler:
     def __init__(self, capture, model, get_box_text, click_box_by_label, bot):
@@ -18,7 +20,7 @@ class EventHandler:
         # 获取所有 card_back
         card_backs = [d for d in detections if d[0] == 'card_back']
         if len(card_backs) != 12:
-            print('Error: card_back count is not 12!')
+            typewriter('Error: card_back count is not 12!')
             return
         # 计算所有卡牌的中心坐标
         centers = [((d[1]+d[3])//2, (d[2]+d[4])//2) for d in card_backs]
@@ -36,7 +38,7 @@ class EventHandler:
             grid_map[(row, col)] = idx
         available = set(grid_map.keys())
         for turn in range(5):
-            print(f'Round {turn+1}/5')
+            typewriter(f'Round {turn+1}/5')
             # 选择第一个
             while True:
                 # print('Available positions:')
@@ -55,22 +57,22 @@ class EventHandler:
                         break
                     except Exception as e:
                         if '429' in str(e) or 'rate limit' in str(e).lower():
-                            print("[AI限流] 等待10秒后重试...")
+                            typewriter("[AI限流] 等待10秒后重试...")
                             time.sleep(10)
                         else:
-                            print(f"[AI请求异常] {e}")
+                            typewriter(f"[AI请求异常] {e}")
                             time.sleep(5)
                 s = ai_response.msg.content.strip()
-                print(f"AI选择: {s}")
+                typewriter(f"AI选择: {s}", color="#ffd600")
                 activate_game_window()
                 try:
                     r1, c1 = [int(x)-1 for x in s.strip().split()]
                 except:
-                    print('Invalid input!')
+                    typewriter('Invalid input!')
                     continue
                 if (r1, c1) in available:
                     break
-                print('Invalid position!')
+                typewriter('Invalid position!')
             idx1 = grid_map[(r1, c1)]
             self.click_box_by_label('card_back', index=idx1, frame=frame, detections=detections)
             time.sleep(0.5)
@@ -92,7 +94,7 @@ class EventHandler:
                 x1, y1, x2, y2 = card1[1:5]
                 roi = frame1[y1:y2, x1:x2]
                 card1_info = read_card(roi)
-            print(f'First card info: {card1_info}')
+            typewriter(f'First card info: {card1_info}')
             # 选择第二个
             while True:
                 # 构造AI输入
@@ -107,22 +109,22 @@ class EventHandler:
                         break
                     except Exception as e:
                         if '429' in str(e) or 'rate limit' in str(e).lower():
-                            print("[AI限流] 等待10秒后重试...")
+                            typewriter("[AI限流] 等待10秒后重试...")
                             time.sleep(10)
                         else:
-                            print(f"[AI请求异常] {e}")
+                            typewriter(f"[AI请求异常] {e}")
                             time.sleep(5)
                 s = ai_response.msg.content.strip()
-                print(f"AI选择: {s}")
+                typewriter(f"AI选择: {s}", color="#ffd600")
                 activate_game_window()
                 try:
                     r2, c2 = [int(x)-1 for x in s.strip().split()]
                 except:
-                    print('Invalid input!')
+                    typewriter('Invalid input!')
                     continue
                 if (r2, c2) in available and (r2, c2) != (r1, c1):
                     break
-                print('Invalid position!')
+                typewriter('Invalid position!')
             idx2 = grid_map[(r2, c2)]
             self.click_box_by_label('card_back', index=idx2, frame=frame, detections=detections)
             time.sleep(0.5)
@@ -133,7 +135,7 @@ class EventHandler:
             detections3 = self.model.detect_all(frame3)
             card_backs3 = [d for d in detections3 if d[0] == 'card_back']
             if len(card_backs3) < len(card_backs):
-                print(f'You got the card: {card1_info}')
+                typewriter(f'You got the card: {card1_info}')
                 centers3 = [((d[1]+d[3])//2, (d[2]+d[4])//2) for d in card_backs3]
                 # 找到消失的卡牌
                 # 用距离阈值判断哪个位置的卡牌消失，避免因识别误差导致判断错误
@@ -167,9 +169,9 @@ class EventHandler:
                     x1, y1, x2, y2 = card2[1:5]
                     roi = frame2[y1:y2, x1:x2]
                     card2_info = read_card(roi)
-                print(f'Second card info: {card2_info}')
-                print('No card obtained this round.')
-        print('Match and keep phase finished.')
+                typewriter(f'Second card info: {card2_info}')
+                typewriter('No card obtained this round.')
+        typewriter('Match and keep phase finished.')
 
 
     def handle_event(self, frame, detections):
@@ -186,18 +188,18 @@ class EventHandler:
                 try:
                     player_hp = self.get_box_text(frame, hp_box)
                 except Exception as e:
-                    print(f"[血量识别异常] {e}")
+                    typewriter(f"[血量识别异常] {e}")
             # 识别金币
             money_box = next((d for d in detections if d[0] == 'money'), None)
             if money_box:
                 try:
                     player_gold = self.get_box_text(frame, money_box)
                 except Exception as e:
-                    print(f"[金币识别异常] {e}")
+                    typewriter(f"[金币识别异常] {e}")
             long_buttons = [d for d in detections if d[0] == 'long_button']
             # 需要对 long_button 按 y 排序，但要注意 click_box_by_label 需要原始索引
             if long_buttons:
-                print("Event options:")
+                typewriter("Event options:")
                 # 记录原始索引和y坐标
                 long_buttons = [(i, d, d[2]) for i, d in enumerate(long_buttons) if d[0] == 'long_button']
                 # 按y排序
@@ -205,7 +207,7 @@ class EventHandler:
                 options = []
                 for display_idx, (orig_idx, d, _) in enumerate(long_buttons):
                     text = self.get_box_text(frame, d)
-                    print(text)
+                    typewriter(text)
                     options.append((orig_idx, text))
                 # AI决策
                 ai_prompt = {
@@ -214,20 +216,20 @@ class EventHandler:
                     "player_hp": player_hp,
                     "player_gold": player_gold
                 }
-                print(ai_prompt)
+                typewriter(str(ai_prompt))
                 while True:
                     try:
                         ai_response = self.get_box_text.__self__.bot.manager.agent.step(json.dumps(ai_prompt, ensure_ascii=False))
                         break
                     except Exception as e:
                         if '429' in str(e) or 'rate limit' in str(e).lower():
-                            print("[AI限流] 等待10秒后重试...")
+                            typewriter("[AI限流] 等待10秒后重试...")
                             time.sleep(10)
                         else:
-                            print(f"[AI请求异常] {e}")
+                            typewriter(f"[AI请求异常] {e}")
                             time.sleep(5)
                 idx_str = ai_response.msg.content.strip()
-                print(f"AI选择: {idx_str}")
+                typewriter(f"AI选择: {idx_str}", color="#ffd600")
                 # 兼容AI返回json或纯数字
                 match = re.search(r'"choice"\s*:\s*(\d+)', idx_str)
                 if match:
@@ -241,18 +243,18 @@ class EventHandler:
                 self.capture.move_to_edge()
                 continue
             if 'energy_state' in labels:
-                print("Event ended, switching to battle scene.")
+                typewriter("Event ended, switching to battle scene.")
                 return
             if 'loot' in labels:
-                print("Switching to loot selection phase.")
+                typewriter("Switching to loot selection phase.")
                 choose_loot_phase(self, frame, detections)
                 return
             if 'card_back' in labels:
-                print("Match and Keep phase detected. (Not implemented, will exit if no card_back)")
+                typewriter("Match and Keep phase detected. (Not implemented, will exit if no card_back)")
                 self.match_and_keep_phase(frame, detections)
                 continue
             if 'card' in labels:
-                print("Deck selection phase in event.")
+                typewriter("Deck selection phase in event.")
                 # 获取唯一 button 的 text
                 button_boxes = [d for d in detections if d[0] == 'button']
                 button_text = None
@@ -265,9 +267,8 @@ class EventHandler:
                 return
             buttons = [d for d in detections if d[0] == 'button']
             if len(buttons) == 1 and buttons[0][1] > 20:  # 假设 eps 为 0.1
-                # 如果只有 1 个 button 且该 button x1 坐标大于 eps 则点击按钮
-                print("Clicking button in event.")
+                typewriter("Clicking button in event.")
                 self.click_box_by_label('button', index=0, frame=frame, detections=detections)
                 continue
-            print("Event ended, returning to map.")
+            typewriter("Event ended, returning to map.")
             return

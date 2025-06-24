@@ -1,17 +1,21 @@
 {
   "player_status": {
-    "energy": "0/3",
-    "health": "4786",
-    "block": "8",
+    "energy": "3/3",
+    "health": "88/88",
+    "block": null,
     "statuses": {},
     "hand": [
       {
         "cost": "1",
+        "name": "Defend"
+      },
+      {
+        "cost": "1",
         "name": "Strike"
       },
       {
-        "cost": "Unknown",
-        "name": ""
+        "cost": "2",
+        "name": "Bash"
       },
       {
         "cost": "1",
@@ -20,28 +24,18 @@
       {
         "cost": "1",
         "name": "Defend"
-      },
-      {
-        "cost": "1",
-        "name": "Defend"
-      },
-      {
-        "cost": "1",
-        "name": "Rampage"
-      },
-      {
-        "cost": "1",
-        "name": "Strike"
       }
     ]
   },
   "enemies": [
     {
       "name": "monster1",
-      "health": "43/250",
+      "health": "47/47",
       "block": null,
       "intent": "?",
-      "statuses": {}
+      "statuses": {
+        "msg1": "Aggressive This enemy intends to Attack for 12 damage"
+      }
     }
   ]
 }

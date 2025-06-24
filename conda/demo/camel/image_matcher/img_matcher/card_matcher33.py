@@ -254,8 +254,6 @@ class ImageFeatureDatabase:
         # 筛选并排序结果
         valid_matches = [(k, v[0], v[1]) for k, v in match_scores.items()]
         valid_matches.sort(key=lambda x: (-x[1], -x[2]))
-        print(valid_matches)
-        
         return [os.path.basename(x[0])[:-4] for x in valid_matches[:top_n]]
 
 db = ImageFeatureDatabase(k_clusters=100)

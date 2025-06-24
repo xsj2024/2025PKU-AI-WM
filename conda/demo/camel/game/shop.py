@@ -7,6 +7,9 @@ from info_reader.hand_card_reader import read_card
 from info_reader.relic_info_reader import read_relic_info
 from info_reader.potion_info_reader import read_potion_info
 from cleaner import Cleaner
+# ===== 引入typewriter美观输出 =====
+from fight import typewriter
+
 class ShopHandler:
     def __init__(self, capture, model, get_box_text, click_box_by_label,bot):
         self.capture = capture
@@ -16,6 +19,7 @@ class ShopHandler:
         self.bot=bot
 
     def handle_shop(self, frame, detections):
+        typewriter('进入商店场景...', color="#90caf9")
         # 先点击 merchant
         self.click_box_by_label('merchant', index=0, frame=frame, detections=detections)
         self.capture.move_to_edge()
@@ -42,7 +46,7 @@ class ShopHandler:
                     money = int(''.join(filter(str.isdigit, money_text)))
                 except:
                     money = None
-                print("money=",money)
+                typewriter(f"money={money}")
             # 识别所有 price
             price_boxes = [(i, d) for i, d in enumerate(detections) if d[0] == 'price']
             goods = []
@@ -72,12 +76,11 @@ class ShopHandler:
                 else:
                     assert False
                 price = self.get_box_text(frame, price_box)
+                # 如果price中有空格，保留空格后面的部分
+                if isinstance(price, str) and ' ' in price:
+                    price = price.split(' ', 1)[1]
                 goods.append({'type': label, 'info': info, 'price': price, 'idx': best[0], 'price_idx': price_idx})
-            print(f'Your money: {money}')
-            for i, g in enumerate(goods):
-                print(f'{i+1}. [{g["type"]}] {g["info"]} - Price: {g["price"]}')
-            print(f'{len(goods)+1}. [leave] 0 leave - Price: 0')
-
+            typewriter(f'你的金币: {money}')
 
             lines = []
             # Add money line
@@ -111,26 +114,44 @@ class ShopHandler:
                     break
                 except Exception as e:
                     if '429' in str(e) or 'rate limit' in str(e).lower():
-                        print("[AI限流] 等待10秒后重试...")
+                        typewriter("[AI限流] 等待10秒后重试...")
                         time.sleep(10)
                     else:
-                        print(f"[AI请求异常] {e}")
+                        typewriter(f"[AI请求异常] {e}")
                         time.sleep(5)
             result = ai_response.msg.content.strip()
-            print(f"AI选择: {result}")
+            typewriter(f"AI选择: {result}",  color="#ffd600")
 
-            choice = int(result)
+            # 更健壮地解析AI返回的选择
+            import re
+            try:
+                choice = int(result)
+            except ValueError:
+                # 尝试解析json
+                try:
+                    if result.startswith('```'):
+                        result = result.split('```')[-1]
+                    data = json.loads(result)
+                    choice = int(data.get('selection', 1))
+                except Exception:
+                    match = re.search(r'\d+', result)
+                    if match:
+                        choice = int(match.group())
+                    else:
+                        raise ValueError(f'AI返回内容无法解析为数字: {result}')
+
             activate_game_window()
             if choice == len(goods)+1:
                 # 离开商店
-                print('Leaving shop...')
+                typewriter('离开商店...')
                 for _ in range(2):
                     frame2 = self.capture.wait_for_stable_frame()
                     detections2 = self.model.detect_all(frame2)
                     buttons = [d for d in detections2 if d[0] == 'button']
                     if buttons:
                         self.click_box_by_label('button', index=0, frame=frame2, detections=detections2)
-                print('Exited shop scene.')
+                typewriter('已退出商店场景。')
+                time.sleep(3)
                 return
             # 购买物品
             g = goods[choice-1]
@@ -143,11 +164,11 @@ class ShopHandler:
             labels2 = [d[0] for d in detections2]
             if 'card_removal_service' not in labels2:
                 if 'loot' in labels2:
-                    print('Loot selection phase after purchase.')
+                    typewriter('购买后进入奖励选择阶段。', color="#90caf9")
                     choose_loot_phase(self, frame2, detections2)
                 elif 'card' in labels2:
-                    print('Deck selection phase after purchase.')
+                    typewriter('购买后进入卡牌选择阶段。', color="#90caf9")
                     deck_selection_phase(self, frame2, detections2)
                 else:
                     assert False
-            print('Purchase finished, waiting for next action...')
+            typewriter('购买完成，等待下一步操作...', color="#90caf9")

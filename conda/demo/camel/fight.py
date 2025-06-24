@@ -14,7 +14,7 @@ import threading
 
 # ===== 打字机效果函数 =====
 def typewriter_print(text, delay=0.03):
-    """以打字机效果打印文本"""
+    """以打字机效果打印文本（不加前缀）"""
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
@@ -218,7 +218,7 @@ class BattleCommander:
             player_desc += "\n"
         
         # 构建敌人状态描述
-        enemies_desc = "\n【敌人状态】（target编号0代表自己，1、2...代表敌人）"
+        enemies_desc = "\n【敌人状态】（target编号0代表自己，1、2...代表敌兵）"
         for i, enemy in enumerate(enemies, 1):
             enemies_desc += (
                 f"\n敌人{i} - {enemy.get('name', f'敌兵{i}')} (target={i}):\n"
@@ -316,15 +316,10 @@ class BattleCommander:
         return self.fallback_command(game_state)
     
     def _show_thinking_animation(self, message, stop_flag):
-        """显示思考动画"""
-        symbols = ['●', '◇', '◆', '■', '□', '▲', '△', '▽', '▼']
-        i = 0
+        """显示思考提示（无动画）"""
+        print(f"{message}……", flush=True)
         while not stop_flag():
-            sys.stdout.write(f"\r{message} {symbols[i % len(symbols)]}")
-            sys.stdout.flush()
             time.sleep(0.1)
-            i += 1
-        sys.stdout.write("\r" + " " * 50 + "\r")  # 清理动画行
 
     # === 结果验证与处理 ===
     def generate_command_with_detail(self):
@@ -351,7 +346,6 @@ class BattleCommander:
             }
         user_prompt = self.session.build_current_prompt(game_state)
         typewriter_print(f"📝 提示已构建 ({len(user_prompt)}字符)")
-        print(user_prompt)
         user_msg = BaseMessage.make_user_message(role_name="玩家", content=user_prompt)
         stop_animation = False
         animation_thread = threading.Thread(
@@ -362,12 +356,10 @@ class BattleCommander:
         animation_thread.start()
         start_time = time.time()
         try:
-            print(user_msg)
             agent_response = self.session.agent.step(user_msg)
             stop_animation = True
             animation_thread.join()
             ai_content = agent_response.msgs[0].content
-            print(ai_content)
             response_time = time.time() - start_time
             typewriter_print(f"\033[36m🤖 AI响应 (耗时{response_time:.1f}s)\033[0m")
             # 解析详细信息
@@ -393,7 +385,6 @@ class BattleCommander:
         # 查找卡牌索引
         hand = game_state["player_status"]["hand"]
         choice = None
-        print(hand)
         for idx, card in enumerate(hand):
             if card["name"] == card_name:
                 choice = (idx+1)%10
@@ -401,7 +392,6 @@ class BattleCommander:
         # 查找目标索引
         enemies = game_state["enemies"]
         target_idx = 0
-        print(enemies)
         if target:
             for idx, enemy in enumerate(enemies):
                 if enemy.get("name") == target:
@@ -409,8 +399,9 @@ class BattleCommander:
                     break
         command = f"〖{card_name}->{target}〗" if target else f"〖{card_name}〗"
         self.session.add_decision_history(command, reasoning)
-        typewriter_print(f"\033[33m📝 新记忆: 回合 {self.session.round_count} - {command}\033[0m")
-        typewriter_print(f"\033[33m  原因: {reasoning}\033[0m")
+        # 彩色输出：记忆为黄色，原因为绿色
+        typewriter(f"📝 新记忆: 回合 {self.session.round_count} - {command}", color="#ffd600")
+        typewriter(f"  原因: {reasoning}", color="#ffd600")
         return {
             'command': command,
             'choice': choice,
@@ -486,4 +477,53 @@ class BattleCommander:
             'target_idx': None,
             'target': None
         }
+
+# ===== 彩色输出函数 =====
+# ===== 支持自定义颜色的打字机输出 =====
+def typewriter(text, color=None, delay=0.03):
+    """
+    以打字机效果输出文本到终端和UI，支持自定义颜色。
+    color: 颜色字符串，如 "#00e676"，None 表示默认。
+    """
+    import sys
+    import re
+    # 判断是否有 UI 输出流
+    ui_stream = getattr(sys, "ui_stream", None)
+    # 颜色转 ANSI
+    def hex_to_ansi(hex_color):
+        hex_color = hex_color.lstrip('#')
+        if len(hex_color) == 6:
+            r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+            return f"\033[38;2;{r};{g};{b}m"
+        return ""
+    ansi_prefix = hex_to_ansi(color) if color else ""
+    ansi_suffix = "\033[0m" if color else ""
+    # UI 输出
+    if ui_stream:
+        for char in text:
+            ui_stream.write(char, color)
+            ui_stream.flush()
+            if char in ['，', '。', '！', '？', '：', '；', '「', '」']:
+                time.sleep(delay * 0.7)
+            elif '\u4e00' <= char <= '\u9fff':
+                time.sleep(delay * 0.8)
+            else:
+                time.sleep(delay)
+        ui_stream.write("\n", color)
+        ui_stream.flush()
+    else:
+        for char in text:
+            sys.stdout.write(f"{ansi_prefix}{char}{ansi_suffix}" if color else char)
+            sys.stdout.flush()
+            if char in ['，', '。', '！', '？', '：', '；', '「', '」']:
+                time.sleep(delay * 0.7)
+            elif '\u4e00' <= char <= '\u9fff':
+                time.sleep(delay * 0.8)
+            else:
+                time.sleep(delay)
+        print()
+
+# 用法示例：
+# typewriter("彩色输出示例", color="#00e676")
+# typewriter("普通输出", color=None)
 

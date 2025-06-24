@@ -47,7 +47,6 @@ def get_card_list_screenshots(capture, model, max_scroll=50, sleep_time=0.5):
             for group in grouped:
                 for box in group:
                     x1, y1, x2, y2 = box
-                    print(f"New card found: {box}")
                     card_img = frame[y1:y2, x1:x2]
                     card_text = ascii_ocr(card_img)
                     all_cards.append({'card_text': card_text, 'box': box})

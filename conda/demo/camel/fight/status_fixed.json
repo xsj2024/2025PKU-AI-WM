@@ -1,21 +1,27 @@
 {
   "player_status": {
-    "energy": "0/3",
-    "health": "4786",
-    "block": "8",
+    "energy": "3/3",
+    "health": "88/88",
+    "block": null,
     "statuses": {},
     "hand": [
       {
         "cost": "1",
+        "name": "Defend",
+        "type": "Skill",
+        "effect": "Gain 5Block."
+      },
+      {
+        "cost": "1",
         "name": "Strike",
         "type": "Attack",
         "effect": "Deal 6 damage."
       },
       {
-        "cost": "Unknown",
-        "name": "",
-        "type": "unknown",
-        "effect": "Not playable"
+        "cost": "2",
+        "name": "Bash",
+        "type": "Attack",
+        "effect": "Deal 8 damage. Apply 2Vulnerable."
       },
       {
         "cost": "1",
@@ -28,33 +34,15 @@
         "name": "Defend",
         "type": "Skill",
         "effect": "Gain 5Block."
-      },
-      {
-        "cost": "1",
-        "name": "Defend",
-        "type": "Skill",
-        "effect": "Gain 5Block."
-      },
-      {
-        "cost": "1",
-        "name": "Rampage",
-        "type": "Attack",
-        "effect": "Deal 8 damage. Increase this card's damage by 5 this combat."
-      },
-      {
-        "cost": "1",
-        "name": "Strike",
-        "type": "Attack",
-        "effect": "Deal 6 damage."
       }
     ]
   },
   "enemies": [
     {
       "name": "monster1",
-      "health": "43/250",
+      "health": "47/47",
       "block": null,
-      "intent": "?",
+      "intent": "Aggressive This enemy intends to Attack for 12 damage",
       "statuses": {}
     }
   ]

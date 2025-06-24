@@ -18,7 +18,6 @@ class MapHandler:
             for frame in frames:
                 detections = self.model.detect_all(frame)
                 selectable_rooms = [d for d in detections if d[0] == 'selectable_room']
-                print(selectable_rooms)
                 if selectable_rooms:
                     print('Selectable room found, clicking the first one.')
                     self.click_box_by_label('selectable_room', index=0, frame=frame, detections=detections)

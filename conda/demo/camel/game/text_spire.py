@@ -15,6 +15,7 @@ from annotator.game_capture import activate_game_window
 import annotator_map.model_manager
 import pyautogui
 import json
+import sys
 
 class TextSlayTheSpire:
     def __init__(self):
@@ -139,7 +140,6 @@ class TextSlayTheSpire:
             x1, y1, x2, y2 = detection[1:5]
             roi = frame[y1:y2, x1:x2]
             text = ascii_ocr.ascii_ocr(roi)
-            print("Outprinting",text.strip().lower())
             return text.strip().lower()
         except Exception as e:
             print(f'[OCR ERROR] {e}')
@@ -147,10 +147,11 @@ class TextSlayTheSpire:
 
 if __name__ == '__main__':
     from annotator.config import Config
+    from game.ui import start_ui
 
-    # hwnd = win32gui.FindWindow(None, Config.GAME_WINDOW_TITLE)
-    # win32gui.SetForegroundWindow(hwnd)
-    activate_game_window()
-    # win32gui.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0, win32con.SWP_NOMOVE | win32con.SWP_NOSIZE)
-    game = TextSlayTheSpire()
-    game.run()
+    def main():
+        activate_game_window()
+        game = TextSlayTheSpire()
+        game.run()
+
+    start_ui(main)

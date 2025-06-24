@@ -9,7 +9,6 @@ def ascii_ocr(image: 'np.ndarray', repeat: int = 1) -> str:
         raise ValueError("Input image is None. Please check the image path or file.")
     result = list(predictor.ocr(image))
     texts = [item['text'] for item in result if 'text' in item]
-    print("ocr_result:", ' '.join(texts))
     return ' '.join(texts)
 
 if __name__ == '__main__':

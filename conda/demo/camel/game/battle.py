@@ -9,6 +9,7 @@ from game.phase_common import card_selection_phase, choose_loot_phase
 from annotator.game_capture import activate_game_window
 import json
 from fight import BattleCommander  # 新增
+from fight import typewriter  # 新增，导入typewriter
 import subprocess
 import ast
 import os
@@ -42,29 +43,26 @@ class BattleHandler:
             has_button = 'button' in labels
             has_loot = 'loot' in labels
             if has_loot:
-                print('Loot selection phase.')
+                typewriter('Loot selection phase.')
                 choose_loot_phase(self, stable_frame, detections)
                 return
             if has_card and has_prompt:
-                print('Card selection phase.')
+                typewriter('Card selection phase.')
                 card_selection_phase(self, stable_frame, detections)
                 continue
             if has_prompt:
-                print('Hand selection phase.')
+                typewriter('Hand selection phase.')
                 self.hand_selection_phase(stable_frame, detections)
                 continue
             if has_button:
-                print('Play phase.')
+                typewriter('Play phase.')
                 # --- 新增血条检测逻辑 ---
                 # 收集 player/monster 和 hp_bar
                 targets = [(i, d) for i, d in enumerate(detections) if d[0] in ('player', 'monster')]
                 hp_bars = [(i, d) for i, d in enumerate(detections) if d[0] == 'hp_bar']
                 hp_info = []
-                print("targets:", targets)
-                print("hp_bars:", hp_bars)
                 for idx, target in targets:
                     tx1, ty1, tx2, ty2 = target[1:5]
-                    print("kuang:", target[1:5])
                     info = {'type': target[0], 'has_hp': False, 'block': None, 'hp': None, 'max_hp': None}
                     # 匹配最近的血条（X轴有重叠，Y轴在目标下方且距离最近）
                     best_bar = None
@@ -81,7 +79,6 @@ class BattleHandler:
                                     best_bar = hpbar
                     if best_bar is not None:
                         hx1, hy1, hx2, hy2 = best_bar[1:5]
-                        print("血条:", best_bar[1:5])
                         info['has_hp'] = True
                         ocr_results = []
                         # 新增：保存截图到figure文件夹
@@ -105,19 +102,17 @@ class BattleHandler:
                             info['hp'] = hp_str
                         else:
                             info['hp'] = hp_text_final
-                        print("hp:", info['hp'])
                     hp_info.append(info)
                 # --- end ---
                 # 找到 detections 中的能量状态
                 energy_state = None
                 for d in detections:
                     if d[0] == 'energy_state':
-                        print("能量状态检测到:", d)
                         ex1, ey1, ex2, ey2 = d[1:5]
                         os.makedirs('figure', exist_ok=True)
                         # 多次截图并识别能量，取众数
                         energy_texts = []
-                        for i in range(5):
+                        for i in range(1):
                             stable_frame_energy = self.capture.wait_for_stable_frame()
                             energy_img = stable_frame_energy[ey1:ey2, ex1:ex2]
                             if i == 0:
@@ -127,7 +122,6 @@ class BattleHandler:
                         from collections import Counter
                         most_common = Counter(energy_texts).most_common(1)
                         energy_state = most_common[0][0] if most_common else ''
-                        print("energy_state(众数):", energy_state)
                         break
                 if energy_state is None:
                     assert False, "Energy state not found in detections."
@@ -135,8 +129,7 @@ class BattleHandler:
                 # 将鼠标移动到 energy_state 区域上方 50 像素
                 self.capture.move_to_edge()
                 continue
-            print(labels)
-            print('Unknown battle phase.')
+            typewriter('Unknown battle phase.', color="#ff1744")
 
             # 保存detections到本地，便于调试
             with open('figure/detections_dump.json', 'w', encoding='utf-8') as f:
@@ -147,20 +140,13 @@ class BattleHandler:
 
     def battle_play_menu(self, energy_state, hp_info):
         self.history_lines = []
-        def add_history(line):
-            print(line)
+        def add_history(line, color=None):
+            typewriter(str(line), color=color)
             self.history_lines.append(str(line))
         add_history(f'\nenergy_state : {energy_state}')
         add_history(f"player: {hp_info[0]['hp']}")
         for i in range(1, len(hp_info)):
             add_history(f"monster{i}: {hp_info[i]['hp']}")
-        add_history("Choose your action:")
-        add_history('1. Show all hand cards')
-        add_history('2. Show all unit status')
-        add_history('3. Show draw pile')
-        add_history('4. Show discard pile')
-        add_history('5. Play a card')
-        add_history('6. End turn')
         hand_cards_raw = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
         hand_cards = hand_card_reader.parse_hand_card(hand_cards_raw)
         hand_cards_str = [str(card) for card in hand_cards]
@@ -174,11 +160,9 @@ class BattleHandler:
         for i, hp in enumerate(hp_info[1:], 0):
             statuses = {}
             if i < len(enemy_units):
-                print(enemy_units[i])
                 messages = enemy_units[i].get('messages', [])
                 for idx, msg in enumerate(messages, 1):
                     statuses[f"msg{idx}"] = msg
-                print(f"enemy {i+1} statuses:", statuses)
             enemy_block = hp.get('block', 0)
             enemies.append({
                 "name": f"monster{i+1}",
@@ -207,7 +191,6 @@ class BattleHandler:
             },
             "enemies": enemies
         }
-        print(status_dict)
         with open("fight/status.json", "w", encoding="utf-8") as f:
             json.dump(status_dict, f, ensure_ascii=False, indent=2)
         # === 新增：调用fix_status_hand.py修正hand结构 ===
@@ -220,11 +203,11 @@ class BattleHandler:
         if choice == '1':
             try:
                 cards = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
-                print('Hand cards:')
+                typewriter('Hand cards:', color="#42a5f5")
                 for i, card in enumerate(cards):
-                    print(f'{i+1}: {card}')
+                    typewriter(f'{i+1}: {card}')
             except Exception as e:
-                print(f'[ERROR] {e}')
+                typewriter(f'[ERROR] {e}', color="#ff1744")
         elif choice == '2':
             try:
                 units = unit_status_reader.read_unit_status(self.capture, self.model)
@@ -232,14 +215,14 @@ class BattleHandler:
                 for u in units:
                     add_history(u)
             except Exception as e:
-                add_history(f'[ERROR] {e}')
+                add_history(f'[ERROR] {e}', color="#ff1744")
         elif choice == '3':
             try:
                 self.click_box_by_label('deck', index=0)
                 frame = self.capture.wait_for_stable_frame()
                 detections = self.model.detect_all(frame)
                 if any(d[0] == 'energy_state' for d in detections):
-                    add_history("Empty draw pile.")
+                    add_history("Empty draw pile.", color="#ffd600")
                     return
                 cards = deck_card_reader.get_card_list_screenshots(self.capture, self.model)
                 add_history('Draw pile:')
@@ -247,14 +230,14 @@ class BattleHandler:
                     add_history(c)
                 pyautogui.click()
             except Exception as e:
-                add_history(f'[ERROR] {e}')
+                add_history(f'[ERROR] {e}', color="#ff1744")
         elif choice == '4':
             try:
                 self.click_box_by_label('discard_deck', index=0)
                 frame = self.capture.wait_for_stable_frame()
                 detections = self.model.detect_all(frame)
                 if any(d[0] == 'energy_state' for d in detections):
-                    add_history("Empty draw pile.")
+                    add_history("Empty draw pile.", color="#ffd600")
                     return
                 cards = deck_card_reader.get_card_list_screenshots(self.capture, self.model)
                 add_history('Discard pile:')
@@ -262,11 +245,10 @@ class BattleHandler:
                     add_history(c)
                 pyautogui.click()
             except Exception as e:
-                add_history(f'[ERROR] {e}')
+                add_history(f'[ERROR] {e}', color="#ff1744")
         elif choice == '5':
             if play_result is None:
                 info = self.fight_ai.generate_command_with_detail()
-                print(info)
                 card_idx = info["choice"]
                 target_idx = info["target_idx"]
                 # 新增：如果AI决策为End Turn，直接执行结束回合
@@ -275,7 +257,7 @@ class BattleHandler:
                         self.click_box_by_label('button', index=0)
                         add_history('AI决策为End Turn，已结束回合。')
                     except Exception as e:
-                        add_history(f'[ERROR] {e}')
+                        add_history(f'[ERROR] {e}', color="#ff1744")
                     return
                 add_history(f"AI打牌决策: idx=({card_idx}, {target_idx})")
                 # --- 执行打牌 ---
@@ -288,7 +270,7 @@ class BattleHandler:
                     self.click_box_by_label(tt, index=y)
                     add_history(f'Played card {card_idx} to target {target_idx}.')
                 except Exception as e:
-                    add_history(f'[ERROR] {e}')
+                    add_history(f'[ERROR] {e}', color="#ff1744")
             else:
                 pass
         elif choice == '6':
@@ -296,17 +278,15 @@ class BattleHandler:
                 self.click_box_by_label('button', index=0)
                 add_history('Turn ended.')
             except Exception as e:
-                add_history(f'[ERROR] {e}')
+                add_history(f'[ERROR] {e}', color="#ff1744")
         else:
-            add_history('Invalid choice. Please try again.')
+            add_history('Invalid choice. Please try again.', color="#ff1744")
 
     def hand_selection_phase(self, frame, detections):
         prompt_box = [d for d in detections if d[0] == 'prompt']
         button_box = [d for d in detections if d[0] == 'button']
         prompt_text = self.get_box_text(frame, prompt_box[0]) if prompt_box else ''
         button_text = self.get_box_text(frame, button_box[0]) if button_box else ''
-        print(f'Prompt: {prompt_text}')
-        print(f'Button: {button_text}')
         while True:
             hand_cards_raw = hand_card_reader.read_hand_cards(self.capture, self.battle_model)
             hand_cards = hand_card_reader.parse_hand_card(hand_cards_raw)
@@ -316,7 +296,7 @@ class BattleHandler:
                 "prompt": prompt_text,
                 "hand_cards": hand_names
             }
-            print(ai_prompt)
+            typewriter(str(ai_prompt), color="#42a5f5")
             # --- 增加自动重试 ---
             while True:
                 try:
@@ -324,11 +304,11 @@ class BattleHandler:
                     break
                 except Exception as e:
                     if '429' in str(e) or 'rate limit' in str(e).lower():
-                        print("[AI限流] 等待10秒后重试...")
+                        typewriter("[AI限流] 等待10秒后重试...", color="#ff1744")
                         import time
                         time.sleep(10)
                     else:
-                        print(f"[AI请求异常] {e}")
+                        typewriter(f"[AI请求异常] {e}", color="#ff1744")
                         import time
                         time.sleep(5)
             idx = int(ai_response.msg.content.strip())
